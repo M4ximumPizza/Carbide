@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'java-library'
+    id 'maven-publish'
 }
 
 group = 'mi.m4x.carbide'
@@ -12,18 +13,32 @@ repositories {
 }
 
 dependencies {
-    // Regular dependencies
     implementation 'com.google.guava:guava:32.1.2-jre'
     implementation 'io.netty:netty-handler:4.1.100.Final'
     implementation 'org.checkerframework:checker-qual:3.42.0'
     implementation 'it.unimi.dsi:fastutil:8.5.12'
     implementation 'io.reactivex.rxjava3:rxjava:3.1.8'
     implementation 'org.slf4j:slf4j-api:2.0.9'
-    // JUnit for testing
+
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
 
 test {
     useJUnitPlatform()
+}
+
+// 👇 This adds sources and javadoc jars to your published library
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
+// 👇 Maven publish configuration (for JitPack or custom repo)
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
 }
