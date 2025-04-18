@@ -7,11 +7,6 @@ plugins {
 group = 'mi.m4x.carbide'
 version = '1.0.0'
 
-repositories {
-    mavenCentral()
-    maven { url 'https://jitpack.io' }
-}
-
 dependencies {
     implementation 'com.google.guava:guava:32.1.2-jre'
     implementation 'io.netty:netty-handler:4.1.100.Final'
