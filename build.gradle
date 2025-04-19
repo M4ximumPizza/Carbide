@@ -22,13 +22,11 @@ test {
     useJUnitPlatform()
 }
 
-// 👇 This adds sources and javadoc jars to your published library
 java {
     withSourcesJar()
     withJavadocJar()
 }
 
-// 👇 Maven publish configuration (for JitPack or custom repo)
 publishing {
     publications {
         mavenJava(MavenPublication) {
