@@ -48,7 +48,7 @@ public final class ObjectPool<T> {
      * @param initializer function to prepare objects on allocation
      * @param postRelease function to clean up objects on release
      * @param capacity maximum number of objects to pool
-     * @throws IllegalArgumentException if capacity <= 0
+     * @throws IllegalArgumentException if capacity less than or equal 0
      * @throws NullPointerException if any function is null
      */
     public ObjectPool(Function<ObjectPool<T>, T> constructor,
