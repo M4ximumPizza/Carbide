@@ -1,5 +1,5 @@
 /**
- * <h1>Carbide Scheduler</h1>
+ * <h2>Carbide Scheduler</h2>
  *
  * <p>
  * This package implements a <strong>high-performance, priority-based task scheduling and execution framework</strong>.
