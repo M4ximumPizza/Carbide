@@ -14,6 +14,9 @@ import java.util.function.Consumer;
  * - Supports cancellation propagation via a callback.
  * - Allows attaching listeners that run exactly once upon completion (success or failure).
  * - Thread-safe and optimized for low-latency and high-concurrency environments.
+ *
+ * @author M4ximumpizza
+ * @since 1.0.0
  */
 public final class CancellationSignaller {
 
