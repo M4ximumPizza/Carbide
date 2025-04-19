@@ -26,4 +26,12 @@ public class InstructionCreateRegisters {
     public static final InstructionCreateRegister r13b = new InstructionCreateRegister(Register.R13L);
     public static final InstructionCreateRegister r14b = new InstructionCreateRegister(Register.R14L);
     public static final InstructionCreateRegister r15b = new InstructionCreateRegister(Register.R15L);
+    public static final InstructionCreateRegister ax = new InstructionCreateRegister(Register.AX);
+    public static final InstructionCreateRegister cx = new InstructionCreateRegister(Register.CX);
+    public static final InstructionCreateRegister dx = new InstructionCreateRegister(Register.DX);
+    public static final InstructionCreateRegister bx = new InstructionCreateRegister(Register.BX);
+    public static final InstructionCreateRegister sp = new InstructionCreateRegister(Register.SP);
+    public static final InstructionCreateRegister bp = new InstructionCreateRegister(Register.BP);
+    public static final InstructionCreateRegister si = new InstructionCreateRegister(Register.SI);
+    public static final InstructionCreateRegister di = new InstructionCreateRegister(Register.DI);
 }

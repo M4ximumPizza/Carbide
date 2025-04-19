@@ -13,52 +13,52 @@ public final class Register {
     public static final int NONE = 0;
 
     /**
-     * AL (Accumulator Low): Lower 8 bits of the AX register (Accumulator Register).
+     * AL (Accumulator Low): Lower 8 bits of the {@link #AX} register (Accumulator Register).
      * Commonly used for arithmetic operations and I/O instructions. Frequently acts
      * as the default operand for many instructions.
      */
     public static final int AL = 1;
 
     /**
-     * CL (Counter Low): Lower 8 bits of the CX register (Counter Register).
+     * CL (Counter Low): Lower 8 bits of the {@link #CX} register (Counter Register).
      * Often used in loop control structures and for shift/rotate operations
      * where the shift count is stored in CL.
      */
     public static final int CL = 2;
 
     /**
-     * DL (Data Low): Lower 8 bits of the DX register (Data Register).
+     * DL (Data Low): Lower 8 bits of the {@link #DX} register (Data Register).
      * Used in I/O port access and extended arithmetic operations such as
      * multiplication and division.
      */
     public static final int DL = 3;
 
     /**
-     * BL (Base Low): Lower 8 bits of the BX register (Base Register).
+     * BL (Base Low): Lower 8 bits of the {@link #BX} register (Base Register).
      * Commonly used in memory addressing and general-purpose byte storage.
      */
     public static final int BL = 4;
 
     /**
-     * AH (Accumulator High): High 8 bits of the AX register (Accumulator Register).
+     * AH (Accumulator High): High 8 bits of the {@link #AX} register (Accumulator Register).
      * Often used for extended precision in arithmetic and data manipulation.
      */
     public static final int AH = 5;
 
     /**
-     * CH (Counter High): High 8 bits of the CX register (Counter Register).
+     * CH (Counter High): High 8 bits of the {@link #CX} register (Counter Register).
      * Sometimes used in loops or when 8-bit operations are split across {@link #CH} and {@link #CL}.
      */
     public static final int CH = 6;
 
     /**
-     * DH (Data High): High 8 bits of the DX register (Data Register).
+     * DH (Data High): High 8 bits of the {@link #DX} register (Data Register).
      * Used in conjunction with DL for extended arithmetic operations.
      */
     public static final int DH = 7;
 
     /**
-     * BH (Base High): High 8 bits of the BX register (Base Register).
+     * BH (Base High): High 8 bits of the {@link #BX} register (Base Register).
      * Occasionally used in memory addressing or as a general-purpose register.
      */
     public static final int BH = 8;
@@ -134,4 +134,50 @@ public final class Register {
      * Introduced in x86-64. Used for 8-bit operations with the R15 general-purpose register.
      */
     public static final int R15L = 20;
+
+    /**
+     * AX (Accumulator Register): 16-bit general-purpose register.
+     * Frequently used in arithmetic and I/O operations.
+     */
+    public static final int AX = 21;
+
+    /**
+     * CX (Counter Register): 16-bit general-purpose register.
+     * Commonly used as a loop counter or for shift/rotate operations.
+     */
+    public static final int CX = 22;
+
+    /**
+     * DX (Data Register): 16-bit general-purpose register.
+     * Used in I/O operations and as an extension of AX in some arithmetic operations.
+     */
+    public static final int DX = 23;
+
+    /**
+     * BX (Base Register): 16-bit general-purpose register.
+     * Often used as a base pointer for memory addressing.
+     */
+    public static final int BX = 24;
+
+    /**
+     * SP (Stack Pointer): 16-bit register pointing to the top of the stack.
+     * Implicitly used by push/pop/call/ret instructions.
+     */
+    public static final int SP = 25;
+
+    /**
+     * BP (Base Pointer): 16-bit register pointing to the base of the current stack frame.
+     * Often used to reference function arguments and local variables.
+     */
+    public static final int BP = 26;
+
+    /**
+     * SI (Source Index): 16-bit register used in string/memory operations as the source.
+     */
+    public static final int SI = 27;
+
+    /**
+     * DI (Destination Index): 16-bit register used in string/memory operations as the destination.
+     */
+    public static final int DI = 28;
 }
