@@ -101,7 +101,7 @@ public class TestThroughput {
 
         @Override
         public int priority() {
-            return ThreadLocalRandom.current().nextInt(128);
+            return ThreadLocalRandom.current().nextInt(64);
         }
     }
 }
