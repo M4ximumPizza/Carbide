@@ -276,4 +276,315 @@ public final class Register {
      * as a destination pointer (e.g., for `movs`, `stos` instructions).
      */
     public static final int EDI = 44;
+
+    /**
+     * R8D: 32-bit lower portion of the 64-bit R8 register, introduced in x86-64.
+     * Used as a general-purpose doubleword (32-bit) register.
+     */
+    public static final int R8D = 45;
+
+    /**
+     * R9D: 32-bit lower portion of the 64-bit R9 register, introduced in x86-64.
+     * Used as a general-purpose doubleword (32-bit) register.
+     */
+    public static final int R9D = 46;
+
+    /**
+     * R10D: 32-bit lower portion of the 64-bit R10 register, introduced in x86-64.
+     * Used as a general-purpose doubleword (32-bit) register.
+     */
+    public static final int R10D = 47;
+
+    /**
+     * R11D: 32-bit lower portion of the 64-bit R11 register, introduced in x86-64.
+     * Used as a general-purpose doubleword (32-bit) register.
+     */
+    public static final int R11D = 48;
+
+    /**
+     * R12D: 32-bit lower portion of the 64-bit R12 register, introduced in x86-64.
+     * Often used in memory addressing and general-purpose computation.
+     */
+    public static final int R12D = 49;
+
+    /**
+     * R13D: 32-bit lower portion of the 64-bit R13 register, introduced in x86-64.
+     * Often used in memory addressing and general-purpose computation.
+     */
+    public static final int R13D = 50;
+
+    /**
+     * R14D: 32-bit lower portion of the 64-bit R14 register, introduced in x86-64.
+     * Often used in memory addressing and general-purpose computation.
+     */
+    public static final int R14D = 51;
+
+    /**
+     * R15D: 32-bit lower portion of the 64-bit R15 register, introduced in x86-64.
+     * Often used in memory addressing and general-purpose computation.
+     */
+    public static final int R15D = 52;
+
+    /**
+     * RAX: 64-bit version of the accumulator register (extended {@link #EAX}), used for arithmetic operations.
+     * Implicit operand in many arithmetic instructions.
+     */
+    public static final int RAX = 53;
+
+    /**
+     * RCX: 64-bit version of the counter register (extended {@link #ECX}), often used for loop counters
+     * and shift/rotate operations.
+     */
+    public static final int RCX = 54;
+
+    /**
+     * RDX: 64-bit version of the data register (extended {@link #EDX}), used in I/O operations
+     * and for high-order bits in multiplication/division.
+     */
+    public static final int RDX = 55;
+
+    /**
+     * RBX: 64-bit version of the base register (extended {@link #EBX}), used for memory addressing.
+     */
+    public static final int RBX = 56;
+
+    /**
+     * RSP: 64-bit version of the stack pointer (extended {@link #ESP}), points to the top of the stack.
+     * Automatically updated by push/pop/call/ret instructions.
+     */
+    public static final int RSP = 57;
+
+    /**
+     * RBP: 64-bit version of the base pointer (extended {@link #EBP}), used to point to the base of the current stack frame.
+     */
+    public static final int RBP = 58;
+
+    /**
+     * RSI: 64-bit version of the source index (extended {@link #ESI}), used in string/memory operations as a source pointer.
+     */
+    public static final int RSI = 59;
+
+    /**
+     * RDI: 64-bit version of the destination index (extended {@link #EDI}), used in string/memory operations as a destination pointer.
+     */
+    public static final int RDI = 60;
+
+    /**
+     * R8: 64-bit general-purpose register introduced in x86-64.
+     * Used for computation and holds the fifth function argument in the System V calling convention.
+     */
+    public static final int R8 = 61;
+
+    /**
+     * R9: 64-bit general-purpose register introduced in x86-64.
+     * Used for computation and holds the sixth function argument in the System V calling convention.
+     */
+    public static final int R9 = 62;
+
+    /**
+     * R10: 64-bit general-purpose register introduced in x86-64.
+     * Caller-saved and used for temporary values or syscall numbers.
+     */
+    public static final int R10 = 63;
+
+    /**
+     * R11: 64-bit general-purpose register introduced in x86-64.
+     * Caller-saved and commonly used for temporary or scratch values.
+     */
+    public static final int R11 = 64;
+
+    /**
+     * R12: 64-bit general-purpose register introduced in x86-64.
+     * Callee-saved and often used for local variables or memory addressing.
+     */
+    public static final int R12 = 65;
+
+    /**
+     * R13: 64-bit general-purpose register introduced in x86-64.
+     * Callee-saved and often used for local variables or stack frames.
+     */
+    public static final int R13 = 66;
+
+    /**
+     * R14: 64-bit general-purpose register introduced in x86-64.
+     * Callee-saved and commonly used for control or data flow within procedures.
+     */
+    public static final int R14 = 67;
+
+    /**
+     * R15: 64-bit general-purpose register introduced in x86-64.
+     * Callee-saved and commonly used for managing context or large functions.
+     */
+    public static final int R15 = 68;
+
+    /**
+     * EIP (Extended Instruction Pointer): 32-bit register that holds the address of the next instruction
+     * to execute in 32-bit x86 mode.
+     */
+    public static final int EIP = 69; // Noice
+
+    /**
+     * RIP (Register Instruction Pointer): 64-bit register that holds the address of the next instruction
+     * to execute in 64-bit x86-64 mode. Supports RIP-relative addressing.
+     */
+    public static final int RIP = 70;
+
+    /**
+     * ES (Extra Segment): Segment register used in legacy x86 for segmented memory addressing.
+     * Rarely used in modern 64-bit systems.
+     */
+    public static final int ES = 71;
+
+    /**
+     * CS (Code Segment): Segment register that holds the segment selector for the currently executing code.
+     * Still used in x86-64 for privilege level separation and far jumps.
+     */
+    public static final int CS = 72;
+
+    /**
+     * SS (Stack Segment): Segment register used for stack operations (push/pop/call/ret) in legacy x86.
+     * Still holds a valid descriptor in 64-bit mode but mostly ignored.
+     */
+    public static final int SS = 73;
+
+    /**
+     * DS (Data Segment): Segment register historically used to access data memory in 16/32-bit modes.
+     * Ignored in most 64-bit code but still loaded.
+     */
+    public static final int DS = 74;
+
+    /**
+     * FS: Segment register used for accessing thread-local storage or platform-specific structures.
+     * Still relevant in both 32-bit and 64-bit code (e.g., Windows TIB or Linux TLS).
+     */
+    public static final int FS = 75;
+
+    /**
+     * GS: Segment register used similarly to FS for thread-local or system-level access.
+     * Used in 64-bit systems for accessing per-CPU data structures (e.g., Linux kernel).
+     */
+    public static final int GS = 76;
+
+    /**
+     * ST0: Top of the x87 floating-point register stack (register 0).
+     * Implicitly used in most x87 instructions as the default operand.
+     */
+    public static final int ST0 = 77;
+
+    /**
+     * ST1: Second register in the x87 floating-point register stack.
+     */
+    public static final int ST1 = 78;
+
+    /**
+     * ST2: Third register in the x87 floating-point register stack.
+     */
+    public static final int ST2 = 79;
+
+    /**
+     * ST3: Fourth register in the x87 floating-point register stack.
+     */
+    public static final int ST3 = 80;
+
+    /**
+     * ST4: Fifth register in the x87 floating-point register stack.
+     */
+    public static final int ST4 = 81;
+
+    /**
+     * ST5: Sixth register in the x87 floating-point register stack.
+     */
+    public static final int ST5 = 82;
+
+    /**
+     * ST6: Seventh register in the x87 floating-point register stack.
+     */
+    public static final int ST6 = 83;
+
+    /**
+     * ST7: Eighth and last register in the x87 floating-point register stack.
+     */
+    public static final int ST7 = 84;
+
+    /**
+     * CR0: Control Register 0. Enables and configures key processor modes such as paging, protection, and coprocessor presence.
+     */
+    public static final int CR0 = 85;
+
+    /**
+     * CR1: Reserved. Not used in any known implementation.
+     */
+    public static final int CR1 = 86;
+
+    /**
+     * CR2: Control Register 2. Holds the page-fault linear address (the address that caused the most recent page fault).
+     */
+    public static final int CR2 = 87;
+
+    /**
+     * CR3: Control Register 3. Holds the physical address of the page directory base in paging mode.
+     * Crucial for virtual memory management.
+     */
+    public static final int CR3 = 88;
+
+    /**
+     * CR4: Control Register 4. Enables various processor extensions such as SSE, PAE, and protection mode features.
+     */
+    public static final int CR4 = 89;
+
+    /**
+     * CR5: Reserved. Not used in standard processors.
+     */
+    public static final int CR5 = 90;
+
+    /**
+     * CR6: Reserved. Not used in standard processors.
+     */
+    public static final int CR6 = 91;
+
+    /**
+     * CR7: Reserved. Not used in standard processors.
+     */
+    public static final int CR7 = 92;
+
+    /**
+     * CR8: Control Register 8. Used on x86-64 systems to store the Task Priority Register (TPR),
+     * which controls interrupt priority thresholding.
+     */
+    public static final int CR8 = 93;
+
+    /**
+     * CR9: Reserved or implementation-defined. Not typically accessible in standard software.
+     */
+    public static final int CR9 = 94;
+
+    /**
+     * CR10: Reserved or implementation-defined. Not typically accessible in standard software.
+     */
+    public static final int CR10 = 95;
+
+    /**
+     * CR11: Reserved or implementation-defined. Not typically accessible in standard software.
+     */
+    public static final int CR11 = 96;
+
+    /**
+     * CR12: Reserved or implementation-defined. Not typically accessible in standard software.
+     */
+    public static final int CR12 = 97;
+
+    /**
+     * CR13: Reserved or implementation-defined. Not typically accessible in standard software.
+     */
+    public static final int CR13 = 98;
+
+    /**
+     * CR14: Reserved or implementation-defined. Not typically accessible in standard software.
+     */
+    public static final int CR14 = 99;
+
+    /**
+     * CR15: Reserved or implementation-defined. Not typically accessible in standard software.
+     */
+    public static final int CR15 = 100;
 }
