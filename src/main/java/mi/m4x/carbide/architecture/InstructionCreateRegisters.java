@@ -247,6 +247,14 @@ public class InstructionCreateRegisters {
     public static final InstructionCreateRegister zmm29 = new InstructionCreateRegister(Register.ZMM29);
     public static final InstructionCreateRegister zmm30 = new InstructionCreateRegister(Register.ZMM30);
     public static final InstructionCreateRegister zmm31 = new InstructionCreateRegister(Register.ZMM31);
+    public static final InstructionCreateRegister tmm0 = new InstructionCreateRegister(Register.TMM0);
+    public static final InstructionCreateRegister tmm1 = new InstructionCreateRegister(Register.TMM1);
+    public static final InstructionCreateRegister tmm2 = new InstructionCreateRegister(Register.TMM2);
+    public static final InstructionCreateRegister tmm3 = new InstructionCreateRegister(Register.TMM3);
+    public static final InstructionCreateRegister tmm4 = new InstructionCreateRegister(Register.TMM4);
+    public static final InstructionCreateRegister tmm5 = new InstructionCreateRegister(Register.TMM5);
+    public static final InstructionCreateRegister tmm6 = new InstructionCreateRegister(Register.TMM6);
+    public static final InstructionCreateRegister tmm7 = new InstructionCreateRegister(Register.TMM7);
 
     public static List<InstructionCreateRegister> all() {
         // No register
@@ -302,6 +310,9 @@ public class InstructionCreateRegisters {
 
                 // ZMM registers
                 zmm0, zmm1, zmm2, zmm3, zmm4, zmm5, zmm6, zmm7, zmm8, zmm9, zmm10, zmm11, zmm12, zmm13, zmm14, zmm15,
-                zmm16, zmm17, zmm18, zmm19, zmm20, zmm21, zmm22, zmm23, zmm24, zmm25, zmm26, zmm27, zmm28, zmm29, zmm30, zmm31);
+                zmm16, zmm17, zmm18, zmm19, zmm20, zmm21, zmm22, zmm23, zmm24, zmm25, zmm26, zmm27, zmm28, zmm29, zmm30, zmm31,
+
+                // Temporary registers
+                tmm0, tmm1, tmm2, tmm3, tmm4, tmm5, tmm6, tmm7);
     }
 }

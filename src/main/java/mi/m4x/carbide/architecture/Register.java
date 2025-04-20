@@ -1127,4 +1127,44 @@ public final class Register {
      * ZMM31: Final ZMM register in AVX-512, used for extensive parallel processing.
      */
     public static final int ZMM31 = 240;
+
+    /**
+     * TMM0: Temporary register 0. Used for storing intermediate data in the Thread Management Unit (TMU) during execution.
+     */
+    public static final int TMM0 = 241;
+
+    /**
+     * TMM1: Temporary register 1. Supports parallel computation by holding intermediate results in the Thread Management Unit.
+     */
+    public static final int TMM1 = 242;
+
+    /**
+     * TMM2: Temporary register 2. Used for holding data that is being processed by threads in multi-threaded or SIMD operations.
+     */
+    public static final int TMM2 = 243;
+
+    /**
+     * TMM3: Temporary register 3. Stores intermediate values for high-performance computing and multi-threaded workloads.
+     */
+    public static final int TMM3 = 244;
+
+    /**
+     * TMM4: Temporary register 4. Used for efficient data handling in thread management systems, often in parallel computations.
+     */
+    public static final int TMM4 = 245;
+
+    /**
+     * TMM5: Temporary register 5. Supports temporary data storage during complex calculations and thread-level computations.
+     */
+    public static final int TMM5 = 246;
+
+    /**
+     * TMM6: Temporary register 6. Employed for storing intermediate results and assisting in multi-threaded or SIMD data manipulations.
+     */
+    public static final int TMM6 = 247;
+
+    /**
+     * TMM7: Temporary register 7. Provides additional storage for data during thread-level or SIMD processing, aiding in parallel execution.
+     */
+    public static final int TMM7 = 248;
 }
