@@ -131,6 +131,18 @@ public class InstructionCreateRegisters {
     public static final InstructionCreateRegister tr5 = new InstructionCreateRegister(Register.TR5);
     public static final InstructionCreateRegister tr6 = new InstructionCreateRegister(Register.TR6);
     public static final InstructionCreateRegister tr7 = new InstructionCreateRegister(Register.TR7);
+    public static final InstructionCreateRegister bnd0 = new InstructionCreateRegister(Register.BND0);
+    public static final InstructionCreateRegister bnd1 = new InstructionCreateRegister(Register.BND1);
+    public static final InstructionCreateRegister bnd2 = new InstructionCreateRegister(Register.BND2);
+    public static final InstructionCreateRegister bnd3 = new InstructionCreateRegister(Register.BND3);
+    public static final InstructionCreateRegister k0 = new InstructionCreateRegister(Register.K0);
+    public static final InstructionCreateRegister k1 = new InstructionCreateRegister(Register.K1);
+    public static final InstructionCreateRegister k2 = new InstructionCreateRegister(Register.K2);
+    public static final InstructionCreateRegister k3 = new InstructionCreateRegister(Register.K3);
+    public static final InstructionCreateRegister k4 = new InstructionCreateRegister(Register.K4);
+    public static final InstructionCreateRegister k5 = new InstructionCreateRegister(Register.K5);
+    public static final InstructionCreateRegister k6 = new InstructionCreateRegister(Register.K6);
+    public static final InstructionCreateRegister k7 = new InstructionCreateRegister(Register.K7);
 
     public static List<InstructionCreateRegister> all() {
         // No register
@@ -163,7 +175,13 @@ public class InstructionCreateRegisters {
                 // Debug registers
                 dr0, dr1, dr2, dr3, dr4, dr5, dr6, dr7, dr8, dr9, dr10, dr11, dr12, dr13, dr14, dr15,
 
-                // Test registers);
-                tr0, tr1, tr2, tr3, tr4, tr5, tr6, tr7);
+                // Test registers
+                tr0, tr1, tr2, tr3, tr4, tr5, tr6, tr7,
+
+                // Bound registers
+                bnd0, bnd1, bnd2, bnd3,
+
+                // AVX-512 mask registers
+                k0, k1, k2, k3, k4, k5, k6, k7);
     }
 }

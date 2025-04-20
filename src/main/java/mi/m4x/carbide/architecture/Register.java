@@ -717,4 +717,67 @@ public final class Register {
      * Removed from Intel architecture after the 486 generation.
      */
     public static final int TR7 = 124;
+
+    /**
+     * BND0: MPX Bound Register 0. Holds lower and upper bounds for pointer bounds checking.
+     * Part of Intel MPX (Memory Protection Extensions), used for enforcing memory safety.
+     */
+    public static final int BND0 = 125;
+
+    /**
+     * BND1: MPX Bound Register 1. Stores bounds for another pointer being tracked for bounds checking.
+     */
+    public static final int BND1 = 126;
+
+    /**
+     * BND2: MPX Bound Register 2. Used by MPX instructions to validate memory accesses within specified bounds.
+     */
+    public static final int BND2 = 127;
+
+    /**
+     * BND3: MPX Bound Register 3. One of four bound registers used for hardware-assisted bounds checking.
+     */
+    public static final int BND3 = 128;
+
+    /**
+     * K0: AVX-512 Mask Register 0. Used to control per-element operations in AVX-512 instructions.
+     * K0 is often implicitly zeroed or ignored depending on the instruction.
+     */
+    public static final int K0 = 129;
+
+    /**
+     * K1: AVX-512 Mask Register 1. Controls which elements are active in vector operations.
+     * Commonly used for predicate-based execution.
+     */
+    public static final int K1 = 130;
+
+    /**
+     * K2: AVX-512 Mask Register 2. One of eight 64-bit predicate registers used in AVX-512 for selective computation.
+     */
+    public static final int K2 = 131;
+
+    /**
+     * K3: AVX-512 Mask Register 3. Holds bitmask flags indicating which vector lanes to update or ignore.
+     */
+    public static final int K3 = 132;
+
+    /**
+     * K4: AVX-512 Mask Register 4. Used to mask out elements during vector computations.
+     */
+    public static final int K4 = 133;
+
+    /**
+     * K5: AVX-512 Mask Register 5. Can be used to apply conditional operations on vector registers.
+     */
+    public static final int K5 = 134;
+
+    /**
+     * K6: AVX-512 Mask Register 6. One of the available predicate registers for fine-grained control over AVX-512 instructions.
+     */
+    public static final int K6 = 135;
+
+    /**
+     * K7: AVX-512 Mask Register 7. Last of the AVX-512 mask registers, usable in most AVX-512 enabled processors.
+     */
+    public static final int K7 = 136;
 }
