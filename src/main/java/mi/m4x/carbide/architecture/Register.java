@@ -587,4 +587,86 @@ public final class Register {
      * CR15: Reserved or implementation-defined. Not typically accessible in standard software.
      */
     public static final int CR15 = 100;
+
+    /**
+     * DR0: Debug Register 0. Holds the linear address of the first hardware breakpoint.
+     */
+    public static final int DR0 = 101;
+
+    /**
+     * DR1: Debug Register 1. Holds the linear address of the second hardware breakpoint.
+     */
+    public static final int DR1 = 102;
+
+    /**
+     * DR2: Debug Register 2. Holds the linear address of the third hardware breakpoint.
+     */
+    public static final int DR2 = 103;
+
+    /**
+     * DR3: Debug Register 3. Holds the linear address of the fourth hardware breakpoint.
+     */
+    public static final int DR3 = 104;
+
+    /**
+     * DR4: Reserved or alias for DR6 on some legacy processors. Avoid using.
+     */
+    public static final int DR4 = 105;
+
+    /**
+     * DR5: Reserved or alias for DR7 on some legacy processors. Avoid using.
+     */
+    public static final int DR5 = 106;
+
+    /**
+     * DR6: Debug Status Register. Reports which debug conditions have occurred (e.g., breakpoint hits).
+     * Automatically updated by the processor when a debug exception occurs.
+     */
+    public static final int DR6 = 107;
+
+    /**
+     * DR7: Debug Control Register. Controls hardware breakpoints—sets which DRx registers are active,
+     * breakpoint types (execution, read, write), and length.
+     */
+    public static final int DR7 = 108;
+
+    /**
+     * DR8: Reserved for future use or system-specific extensions. Not used in standard debugging.
+     */
+    public static final int DR8 = 109;
+
+    /**
+     * DR9: Reserved for future use or system-specific extensions. Not used in standard debugging.
+     */
+    public static final int DR9 = 110;
+
+    /**
+     * DR10: Reserved for future use or system-specific extensions. Not used in standard debugging.
+     */
+    public static final int DR10 = 111;
+
+    /**
+     * DR11: Reserved for future use or system-specific extensions. Not used in standard debugging.
+     */
+    public static final int DR11 = 112;
+
+    /**
+     * DR12: Reserved for future use or system-specific extensions. Not used in standard debugging.
+     */
+    public static final int DR12 = 113;
+
+    /**
+     * DR13: Reserved for future use or system-specific extensions. Not used in standard debugging.
+     */
+    public static final int DR13 = 114;
+
+    /**
+     * DR14: Reserved for future use or system-specific extensions. Not used in standard debugging.
+     */
+    public static final int DR14 = 115;
+
+    /**
+     * DR15: Reserved for future use or system-specific extensions. Not used in standard debugging.
+     */
+    public static final int DR15 = 116;
 }

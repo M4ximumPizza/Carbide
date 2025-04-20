@@ -107,6 +107,22 @@ public class InstructionCreateRegisters {
     public static final InstructionCreateRegister cr13 = new InstructionCreateRegister(Register.CR13);
     public static final InstructionCreateRegister cr14 = new InstructionCreateRegister(Register.CR14);
     public static final InstructionCreateRegister cr15 = new InstructionCreateRegister(Register.CR15);
+    public static final InstructionCreateRegister dr0 = new InstructionCreateRegister(Register.DR0);
+    public static final InstructionCreateRegister dr1 = new InstructionCreateRegister(Register.DR1);
+    public static final InstructionCreateRegister dr2 = new InstructionCreateRegister(Register.DR2);
+    public static final InstructionCreateRegister dr3 = new InstructionCreateRegister(Register.DR3);
+    public static final InstructionCreateRegister dr4 = new InstructionCreateRegister(Register.DR4);
+    public static final InstructionCreateRegister dr5 = new InstructionCreateRegister(Register.DR5);
+    public static final InstructionCreateRegister dr6 = new InstructionCreateRegister(Register.DR6);
+    public static final InstructionCreateRegister dr7 = new InstructionCreateRegister(Register.DR7);
+    public static final InstructionCreateRegister dr8 = new InstructionCreateRegister(Register.DR8);
+    public static final InstructionCreateRegister dr9 = new InstructionCreateRegister(Register.DR9);
+    public static final InstructionCreateRegister dr10 = new InstructionCreateRegister(Register.DR10);
+    public static final InstructionCreateRegister dr11 = new InstructionCreateRegister(Register.DR11);
+    public static final InstructionCreateRegister dr12 = new InstructionCreateRegister(Register.DR12);
+    public static final InstructionCreateRegister dr13 = new InstructionCreateRegister(Register.DR13);
+    public static final InstructionCreateRegister dr14 = new InstructionCreateRegister(Register.DR14);
+    public static final InstructionCreateRegister dr15 = new InstructionCreateRegister(Register.DR15);
 
     public static List<InstructionCreateRegister> all() {
         return Collections.unmodifiableList(Arrays.asList(
@@ -141,7 +157,11 @@ public class InstructionCreateRegisters {
 
                 // Control registers
                 cr0, cr1, cr2, cr3, cr4, cr5, cr6, cr7,
-                cr8, cr9, cr10, cr11, cr12, cr13, cr14, cr15
+                cr8, cr9, cr10, cr11, cr12, cr13, cr14, cr15,
+
+                // Debug registers
+                dr0, dr1, dr2, dr3, dr4, dr5, dr6, dr7,
+                dr8, dr9, dr10, dr11, dr12, dr13, dr14, dr15
         ));
     }
 }
