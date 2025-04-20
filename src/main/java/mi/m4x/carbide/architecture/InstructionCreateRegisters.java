@@ -1,10 +1,7 @@
 package mi.m4x.carbide.architecture;
 
-import org.checkerframework.checker.units.qual.N;
 
-import java.util.Collections;
 import java.util.List;
-import java.util.Arrays;
 
 public class InstructionCreateRegisters {
     public InstructionCreateRegisters() {}
