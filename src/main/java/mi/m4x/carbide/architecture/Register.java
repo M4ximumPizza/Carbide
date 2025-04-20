@@ -1167,4 +1167,6 @@ public final class Register {
      * TMM7: Temporary register 7. Provides additional storage for data during thread-level or SIMD processing, aiding in parallel execution.
      */
     public static final int TMM7 = 248;
+
+    //TODO: Add more registers. THERE ARE A LOT MORE!
 }
