@@ -123,6 +123,14 @@ public class InstructionCreateRegisters {
     public static final InstructionCreateRegister dr13 = new InstructionCreateRegister(Register.DR13);
     public static final InstructionCreateRegister dr14 = new InstructionCreateRegister(Register.DR14);
     public static final InstructionCreateRegister dr15 = new InstructionCreateRegister(Register.DR15);
+    public static final InstructionCreateRegister tr0 = new InstructionCreateRegister(Register.TR0);
+    public static final InstructionCreateRegister tr1 = new InstructionCreateRegister(Register.TR1);
+    public static final InstructionCreateRegister tr2 = new InstructionCreateRegister(Register.TR2);
+    public static final InstructionCreateRegister tr3 = new InstructionCreateRegister(Register.TR3);
+    public static final InstructionCreateRegister tr4 = new InstructionCreateRegister(Register.TR4);
+    public static final InstructionCreateRegister tr5 = new InstructionCreateRegister(Register.TR5);
+    public static final InstructionCreateRegister tr6 = new InstructionCreateRegister(Register.TR6);
+    public static final InstructionCreateRegister tr7 = new InstructionCreateRegister(Register.TR7);
 
     public static List<InstructionCreateRegister> all() {
         // No register
@@ -153,6 +161,9 @@ public class InstructionCreateRegisters {
                 cr0, cr1, cr2, cr3, cr4, cr5, cr6, cr7, cr8, cr9, cr10, cr11, cr12, cr13, cr14, cr15,
 
                 // Debug registers
-                dr0, dr1, dr2, dr3, dr4, dr5, dr6, dr7, dr8, dr9, dr10, dr11, dr12, dr13, dr14, dr15);
+                dr0, dr1, dr2, dr3, dr4, dr5, dr6, dr7, dr8, dr9, dr10, dr11, dr12, dr13, dr14, dr15,
+
+                // Test registers);
+                tr0, tr1, tr2, tr3, tr4, tr5, tr6, tr7);
     }
 }

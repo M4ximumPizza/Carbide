@@ -669,4 +669,52 @@ public final class Register {
      * DR15: Reserved for future use or system-specific extensions. Not used in standard debugging.
      */
     public static final int DR15 = 116;
+
+    /**
+     * TR0: Test Register 0. Used on early Intel 486 processors for TLB testing.
+     * Obsolete in modern architectures.
+     */
+    public static final int TR0 = 117;
+
+    /**
+     * TR1: Test Register 1. Used for internal diagnostics and TLB testing on early processors.
+     * Obsolete in modern architectures.
+     */
+    public static final int TR1 = 118;
+
+    /**
+     * TR2: Test Register 2. Part of TLB testing and diagnostic facilities on Intel 486.
+     * Obsolete and undocumented in later architectures.
+     */
+    public static final int TR2 = 119;
+
+    /**
+     * TR3: Test Register 3. Used for TLB testing and diagnostics on early Intel processors.
+     * Obsolete in modern architectures.
+     */
+    public static final int TR3 = 120;
+
+    /**
+     * TR4: Test Register 4. Used for testing L1 cache and TLB behavior in early Intel processors.
+     * Obsolete in modern x86 systems.
+     */
+    public static final int TR4 = 121;
+
+    /**
+     * TR5: Test Register 5. Complemented TR4 in cache testing procedures.
+     * No longer present or functional in modern CPUs.
+     */
+    public static final int TR5 = 122;
+
+    /**
+     * TR6: Test Register 6. Used to initiate or check test conditions, particularly for cache.
+     * Obsolete; should not be used in modern system software.
+     */
+    public static final int TR6 = 123;
+
+    /**
+     * TR7: Test Register 7. Typically used alongside TR6 for cache testing.
+     * Removed from Intel architecture after the 486 generation.
+     */
+    public static final int TR7 = 124;
 }
