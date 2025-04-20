@@ -1,5 +1,7 @@
 package mi.m4x.carbide.architecture;
 
+import org.checkerframework.checker.units.qual.N;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.Arrays;
@@ -7,6 +9,7 @@ import java.util.Arrays;
 public class InstructionCreateRegisters {
     public InstructionCreateRegisters() {}
 
+    public static final InstructionCreateRegister NONE = new InstructionCreateRegister(Register.NONE);
     public static final InstructionCreateRegister al = new InstructionCreateRegister(Register.AL);
     public static final InstructionCreateRegister cl = new InstructionCreateRegister(Register.CL);
     public static final InstructionCreateRegister dl = new InstructionCreateRegister(Register.DL);
@@ -143,10 +146,51 @@ public class InstructionCreateRegisters {
     public static final InstructionCreateRegister k5 = new InstructionCreateRegister(Register.K5);
     public static final InstructionCreateRegister k6 = new InstructionCreateRegister(Register.K6);
     public static final InstructionCreateRegister k7 = new InstructionCreateRegister(Register.K7);
+    public static final InstructionCreateRegister mm0 = new InstructionCreateRegister(Register.MM0);
+    public static final InstructionCreateRegister mm1 = new InstructionCreateRegister(Register.MM1);
+    public static final InstructionCreateRegister mm2 = new InstructionCreateRegister(Register.MM2);
+    public static final InstructionCreateRegister mm3 = new InstructionCreateRegister(Register.MM3);
+    public static final InstructionCreateRegister mm4 = new InstructionCreateRegister(Register.MM4);
+    public static final InstructionCreateRegister mm5 = new InstructionCreateRegister(Register.MM5);
+    public static final InstructionCreateRegister mm6 = new InstructionCreateRegister(Register.MM6);
+    public static final InstructionCreateRegister mm7 = new InstructionCreateRegister(Register.MM7);
+    public static final InstructionCreateRegister xmm0 = new InstructionCreateRegister(Register.XMM0);
+    public static final InstructionCreateRegister xmm1 = new InstructionCreateRegister(Register.XMM1);
+    public static final InstructionCreateRegister xmm2 = new InstructionCreateRegister(Register.XMM2);
+    public static final InstructionCreateRegister xmm3 = new InstructionCreateRegister(Register.XMM3);
+    public static final InstructionCreateRegister xmm4 = new InstructionCreateRegister(Register.XMM4);
+    public static final InstructionCreateRegister xmm5 = new InstructionCreateRegister(Register.XMM5);
+    public static final InstructionCreateRegister xmm6 = new InstructionCreateRegister(Register.XMM6);
+    public static final InstructionCreateRegister xmm7 = new InstructionCreateRegister(Register.XMM7);
+    public static final InstructionCreateRegister xmm8 = new InstructionCreateRegister(Register.XMM8);
+    public static final InstructionCreateRegister xmm9 = new InstructionCreateRegister(Register.XMM9);
+    public static final InstructionCreateRegister xmm10 = new InstructionCreateRegister(Register.XMM10);
+    public static final InstructionCreateRegister xmm11 = new InstructionCreateRegister(Register.XMM11);
+    public static final InstructionCreateRegister xmm12 = new InstructionCreateRegister(Register.XMM12);
+    public static final InstructionCreateRegister xmm13 = new InstructionCreateRegister(Register.XMM13);
+    public static final InstructionCreateRegister xmm14 = new InstructionCreateRegister(Register.XMM14);
+    public static final InstructionCreateRegister xmm15 = new InstructionCreateRegister(Register.XMM15);
+    public static final InstructionCreateRegister xmm16 = new InstructionCreateRegister(Register.XMM16);
+    public static final InstructionCreateRegister xmm17 = new InstructionCreateRegister(Register.XMM17);
+    public static final InstructionCreateRegister xmm18 = new InstructionCreateRegister(Register.XMM18);
+    public static final InstructionCreateRegister xmm19 = new InstructionCreateRegister(Register.XMM19);
+    public static final InstructionCreateRegister xmm20 = new InstructionCreateRegister(Register.XMM20);
+    public static final InstructionCreateRegister xmm21 = new InstructionCreateRegister(Register.XMM21);
+    public static final InstructionCreateRegister xmm22 = new InstructionCreateRegister(Register.XMM22);
+    public static final InstructionCreateRegister xmm23 = new InstructionCreateRegister(Register.XMM23);
+    public static final InstructionCreateRegister xmm24 = new InstructionCreateRegister(Register.XMM24);
+    public static final InstructionCreateRegister xmm25 = new InstructionCreateRegister(Register.XMM25);
+    public static final InstructionCreateRegister xmm26 = new InstructionCreateRegister(Register.XMM26);
+    public static final InstructionCreateRegister xmm27 = new InstructionCreateRegister(Register.XMM27);
+    public static final InstructionCreateRegister xmm28 = new InstructionCreateRegister(Register.XMM28);
+    public static final InstructionCreateRegister xmm29 = new InstructionCreateRegister(Register.XMM29);
+    public static final InstructionCreateRegister xmm30 = new InstructionCreateRegister(Register.XMM30);
+    public static final InstructionCreateRegister xmm31 = new InstructionCreateRegister(Register.XMM31);
 
     public static List<InstructionCreateRegister> all() {
         // No register
-        return List.of(InstructionCreateRegister.NONE,
+        return List.of(
+                NONE,
 
                 // 8-bit general-purpose registers
                 al, cl, dl, bl, ah, ch, dh, bh, spl, bpl, sil, dil, r8b, r9b, r10b, r11b, r12b, r13b, r14b, r15b,
@@ -182,6 +226,13 @@ public class InstructionCreateRegisters {
                 bnd0, bnd1, bnd2, bnd3,
 
                 // AVX-512 mask registers
-                k0, k1, k2, k3, k4, k5, k6, k7);
+                k0, k1, k2, k3, k4, k5, k6, k7,
+
+                // MMX registers
+                mm0, mm1, mm2, mm3, mm4, mm5, mm6, mm7,
+
+                // XMM registers
+                xmm0, xmm1, xmm2, xmm3, xmm4, xmm5, xmm6, xmm7, xmm8, xmm9, xmm10, xmm11, xmm12, xmm13, xmm14, xmm15,
+                xmm16, xmm17, xmm18, xmm19, xmm20, xmm21, xmm22, xmm23, xmm24, xmm25, xmm26, xmm27, xmm28, xmm29, xmm30, xmm31);
     }
 }

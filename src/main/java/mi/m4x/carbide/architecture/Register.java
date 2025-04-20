@@ -780,4 +780,116 @@ public final class Register {
      * K7: AVX-512 Mask Register 7. Last of the AVX-512 mask registers, usable in most AVX-512 enabled processors.
      */
     public static final int K7 = 136;
+
+    /**
+     * MM0: MMX register 0. 64-bit register used for multimedia SIMD operations.
+     */
+    public static final int MM0 = 137;
+
+    /**
+     * MM1: MMX register 1. Stores packed integers for SIMD processing.
+     */
+    public static final int MM1 = 138;
+
+    /**
+     * MM2: MMX register 2. Utilized in integer-based parallel computations.
+     */
+    public static final int MM2 = 139;
+
+    /**
+     * MM3: MMX register 3. Part of the MMX SIMD instruction set for multimedia acceleration.
+     */
+    public static final int MM3 = 140;
+
+    /**
+     * MM4: MMX register 4. Used in legacy 64-bit SIMD integer processing.
+     */
+    public static final int MM4 = 141;
+
+    /**
+     * MM5: MMX register 5. 64-bit SIMD register, shares storage with x87 FPU stack.
+     */
+    public static final int MM5 = 142;
+
+    /**
+     * MM6: MMX register 6. Holds packed data for legacy SIMD integer operations.
+     */
+    public static final int MM6 = 143;
+
+    /**
+     * MM7: MMX register 7. Final MMX register; used in packed integer arithmetic.
+     */
+    public static final int MM7 = 144;
+
+    /**
+     * XMM0: 128-bit SIMD register used in SSE/SSE2 instructions for floating-point and integer operations.
+     */
+    public static final int XMM0 = 145;
+
+    /**
+     * XMM1: SSE register 1. Used for packed single/double precision floating-point or integer vectors.
+     */
+    public static final int XMM1 = 146;
+
+    /**
+     * XMM2: 128-bit register used for vectorized computations in modern multimedia applications.
+     */
+    public static final int XMM2 = 147;
+
+    /**
+     * XMM3: SSE register 3. Performs SIMD operations on packed float/double data.
+     */
+    public static final int XMM3 = 148;
+
+    /**
+     * XMM4: Used in vector arithmetic, logic, and shuffle operations under SSE/AVX.
+     */
+    public static final int XMM4 = 149;
+
+    /**
+     * XMM5: 128-bit register for parallel processing in multimedia/graphics workloads.
+     */
+    public static final int XMM5 = 150;
+
+    /**
+     * XMM6: Holds four 32-bit floats or two 64-bit doubles for SIMD computations.
+     */
+    public static final int XMM6 = 151;
+
+    /**
+     * XMM7: Legacy SSE register, often used in floating-point vector processing.
+     */
+    public static final int XMM7 = 152;
+
+    /**
+     * XMM8–XMM15: Extended XMM registers (only available in 64-bit mode).
+     */
+    public static final int XMM8 = 153;
+    public static final int XMM9 = 154;
+    public static final int XMM10 = 155;
+    public static final int XMM11 = 156;
+    public static final int XMM12 = 157;
+    public static final int XMM13 = 158;
+    public static final int XMM14 = 159;
+    public static final int XMM15 = 160;
+
+    /**
+     * XMM16–XMM31: AVX-512 enabled XMM registers used in high-performance vectorized computing.
+     */
+    public static final int XMM16 = 161;
+    public static final int XMM17 = 162;
+    public static final int XMM18 = 163;
+    public static final int XMM19 = 164;
+    public static final int XMM20 = 165;
+    public static final int XMM21 = 166;
+    public static final int XMM22 = 167;
+    public static final int XMM23 = 168;
+    public static final int XMM24 = 169;
+    public static final int XMM25 = 170;
+    public static final int XMM26 = 171;
+    public static final int XMM27 = 172;
+    public static final int XMM28 = 173;
+    public static final int XMM29 = 174;
+    public static final int XMM30 = 175;
+    public static final int XMM31 = 176;
 }
