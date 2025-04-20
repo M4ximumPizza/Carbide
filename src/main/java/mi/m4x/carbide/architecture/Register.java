@@ -892,4 +892,79 @@ public final class Register {
     public static final int XMM29 = 174;
     public static final int XMM30 = 175;
     public static final int XMM31 = 176;
+
+    /**
+     * YMM0: 256-bit AVX register for packed SIMD operations.
+     * Extends XMM0 with 128 additional bits.
+     */
+    public static final int YMM0 = 177;
+
+    /**
+     * YMM1: 256-bit SIMD register used in AVX instructions for parallel floating-point and integer data.
+     */
+    public static final int YMM1 = 178;
+
+    /**
+     * YMM2: AVX register for vectorized mathematical and logical computations.
+     */
+    public static final int YMM2 = 179;
+
+    /**
+     * YMM3: Used for processing packed float/double/integer operations across 256 bits.
+     */
+    public static final int YMM3 = 180;
+
+    /**
+     * YMM4: Extended register from XMM4 for high-performance vector operations.
+     */
+    public static final int YMM4 = 181;
+
+    /**
+     * YMM5: SIMD AVX register for parallel data transformations and computations.
+     */
+    public static final int YMM5 = 182;
+
+    /**
+     * YMM6: 256-bit vector register used in floating-point and integer AVX instructions.
+     */
+    public static final int YMM6 = 183;
+
+    /**
+     * YMM7: Final legacy AVX register before extended YMM8–YMM15 in x86_64.
+     */
+    public static final int YMM7 = 184;
+
+    /**
+     * YMM8–YMM15: Extended AVX registers (available in 64-bit mode only).
+     * Provide additional vector registers for high-throughput SIMD operations.
+     */
+    public static final int YMM8 = 185;
+    public static final int YMM9 = 186;
+    public static final int YMM10 = 187;
+    public static final int YMM11 = 188;
+    public static final int YMM12 = 189;
+    public static final int YMM13 = 190;
+    public static final int YMM14 = 191;
+    public static final int YMM15 = 192;
+
+    /**
+     * YMM16–YMM31: AVX-512 extended YMM registers (upper 16 registers).
+     * Used in AVX-512F and other AVX-512 instruction subsets for wider throughput.
+     */
+    public static final int YMM16 = 193;
+    public static final int YMM17 = 194;
+    public static final int YMM18 = 195;
+    public static final int YMM19 = 196;
+    public static final int YMM20 = 197;
+    public static final int YMM21 = 198;
+    public static final int YMM22 = 199;
+    public static final int YMM23 = 200;
+    public static final int YMM24 = 201;
+    public static final int YMM25 = 202;
+    public static final int YMM26 = 203;
+    public static final int YMM27 = 204;
+    public static final int YMM28 = 205;
+    public static final int YMM29 = 206;
+    public static final int YMM30 = 207;
+    public static final int YMM31 = 208;
 }

@@ -186,6 +186,38 @@ public class InstructionCreateRegisters {
     public static final InstructionCreateRegister xmm29 = new InstructionCreateRegister(Register.XMM29);
     public static final InstructionCreateRegister xmm30 = new InstructionCreateRegister(Register.XMM30);
     public static final InstructionCreateRegister xmm31 = new InstructionCreateRegister(Register.XMM31);
+    public static final InstructionCreateRegister ymm0 = new InstructionCreateRegister(Register.YMM0);
+    public static final InstructionCreateRegister ymm1 = new InstructionCreateRegister(Register.YMM1);
+    public static final InstructionCreateRegister ymm2 = new InstructionCreateRegister(Register.YMM2);
+    public static final InstructionCreateRegister ymm3 = new InstructionCreateRegister(Register.YMM3);
+    public static final InstructionCreateRegister ymm4 = new InstructionCreateRegister(Register.YMM4);
+    public static final InstructionCreateRegister ymm5 = new InstructionCreateRegister(Register.YMM5);
+    public static final InstructionCreateRegister ymm6 = new InstructionCreateRegister(Register.YMM6);
+    public static final InstructionCreateRegister ymm7 = new InstructionCreateRegister(Register.YMM7);
+    public static final InstructionCreateRegister ymm8 = new InstructionCreateRegister(Register.YMM8);
+    public static final InstructionCreateRegister ymm9 = new InstructionCreateRegister(Register.YMM9);
+    public static final InstructionCreateRegister ymm10 = new InstructionCreateRegister(Register.YMM10);
+    public static final InstructionCreateRegister ymm11 = new InstructionCreateRegister(Register.YMM11);
+    public static final InstructionCreateRegister ymm12 = new InstructionCreateRegister(Register.YMM12);
+    public static final InstructionCreateRegister ymm13 = new InstructionCreateRegister(Register.YMM13);
+    public static final InstructionCreateRegister ymm14 = new InstructionCreateRegister(Register.YMM14);
+    public static final InstructionCreateRegister ymm15 = new InstructionCreateRegister(Register.YMM15);
+    public static final InstructionCreateRegister ymm16 = new InstructionCreateRegister(Register.YMM16);
+    public static final InstructionCreateRegister ymm17 = new InstructionCreateRegister(Register.YMM17);
+    public static final InstructionCreateRegister ymm18 = new InstructionCreateRegister(Register.YMM18);
+    public static final InstructionCreateRegister ymm19 = new InstructionCreateRegister(Register.YMM19);
+    public static final InstructionCreateRegister ymm20 = new InstructionCreateRegister(Register.YMM20);
+    public static final InstructionCreateRegister ymm21 = new InstructionCreateRegister(Register.YMM21);
+    public static final InstructionCreateRegister ymm22 = new InstructionCreateRegister(Register.YMM22);
+    public static final InstructionCreateRegister ymm23 = new InstructionCreateRegister(Register.YMM23);
+    public static final InstructionCreateRegister ymm24 = new InstructionCreateRegister(Register.YMM24);
+    public static final InstructionCreateRegister ymm25 = new InstructionCreateRegister(Register.YMM25);
+    public static final InstructionCreateRegister ymm26 = new InstructionCreateRegister(Register.YMM26);
+    public static final InstructionCreateRegister ymm27 = new InstructionCreateRegister(Register.YMM27);
+    public static final InstructionCreateRegister ymm28 = new InstructionCreateRegister(Register.YMM28);
+    public static final InstructionCreateRegister ymm29 = new InstructionCreateRegister(Register.YMM29);
+    public static final InstructionCreateRegister ymm30 = new InstructionCreateRegister(Register.YMM30);
+    public static final InstructionCreateRegister ymm31 = new InstructionCreateRegister(Register.YMM31);
 
     public static List<InstructionCreateRegister> all() {
         // No register
@@ -233,6 +265,11 @@ public class InstructionCreateRegisters {
 
                 // XMM registers
                 xmm0, xmm1, xmm2, xmm3, xmm4, xmm5, xmm6, xmm7, xmm8, xmm9, xmm10, xmm11, xmm12, xmm13, xmm14, xmm15,
-                xmm16, xmm17, xmm18, xmm19, xmm20, xmm21, xmm22, xmm23, xmm24, xmm25, xmm26, xmm27, xmm28, xmm29, xmm30, xmm31);
+                xmm16, xmm17, xmm18, xmm19, xmm20, xmm21, xmm22, xmm23, xmm24, xmm25, xmm26, xmm27, xmm28, xmm29, xmm30, xmm31,
+
+                // YMM registers
+                ymm0, ymm1, ymm2, ymm3, ymm4, ymm5, ymm6, ymm7, ymm8, ymm9, ymm10, ymm11, ymm12, ymm13, ymm14, ymm15,
+                ymm16, ymm17, ymm18, ymm19, ymm20, ymm21, ymm22, ymm23, ymm24, ymm25, ymm26, ymm27, ymm28, ymm29, ymm30, ymm31);
+
     }
 }
