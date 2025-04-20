@@ -125,26 +125,20 @@ public class InstructionCreateRegisters {
     public static final InstructionCreateRegister dr15 = new InstructionCreateRegister(Register.DR15);
 
     public static List<InstructionCreateRegister> all() {
-        return Collections.unmodifiableList(Arrays.asList(
-                // No register
-                InstructionCreateRegister.NONE,
+        // No register
+        return List.of(InstructionCreateRegister.NONE,
 
                 // 8-bit general-purpose registers
-                al, cl, dl, bl, ah, ch, dh, bh,
-                spl, bpl, sil, dil,
-                r8b, r9b, r10b, r11b, r12b, r13b, r14b, r15b,
+                al, cl, dl, bl, ah, ch, dh, bh, spl, bpl, sil, dil, r8b, r9b, r10b, r11b, r12b, r13b, r14b, r15b,
 
                 // 16-bit general-purpose registers
-                ax, cx, dx, bx, sp, bp, si, di,
-                r8w, r9w, r10w, r11w, r12w, r13w, r14w, r15w,
+                ax, cx, dx, bx, sp, bp, si, di, r8w, r9w, r10w, r11w, r12w, r13w, r14w, r15w,
 
                 // 32-bit general-purpose registers
-                eax, ecx, edx, ebx, esp, ebp, esi, edi,
-                r8d, r9d, r10d, r11d, r12d, r13d, r14d, r15d,
+                eax, ecx, edx, ebx, esp, ebp, esi, edi, r8d, r9d, r10d, r11d, r12d, r13d, r14d, r15d,
 
                 // 64-bit general-purpose registers
-                rax, rcx, rdx, rbx, rsp, rbp, rsi, rdi,
-                r8, r9, r10, r11, r12, r13, r14, r15,
+                rax, rcx, rdx, rbx, rsp, rbp, rsi, rdi, r8, r9, r10, r11, r12, r13, r14, r15,
 
                 // Instruction pointers
                 eip, rip,
@@ -156,12 +150,9 @@ public class InstructionCreateRegisters {
                 st0, st1, st2, st3, st4, st5, st6, st7,
 
                 // Control registers
-                cr0, cr1, cr2, cr3, cr4, cr5, cr6, cr7,
-                cr8, cr9, cr10, cr11, cr12, cr13, cr14, cr15,
+                cr0, cr1, cr2, cr3, cr4, cr5, cr6, cr7, cr8, cr9, cr10, cr11, cr12, cr13, cr14, cr15,
 
                 // Debug registers
-                dr0, dr1, dr2, dr3, dr4, dr5, dr6, dr7,
-                dr8, dr9, dr10, dr11, dr12, dr13, dr14, dr15
-        ));
+                dr0, dr1, dr2, dr3, dr4, dr5, dr6, dr7, dr8, dr9, dr10, dr11, dr12, dr13, dr14, dr15);
     }
 }
