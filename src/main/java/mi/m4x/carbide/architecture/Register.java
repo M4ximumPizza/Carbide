@@ -115,8 +115,7 @@ public final class Register {
      * R12L: Lower 8 bits of the R12 register.
      * Introduced in x86-64. Used for 8-bit operations with the R12 general-purpose register.
      */
-    public static final int
-            R12L = 17;
+    public static final int R12L = 17;
 
     /**
      * R13L: Lower 8 bits of the R13 register.
