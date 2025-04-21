@@ -20,7 +20,7 @@ import java.lang.annotation.*;
  * Once a {@code @Beta} feature is deemed stable, this annotation will be removed.
  * </p>
  *
- * <h3>Example Usage:</h3>
+ * Example Usage:
  * <pre>{@code
  * @Beta
  * public class ExperimentalFeature {
