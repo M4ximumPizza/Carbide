@@ -1,8 +1,10 @@
 package mi.m4x.carbide.architecture;
 
+import mi.m4x.carbide.interfaces.Beta;
 
 import java.util.List;
 
+@Beta
 public class InstructionCreateRegisters {
     public InstructionCreateRegisters() {}
 

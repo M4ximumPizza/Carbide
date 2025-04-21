@@ -1,5 +1,7 @@
 package mi.m4x.carbide.architecture;
 
+import mi.m4x.carbide.interfaces.Beta;
+
 /**
  * This class provides static instances representing the bound registers used in Intel MPX (Memory Protection Extensions).
  * These registers are part of the MPX architecture and are utilized for memory safety by performing bounds checking
@@ -9,6 +11,7 @@ package mi.m4x.carbide.architecture;
  * @since 1.0.1
  * @author M4ximumpizza
  */
+@Beta
 public class InstructionCreateBoundRegister {
     // Private constructor to prevent instantiation
     private InstructionCreateBoundRegister() {
