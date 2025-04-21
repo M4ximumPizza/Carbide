@@ -13,7 +13,7 @@ import mi.m4x.carbide.interfaces.Beta;
  * instances corresponding to each debug register and is not meant to be instantiated.</p>
  *
  * @since 1.0.1
- * author M4ximumpizza
+ * @author M4ximumpizza
  */
 @Beta
 public class InstructionCreateDebugRegisters {

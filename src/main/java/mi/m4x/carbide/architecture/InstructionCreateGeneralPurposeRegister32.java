@@ -13,7 +13,7 @@ import mi.m4x.carbide.interfaces.Beta;
  * instances corresponding to each 32-bit general-purpose register. It is not intended to be instantiated.</p>
  *
  * @since 1.0.1
- * author M4ximumpizza
+ * @author M4ximumpizza
  */
 @Beta
 public class InstructionCreateGeneralPurposeRegister32 {
