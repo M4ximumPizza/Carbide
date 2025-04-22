@@ -1,4 +1,4 @@
-package mi.m4x.carbide.architecture;
+package mi.m4x.rive;
 
 import mi.m4x.carbide.interfaces.Beta;
 

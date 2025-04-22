@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'mi.m4x.carbide'
-version = '1.0.1'
+version = '1.0.2-SNAPSHOT'
 
 dependencies {
     implementation 'com.google.guava:guava:32.1.2-jre'
@@ -27,10 +27,38 @@ java {
     withJavadocJar()
 }
 
+tasks.named('jar') {
+    duplicatesStrategy DuplicatesStrategy.INCLUDE
+    from sourceSets.main.output
+    from project(':rive').sourceSets.main.output
+}
+
+tasks.named('sourcesJar') {
+    duplicatesStrategy DuplicatesStrategy.INCLUDE
+    from sourceSets.main.allSource
+    // Include source files from the 'rive' subproject
+    from project(':rive').sourceSets.main.allSource
+}
+
+tasks.named('javadocJar') {
+    duplicatesStrategy DuplicatesStrategy.INCLUDE
+    // Include javadoc from the 'rive' subproject
+    from project(':rive').tasks.named('javadoc').get().destinationDir
+}
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
             from components.java
+            artifact(tasks.named('jar')) {
+                // No classifier needed for the main artifact
+            }
+            artifact(tasks.named('sourcesJar')) {
+                classifier = 'sources'
+            }
+            artifact(tasks.named('javadocJar')) {
+                classifier = 'javadoc'
+            }
         }
     }
 }

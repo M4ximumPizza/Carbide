@@ -1,9 +1,9 @@
-package architecture;
+package x86;
+
+import mi.m4x.rive.InstructionCreateRegister;
+import mi.m4x.rive.InstructionCreateRegisters;
 
 import java.util.List;
-
-import mi.m4x.carbide.architecture.InstructionCreateRegister;
-import mi.m4x.carbide.architecture.InstructionCreateRegisters;
 
 public class InstructionCreateRegisterTest {
     public static void main(String[] args) {

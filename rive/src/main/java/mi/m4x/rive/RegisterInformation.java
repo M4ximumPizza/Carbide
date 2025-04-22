@@ -1,7 +1,7 @@
-package mi.m4x.carbide.architecture;
+package mi.m4x.rive;
 
-import mi.m4x.carbide.architecture.constants.Constants;
 import mi.m4x.carbide.interfaces.Beta;
+import mi.m4x.rive.constants.Constants;
 
 /**
  * Represents metadata about a CPU register, including its identity, associated base register,

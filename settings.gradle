@@ -1,4 +1,4 @@
-rootProject.name = 'Carbide'
+rootProject.name = 'carbide'
 
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
@@ -7,3 +7,5 @@ dependencyResolutionManagement {
         maven { url 'https://jitpack.io' }
     }
 }
+
+include 'rive'
