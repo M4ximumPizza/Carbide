@@ -98,6 +98,25 @@ public final class MemorySize {
      */
     public static final int INT512 = 15;
 
+    /**
+     * Pointer types. This is 16 bits.
+     */
+    public static final int SEGMENT_POINTER16 = 16;
+
+    /**
+     * Pointer types. This is 32 bits.
+     */
+    public static final int SEGMENT_POINTER32 = 17;
+
+    /**
+     * Pointer types. This is 64 bits.
+     */
+    public static final int SEGMENT_POINTER64 = 18;
+
+    public static final int WORD_OFFSET = 19;
+
+    public static final int BROADCAST32_FLOAT16 = 20;
+
     public static List<Integer> all() {
         // No register
         return List.of(
@@ -116,7 +135,12 @@ public final class MemorySize {
                 INT64,
                 INT128,
                 INT256,
-                INT512
+                INT512,
+                SEGMENT_POINTER16,
+                SEGMENT_POINTER32,
+                SEGMENT_POINTER64,
+                WORD_OFFSET,
+                BROADCAST32_FLOAT16
         );
     }
 }
