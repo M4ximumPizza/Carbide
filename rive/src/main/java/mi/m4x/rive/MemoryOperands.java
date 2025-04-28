@@ -1,6 +1,7 @@
 package mi.m4x.rive;
 
 import mi.m4x.carbide.interfaces.Beta;
+import mi.m4x.rive.registers.InstructionCreateRegister;
 
 /**
  * Represents the operands for memory addressing in assembly instructions.

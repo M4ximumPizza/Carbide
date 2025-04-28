@@ -1,6 +1,5 @@
 package x86;
 
-import mi.m4x.rive.InstructionCreateRegister;
 import mi.m4x.rive.MemorySize;
 
 import java.util.List;

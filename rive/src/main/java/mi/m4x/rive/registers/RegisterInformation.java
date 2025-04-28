@@ -1,4 +1,4 @@
-package mi.m4x.rive;
+package mi.m4x.rive.registers;
 
 import mi.m4x.carbide.interfaces.Beta;
 import mi.m4x.rive.constants.Constants;

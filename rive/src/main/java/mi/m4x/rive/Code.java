@@ -531,5 +531,4 @@ public class Code {
      * XOR_R32_RM32: Perform a bitwise XOR between a 32-bit register and a 32-bit memory operand.
      */
     public static final int XOR_R32_RM32 = 100;
-
 }

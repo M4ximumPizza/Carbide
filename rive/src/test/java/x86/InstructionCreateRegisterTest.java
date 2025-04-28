@@ -1,7 +1,7 @@
 package x86;
 
-import mi.m4x.rive.InstructionCreateRegister;
-import mi.m4x.rive.InstructionCreateRegisters;
+import mi.m4x.rive.registers.InstructionCreateRegister;
+import mi.m4x.rive.registers.InstructionCreateRegisters;
 
 import java.util.List;
 
