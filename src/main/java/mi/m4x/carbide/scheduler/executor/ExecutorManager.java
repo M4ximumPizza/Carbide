@@ -214,7 +214,7 @@ public class ExecutorManager {
 
     private void wakeup() {
         synchronized (workerMonitor) {
-            workerMonitor.notify();
+            workerMonitor.notifyAll();
         }
     }
 
