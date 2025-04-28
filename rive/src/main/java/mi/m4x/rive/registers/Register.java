@@ -1024,7 +1024,7 @@ public final class Register {
      * ZMM10: 512-bit register used in floating-point heavy AVX-512 instructions.
      */
     public static final int ZMM10;
-            ;
+
     /**
      * ZMM11: Supports wide vector calculations for scientific computing and media processing.
      */
