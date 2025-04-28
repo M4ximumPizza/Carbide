@@ -81,19 +81,15 @@ public class ExecutorManager {
                         lockListeners.remove(tokens[j], localList);
                     }
 
-                    // Notify existing list if it was freed
-                    synchronized (existing) {
-                        if (existing.freed) {
-                            continue retry;
-                        }
-                        existing.add(task);
+                    // Try adding safely
+                    if (!existing.addIfNotFreed(task)) {
+                        continue retry;
                     }
 
                     callListeners(localList);
                     return false;
                 }
             }
-
             return true;
         }
     }
@@ -131,12 +127,10 @@ public class ExecutorManager {
      * @param listeners Listener task list to wake up.
      */
     private void callListeners(FreeableTaskList listeners) {
-        synchronized (listeners) {
-            listeners.freed = true;
-            if (!listeners.isEmpty()) {
-                for (Task task : listeners) {
-                    schedule0(task);
-                }
+        listeners.markFreed();
+        if (!listeners.isEmpty()) {
+            for (Task task : listeners) {
+                schedule0(task);
             }
         }
         wakeup();
@@ -228,7 +222,34 @@ public class ExecutorManager {
      * Internal class for managing a list of listeners waiting for lock release.
      */
     private static class FreeableTaskList extends ReferenceArrayList<Task> {
-        private boolean freed = false;
+        private volatile boolean freed = false;
+
+        /**
+         * Marks this list as freed, in a thread-safe way.
+         * @since 1.0.2
+         */
+        public void markFreed() {
+            synchronized (this) {
+                this.freed = true;
+            }
+        }
+
+        /**
+         * Attempts to add a task if not freed.
+         *
+         * @param task Task to add.
+         * @return true if added, false if already freed.
+         * @since 1.0.2
+         */
+        public boolean addIfNotFreed(Task task) {
+            synchronized (this) {
+                if (freed) {
+                    return false;
+                }
+                add(task);
+                return true;
+            }
+        }
     }
 }
 
