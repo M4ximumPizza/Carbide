@@ -1,5 +1,7 @@
 package mi.m4x.rive;
 
+import mi.m4x.carbide.interfaces.Beta;
+
 /**
  * Represents the operands for memory addressing in assembly instructions.
  * This class encapsulates the details of how memory is accessed, including
@@ -13,6 +15,7 @@ package mi.m4x.rive;
  * @since 1.0.2
  * @author M4ximumpizza
  */
+@Beta
 public final class MemoryOperands {
     /**
      * Segment override or {@code NONE} if not provided.

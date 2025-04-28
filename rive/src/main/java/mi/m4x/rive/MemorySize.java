@@ -1,5 +1,6 @@
 package mi.m4x.rive;
 
+import mi.m4x.carbide.interfaces.Beta;
 import mi.m4x.rive.constants.Constants;
 
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.List;
  * @since 1.0.2
  * @author M4ximumpizza
  */
+@Beta
 public final class MemorySize {
     private MemorySize() {
         // Prevent instantiation

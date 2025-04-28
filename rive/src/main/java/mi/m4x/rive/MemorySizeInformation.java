@@ -1,5 +1,6 @@
 package mi.m4x.rive;
 
+import mi.m4x.carbide.interfaces.Beta;
 import mi.m4x.rive.constants.Constants;
 
 /**
@@ -12,6 +13,7 @@ import mi.m4x.rive.constants.Constants;
  * @author M4ximumpizza
  * @since 1.0.2
  */
+@Beta
 public class MemorySizeInformation {
 
     static final MemorySizeInformation[] informations = createMemorySizeInformations();
