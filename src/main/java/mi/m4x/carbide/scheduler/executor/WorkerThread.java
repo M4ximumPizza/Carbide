@@ -64,8 +64,10 @@ public class WorkerThread extends Thread {
                 }
                 try {
                     executorManager.workerMonitor.wait(); // Wait for work
-                } catch (InterruptedException ignored) {
-                    // Safe to ignore as thread will re-check shutdown flag
+                } catch (InterruptedException e) {
+                    // Re-interrupt the thread to propagate the interrupt
+                    Thread.currentThread().interrupt();
+                    return;
                 }
             }
         }
