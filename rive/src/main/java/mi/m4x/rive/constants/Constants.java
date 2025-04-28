@@ -4,7 +4,7 @@ import mi.m4x.carbide.interfaces.Beta;
 import mi.m4x.rive.MemorySize;
 
 /**
- * Constants class for the Carbide architecture.
+ * Constants class for the Carbide.
  *
  * @author M4ximumpizza
  * @since 1.0.1
