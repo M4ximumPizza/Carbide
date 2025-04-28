@@ -14,6 +14,7 @@ import mi.m4x.rive.constants.Constants;
  */
 public class MemorySizeInformation {
 
+    static final MemorySizeInformation[] informations = createMemorySizeInformations();
     private final int size;
     private final int elementSize;
     private final int memorySize;
@@ -285,6 +286,14 @@ public class MemorySizeInformation {
      */
     public int getElementCount() {
         return (elementSize == size) ? 1 : size / elementSize;
+    }
+
+    /**
+     * Checks if the memory configuration is packed.
+     * @return true if the memory is packed; false otherwise.
+     */
+    public boolean isPacked() {
+        return elementSize < size;
     }
 
     /**
