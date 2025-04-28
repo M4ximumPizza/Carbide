@@ -1281,4 +1281,1254 @@ public class Code {
      * OR_RM16_IMM8: Perform a bitwise OR between the 8-bit immediate value and the value at the specified 16-bit memory location.
      */
     public static final int OR_RM16_IMM8 = 250;
+
+    /**
+     * OR_RM32_IMM8: Perform a bitwise OR operation between a 32-bit register/memory and an 8-bit immediate value.
+     */
+    public static final int OR_RM32_IMM8 = 251;
+
+    /**
+     * OR_RM64_IMM8: Perform a bitwise OR operation between a 64-bit register/memory and an 8-bit immediate value.
+     */
+    public static final int OR_RM64_IMM8 = 252;
+
+    /**
+     * ADC_RM16_IMM8: Add with carry a 16-bit register/memory and an 8-bit immediate value.
+     */
+    public static final int ADC_RM16_IMM8 = 253;
+
+    /**
+     * ADC_RM32_IMM8: Add with carry a 32-bit register/memory and an 8-bit immediate value.
+     */
+    public static final int ADC_RM32_IMM8 = 254;
+
+    /**
+     * ADC_RM64_IMM8: Add with carry a 64-bit register/memory and an 8-bit immediate value.
+     */
+    public static final int ADC_RM64_IMM8 = 255;
+
+    /**
+     * SBB_RM16_IMM8: Subtract with borrow a 16-bit register/memory and an 8-bit immediate value.
+     */
+    public static final int SBB_RM16_IMM8 = 256;
+
+    /**
+     * SBB_RM32_IMM8: Subtract with borrow a 32-bit register/memory and an 8-bit immediate value.
+     */
+    public static final int SBB_RM32_IMM8 = 257;
+
+    /**
+     * SBB_RM64_IMM8: Subtract with borrow a 64-bit register/memory and an 8-bit immediate value.
+     */
+    public static final int SBB_RM64_IMM8 = 258;
+
+    /**
+     * AND_RM16_IMM8: Perform a bitwise AND operation between a 16-bit register/memory and an 8-bit immediate value.
+     */
+    public static final int AND_RM16_IMM8 = 259;
+
+    /**
+     * AND_RM32_IMM8: Perform a bitwise AND operation between a 32-bit register/memory and an 8-bit immediate value.
+     */
+    public static final int AND_RM32_IMM8 = 260;
+
+    /**
+     * AND_RM64_IMM8: Perform a bitwise AND operation between a 64-bit register/memory and an 8-bit immediate value.
+     */
+    public static final int AND_RM64_IMM8 = 261;
+
+    /**
+     * SUB_RM16_IMM8: Subtract a 16-bit immediate value from a 16-bit register/memory.
+     */
+    public static final int SUB_RM16_IMM8 = 262;
+
+    /**
+     * SUB_RM32_IMM8: Subtract a 32-bit immediate value from a 32-bit register/memory.
+     */
+    public static final int SUB_RM32_IMM8 = 263;
+
+    /**
+     * SUB_RM64_IMM8: Subtract a 64-bit immediate value from a 64-bit register/memory.
+     */
+    public static final int SUB_RM64_IMM8 = 264;
+
+    /**
+     * XOR_RM16_IMM8: Perform a bitwise XOR operation between a 16-bit register/memory and an 8-bit immediate value.
+     */
+    public static final int XOR_RM16_IMM8 = 265;
+
+    /**
+     * XOR_RM32_IMM8: Perform a bitwise XOR operation between a 32-bit register/memory and an 8-bit immediate value.
+     */
+    public static final int XOR_RM32_IMM8 = 266;
+
+    /**
+     * XOR_RM64_IMM8: Perform a bitwise XOR operation between a 64-bit register/memory and an 8-bit immediate value.
+     */
+    public static final int XOR_RM64_IMM8 = 267;
+
+    /**
+     * CMP_RM16_IMM8: Compare a 16-bit register/memory with an 8-bit immediate value.
+     */
+    public static final int CMP_RM16_IMM8 = 268;
+
+    /**
+     * CMP_RM32_IMM8: Compare a 32-bit register/memory with an 8-bit immediate value.
+     */
+    public static final int CMP_RM32_IMM8 = 269;
+
+    /**
+     * CMP_RM64_IMM8: Compare a 64-bit register/memory with an 8-bit immediate value.
+     */
+    public static final int CMP_RM64_IMM8 = 270;
+
+    /**
+     * TEST_RM8_R8: Perform a bitwise AND operation between a 8-bit register/memory and a 8-bit register.
+     */
+    public static final int TEST_RM8_R8 = 271;
+
+    /**
+     * TEST_RM16_R16: Perform a bitwise AND operation between a 16-bit register/memory and a 16-bit register.
+     */
+    public static final int TEST_RM16_R16 = 272;
+
+    /**
+     * TEST_RM32_R32: Perform a bitwise AND operation between a 32-bit register/memory and a 32-bit register.
+     */
+    public static final int TEST_RM32_R32 = 273;
+
+    /**
+     * TEST_RM64_R64: Perform a bitwise AND operation between a 64-bit register/memory and a 64-bit register.
+     */
+    public static final int TEST_RM64_R64 = 274;
+
+    /**
+     * XCHG_RM8_R8: Exchange the values of two 8-bit registers/memory.
+     */
+    public static final int XCHG_RM8_R8 = 275;
+
+    /**
+     * XCHG_RM16_R16: Exchange the values of two 16-bit registers/memory.
+     */
+    public static final int XCHG_RM16_R16 = 276;
+
+    /**
+     * XCHG_RM32_R32: Exchange the values of two 32-bit registers/memory.
+     */
+    public static final int XCHG_RM32_R32 = 277;
+
+    /**
+     * XCHG_RM64_R64: Exchange the values of two 64-bit registers/memory.
+     */
+    public static final int XCHG_RM64_R64 = 278;
+
+    /**
+     * MOV_RM8_R8: Move the value from a 8-bit register to a 8-bit register/memory.
+     */
+    public static final int MOV_RM8_R8 = 279;
+
+    /**
+     * MOV_RM16_R16: Move the value from a 16-bit register to a 16-bit register/memory.
+     */
+    public static final int MOV_RM16_R16 = 280;
+
+    /**
+     * MOV_RM32_R32: Move the value from a 32-bit register to a 32-bit register/memory.
+     */
+    public static final int MOV_RM32_R32 = 281;
+
+    /**
+     * MOV_RM64_R64: Move the value from a 64-bit register to a 64-bit register/memory.
+     */
+    public static final int MOV_RM64_R64 = 282;
+
+    /**
+     * MOV_R8_RM8: Move the value from a 8-bit register to a 8-bit register/memory.
+     */
+    public static final int MOV_R8_RM8 = 283;
+
+    /**
+     * MOV_R16_RM16: Move the value from a 16-bit register to a 16-bit register/memory.
+     */
+    public static final int MOV_R16_RM16 = 284;
+
+    /**
+     * MOV_R32_RM32: Move the value from a 32-bit register to a 32-bit register/memory.
+     */
+    public static final int MOV_R32_RM32 = 285;
+
+    /**
+     * MOV_R64_RM64: Move the value from a 64-bit register to a 64-bit register/memory.
+     */
+    public static final int MOV_R64_RM64 = 286;
+
+    /**
+     * MOV_RM16_SREG: Move the value from a 16-bit register/memory to a segment register.
+     */
+    public static final int MOV_RM16_SREG = 287;
+
+    /**
+     * MOV_R32M16_SREG: Move the value from a 32-bit or 16-bit register/memory to a segment register.
+     */
+    public static final int MOV_R32M16_SREG = 288;
+
+    /**
+     * MOV_R64M16_SREG: Move the value from a 64-bit or 16-bit register/memory to a segment register.
+     */
+    public static final int MOV_R64M16_SREG = 289;
+
+    /**
+     * LEA_R16_M: Load the effective address of a memory operand into a 16-bit register.
+     */
+    public static final int LEA_R16_M = 290;
+
+    /**
+     * LEA_R32_M: Load the effective address of a memory operand into a 32-bit register.
+     */
+    public static final int LEA_R32_M = 291;
+
+    /**
+     * LEA_R64_M: Load the effective address of a memory operand into a 64-bit register.
+     */
+    public static final int LEA_R64_M = 292;
+
+    /**
+     * MOV_SREG_RM16: Move the value from a segment register to a 16-bit register/memory.
+     */
+    public static final int MOV_SREG_RM16 = 293;
+
+    /**
+     * MOV_SREG_R32M16: Move the value from a segment register to a 32-bit or 16-bit register/memory.
+     */
+    public static final int MOV_SREG_R32M16 = 294;
+
+    /**
+     * MOV_SREG_R64M16: Move the value from a segment register to a 64-bit or 16-bit register/memory.
+     */
+    public static final int MOV_SREG_R64M16 = 295;
+
+    /**
+     * POP_RM16: Pop a 16-bit value from the stack into a 16-bit register/memory.
+     */
+    public static final int POP_RM16 = 296;
+
+    /**
+     * POP_RM32: Pop a 32-bit value from the stack into a 32-bit register/memory.
+     */
+    public static final int POP_RM32 = 297;
+
+    /**
+     * POP_RM64: Pop a 64-bit value from the stack into a 64-bit register/memory.
+     */
+    public static final int POP_RM64 = 298;
+
+    /**
+     * NOPW: No operation (16-bit version).
+     */
+    public static final int NOPW = 299;
+
+    /**
+     * NOPD: No operation (32-bit version).
+     */
+    public static final int NOPD = 300;
+
+    /**
+     * NOPQ: No operation (64-bit version).
+     */
+    public static final int NOPQ = 301;
+
+    /**
+     * XCHG_R16_AX: Exchange the contents of a 16-bit register with the AX register.
+     */
+    public static final int XCHG_R16_AX = 302;
+
+    /**
+     * XCHG_R32_EAX: Exchange the contents of a 32-bit register with the EAX register.
+     */
+    public static final int XCHG_R32_EAX = 303;
+
+    /**
+     * XCHG_R64_RAX: Exchange the contents of a 64-bit register with the RAX register.
+     */
+    public static final int XCHG_R64_RAX = 304;
+
+    /**
+     * PAUSE: Hint to the processor to pause execution until the next instruction.
+     */
+    public static final int PAUSE = 305;
+
+    /**
+     * CBW: Convert byte to word (sign-extend AL to AX).
+     */
+    public static final int CBW = 306;
+
+    /**
+     * CWDE: Convert word to double word (sign-extend AX to EAX).
+     */
+    public static final int CWDE = 307;
+
+    /**
+     * CDQE: Convert double word to quad word (sign-extend EAX to RAX).
+     */
+    public static final int CDQE = 308;
+
+    /**
+     * CWD: Convert word to double word (sign-extend AX to DX:AX).
+     */
+    public static final int CWD = 309;
+
+    /**
+     * CDQ: Convert double word to quad word (sign-extend EAX to EDX:EAX).
+     */
+    public static final int CDQ = 310;
+
+    /**
+     * CQO: Convert quad word to octa word (sign-extend RAX to RDX:RAX).
+     */
+    public static final int CQO = 311;
+
+    /**
+     * CALL_PTR1616: Call a procedure at the address specified by the 16-bit segment and offset.
+     */
+    public static final int CALL_PTR1616 = 312;
+
+    /**
+     * CALL_PTR1632: Call a procedure at the address specified by the 16-bit segment and 32-bit offset.
+     */
+    public static final int CALL_PTR1632 = 313;
+
+    /**
+     * WAIT: Wait for the processor to complete pending floating-point operations.
+     */
+    public static final int WAIT = 314;
+
+    /**
+     * PUSHFW: Push the FLAGS register onto the stack (16-bit version).
+     */
+    public static final int PUSHFW = 315;
+
+    /**
+     * PUSHFD: Push the EFLAGS register onto the stack (32-bit version).
+     */
+    public static final int PUSHFD = 316;
+
+    /**
+     * PUSHFQ: Push the RFLAGS register onto the stack (64-bit version).
+     */
+    public static final int PUSHFQ = 317;
+
+    /**
+     * POPFW: Pop the FLAGS register from the stack (16-bit version).
+     */
+    public static final int POPFW = 318;
+
+    /**
+     * POPFD: Pop the EFLAGS register from the stack (32-bit version).
+     */
+    public static final int POPFD = 319;
+
+    /**
+     * POPFQ: Pop the RFLAGS register from the stack (64-bit version).
+     */
+    public static final int POPFQ = 320;
+
+    /**
+     * SAHF: Store the AH byte of the FLAGS register into the AH byte of the FLAGS register.
+     */
+    public static final int SAHF = 321;
+
+    /**
+     * LAHF: Load the AH byte of the FLAGS register into the AH byte of the FLAGS register.
+     */
+    public static final int LAHF = 322;
+
+    /**
+     * MOV_AL_MOFFS8: Move the 8-bit value at the specified memory offset into the AL register.
+     */
+    public static final int MOV_AL_MOFFS8 = 323;
+
+    /**
+     * MOV_AX_MOFFS16: Move the 16-bit value at the specified memory offset into the AX register.
+     */
+    public static final int MOV_AX_MOFFS16 = 324;
+
+    /**
+     * MOV_EAX_MOFFS32: Move the 32-bit value at the specified memory offset into the EAX register.
+     */
+    public static final int MOV_EAX_MOFFS32 = 325;
+
+    /**
+     * MOV_RAX_MOFFS64: Move the 64-bit value at the specified memory offset into the RAX register.
+     */
+    public static final int MOV_RAX_MOFFS64 = 326;
+
+    /**
+     * MOV_MOFFS8_AL: Move the contents of the AL register to the 8-bit memory offset.
+     */
+    public static final int MOV_MOFFS8_AL = 327;
+
+    /**
+     * MOV_MOFFS16_AX: Move the contents of the AX register to the 16-bit memory offset.
+     */
+    public static final int MOV_MOFFS16_AX = 328;
+
+    /**
+     * MOV_MOFFS32_EAX: Move the contents of the EAX register to the 32-bit memory offset.
+     */
+    public static final int MOV_MOFFS32_EAX = 329;
+
+    /**
+     * MOV_MOFFS64_RAX: Move the contents of the RAX register to the 64-bit memory offset.
+     */
+    public static final int MOV_MOFFS64_RAX = 330;
+
+    /**
+     * MOVSB_M8_M8: Move a byte from the source memory to the destination memory.
+     */
+    public static final int MOVSB_M8_M8 = 331;
+
+    /**
+     * MOVSW_M16_M16: Move a word from the source memory to the destination memory.
+     */
+    public static final int MOVSW_M16_M16 = 332;
+
+    /**
+     * MOVSD_M32_M32: Move a double word from the source memory to the destination memory.
+     */
+    public static final int MOVSD_M32_M32 = 333;
+
+    /**
+     * MOVSQ_M64_M64: Move a quad word from the source memory to the destination memory.
+     */
+    public static final int MOVSQ_M64_M64 = 334;
+
+    /**
+     * CMPSB_M8_M8: Compare a byte from the source memory with a byte from the destination memory.
+     */
+    public static final int CMPSB_M8_M8 = 335;
+
+    /**
+     * CMPSW_M16_M16: Compare a word from the source memory with a word from the destination memory.
+     */
+    public static final int CMPSW_M16_M16 = 336;
+
+    /**
+     * CMPSD_M32_M32: Compare a double word from the source memory with a double word from the destination memory.
+     */
+    public static final int CMPSD_M32_M32 = 337;
+
+    /**
+     * CMPSQ_M64_M64: Compare a quad word from the source memory with a quad word from the destination memory.
+     */
+    public static final int CMPSQ_M64_M64 = 338;
+
+    /**
+     * TEST_AL_IMM8: Test the AL register with an immediate 8-bit value.
+     */
+    public static final int TEST_AL_IMM8 = 339;
+
+    /**
+     * TEST_AX_IMM16: Test the AX register with an immediate 16-bit value.
+     */
+    public static final int TEST_AX_IMM16 = 340;
+
+    /**
+     * TEST_EAX_IMM32: Test the EAX register with an immediate 32-bit value.
+     */
+    public static final int TEST_EAX_IMM32 = 341;
+
+    /**
+     * TEST_RAX_IMM32: Test the RAX register with an immediate 32-bit value.
+     */
+    public static final int TEST_RAX_IMM32 = 342;
+
+    /**
+     * STOSB_M8_AL: Store the byte from the AL register into the destination memory.
+     */
+    public static final int STOSB_M8_AL = 343;
+
+    /**
+     * STOSW_M16_AX: Store the word from the AX register into the destination memory.
+     */
+    public static final int STOSW_M16_AX = 344;
+
+    /**
+     * STOSD_M32_EAX: Store the double word from the EAX register into the destination memory.
+     */
+    public static final int STOSD_M32_EAX = 345;
+
+    /**
+     * STOSQ_M64_RAX: Store the quad word from the RAX register into the destination memory.
+     */
+    public static final int STOSQ_M64_RAX = 346;
+
+    /**
+     * LODSB_AL_M8: Load a byte from the source memory into the AL register.
+     */
+    public static final int LODSB_AL_M8 = 347;
+
+    /**
+     * LODSW_AX_M16: Load a word from the source memory into the AX register.
+     */
+    public static final int LODSW_AX_M16 = 348;
+
+    /**
+     * LODSD_EAX_M32: Load a double word from the source memory into the EAX register.
+     */
+    public static final int LODSD_EAX_M32 = 349;
+
+    /**
+     * LODSQ_RAX_M64: Load a quad word from the source memory into the RAX register.
+     */
+    public static final int LODSQ_RAX_M64 = 350;
+
+    /**
+     * SCASB_AL_M8: Scan a byte from the AL register against the memory.
+     */
+    public static final int SCASB_AL_M8 = 351;
+
+    /**
+     * SCASW_AX_M16: Scan a word from the AX register against the memory.
+     */
+    public static final int SCASW_AX_M16 = 352;
+
+    /**
+     * SCASD_EAX_M32: Scan a double word from the EAX register against the memory.
+     */
+    public static final int SCASD_EAX_M32 = 353;
+
+    /**
+     * SCASQ_RAX_M64: Scan a quad word from the RAX register against the memory.
+     */
+    public static final int SCASQ_RAX_M64 = 354;
+
+    /**
+     * MOV_R8_IMM8: Move an immediate 8-bit value into the R8 register.
+     */
+    public static final int MOV_R8_IMM8 = 355;
+
+    /**
+     * MOV_R16_IMM16: Move an immediate 16-bit value into the R16 register.
+     */
+    public static final int MOV_R16_IMM16 = 356;
+
+    /**
+     * MOV_R32_IMM32: Move an immediate 32-bit value into the R32 register.
+     */
+    public static final int MOV_R32_IMM32 = 357;
+
+    /**
+     * MOV_R64_IMM64: Move an immediate 64-bit value into the R64 register.
+     */
+    public static final int MOV_R64_IMM64 = 358;
+
+    /**
+     * ROL_RM8_IMM8: Rotate left a byte in memory or register by an immediate 8-bit value.
+     */
+    public static final int ROL_RM8_IMM8 = 359;
+
+    /**
+     * ROR_RM8_IMM8: Rotate right a byte in memory or register by an immediate 8-bit value.
+     */
+    public static final int ROR_RM8_IMM8 = 360;
+
+    /**
+     * RCL_RM8_IMM8: Rotate left through carry a byte in memory or register by an immediate 8-bit value.
+     */
+    public static final int RCL_RM8_IMM8 = 361;
+
+    /**
+     * RCR_RM8_IMM8: Rotate right through carry a byte in memory or register by an immediate 8-bit value.
+     */
+    public static final int RCR_RM8_IMM8 = 362;
+
+    /**
+     * SHL_RM8_IMM8: Shift left a byte in memory or register by an immediate 8-bit value.
+     */
+    public static final int SHL_RM8_IMM8 = 363;
+
+    /**
+     * SHR_RM8_IMM8: Shift right a byte in memory or register by an immediate 8-bit value.
+     */
+    public static final int SHR_RM8_IMM8 = 364;
+
+    /**
+     * SAL_RM8_IMM8: Shift arithmetic left a byte in memory or register by an immediate 8-bit value.
+     */
+    public static final int SAL_RM8_IMM8 = 365;
+
+    /**
+     * SAR_RM8_IMM8: Shift arithmetic right a byte in memory or register by an immediate 8-bit value.
+     */
+    public static final int SAR_RM8_IMM8 = 366;
+
+    /**
+     * ROL_RM16_IMM8: Rotate left a word in memory or register by an immediate 8-bit value.
+     */
+    public static final int ROL_RM16_IMM8 = 367;
+
+    /**
+     * ROL_RM32_IMM8: Rotate left a double word in memory or register by an immediate 8-bit value.
+     */
+    public static final int ROL_RM32_IMM8 = 368;
+
+    /**
+     * ROL_RM64_IMM8: Rotate left a quad word in memory or register by an immediate 8-bit value.
+     */
+    public static final int ROL_RM64_IMM8 = 369;
+
+    /**
+     * ROR_RM16_IMM8: Rotate right a word in memory or register by an immediate 8-bit value.
+     */
+    public static final int ROR_RM16_IMM8 = 370;
+
+    /**
+     * ROR_RM32_IMM8: Rotate right a double word in memory or register by an immediate 8-bit value.
+     */
+    public static final int ROR_RM32_IMM8 = 371;
+
+    /**
+     * ROR_RM64_IMM8: Rotate right a quad word in memory or register by an immediate 8-bit value.
+     */
+    public static final int ROR_RM64_IMM8 = 372;
+
+    /**
+     * RCL_RM16_IMM8: Rotate left through carry a word in memory or register by an immediate 8-bit value.
+     */
+    public static final int RCL_RM16_IMM8 = 373;
+
+    /**
+     * RCL_RM32_IMM8: Rotate left through carry a double word in memory or register by an immediate 8-bit value.
+     */
+    public static final int RCL_RM32_IMM8 = 374;
+
+    /**
+     * RCL_RM64_IMM8: Rotate left through carry a quad word in memory or register by an immediate 8-bit value.
+     */
+    public static final int RCL_RM64_IMM8 = 375;
+
+    /**
+     * RCR_RM16_IMM8: Rotate right through carry a word in memory or register by an immediate 8-bit value.
+     */
+    public static final int RCR_RM16_IMM8 = 376;
+
+    /**
+     * RCR_RM32_IMM8: Rotate right through carry a double word in memory or register by an immediate 8-bit value.
+     */
+    public static final int RCR_RM32_IMM8 = 377;
+
+    /**
+     * RCR_RM64_IMM8: Rotate right through carry a quad word in memory or register by an immediate 8-bit value.
+     */
+    public static final int RCR_RM64_IMM8 = 378;
+
+    /**
+     * SHL_RM16_IMM8: Shift left a word in memory or register by an immediate 8-bit value.
+     */
+    public static final int SHL_RM16_IMM8 = 379;
+
+    /**
+     * SHL_RM32_IMM8: Shift left a double word in memory or register by an immediate 8-bit value.
+     */
+    public static final int SHL_RM32_IMM8 = 380;
+
+    /**
+     * SHL_RM64_IMM8: Shift left a quad word in memory or register by an immediate 8-bit value.
+     */
+    public static final int SHL_RM64_IMM8 = 381;
+
+    /**
+     * SHR_RM16_IMM8: Shift right a word in memory or register by an immediate 8-bit value.
+     */
+    public static final int SHR_RM16_IMM8 = 382;
+
+    /**
+     * SHR_RM32_IMM8: Shift right a double word in memory or register by an immediate 8-bit value.
+     */
+    public static final int SHR_RM32_IMM8 = 383;
+
+    /**
+     * SHR_RM64_IMM8: Shift right a quad word in memory or register by an immediate 8-bit value.
+     */
+    public static final int SHR_RM64_IMM8 = 384;
+
+    /**
+     * SAL_RM16_IMM8: Shift arithmetic left a word in memory or register by an immediate 8-bit value.
+     */
+    public static final int SAL_RM16_IMM8 = 385;
+
+    /**
+     * SAL_RM32_IMM8: Shift arithmetic left a double word in memory or register by an immediate 8-bit value.
+     */
+    public static final int SAL_RM32_IMM8 = 386;
+
+    /**
+     * SAL_RM64_IMM8: Shift arithmetic left a quad word in memory or register by an immediate 8-bit value.
+     */
+    public static final int SAL_RM64_IMM8 = 387;
+
+    /**
+     * SAR_RM16_IMM8: Shift arithmetic right a word in memory or register by an immediate 8-bit value.
+     */
+    public static final int SAR_RM16_IMM8 = 388;
+
+    /**
+     * SAR_RM32_IMM8: Shift arithmetic right a double word in memory or register by an immediate 8-bit value.
+     */
+    public static final int SAR_RM32_IMM8 = 389;
+
+    /**
+     * SAR_RM64_IMM8: Shift arithmetic right a quad word in memory or register by an immediate 8-bit value.
+     */
+    public static final int SAR_RM64_IMM8 = 390;
+
+    /**
+     * RETNW_IMM16: Return from procedure with an immediate 16-bit value.
+     */
+    public static final int RETNW_IMM16 = 391;
+
+    /**
+     * RETND_IMM16: Return from procedure with an immediate 16-bit value (32-bit mode).
+     */
+    public static final int RETND_IMM16 = 392;
+
+    /**
+     * RETNQ_IMM16: Return from procedure with an immediate 16-bit value (64-bit mode).
+     */
+    public static final int RETNQ_IMM16 = 393;
+
+    /**
+     * RETNW: Return from procedure.
+     */
+    public static final int RETNW = 394;
+
+    /**
+     * RETND: Return from procedure (32-bit mode).
+     */
+    public static final int RETND = 395;
+
+    /**
+     * RETNQ: Return from procedure (64-bit mode).
+     */
+    public static final int RETNQ = 396;
+
+    /**
+     * LES_R16_M1616: Load far pointer to the R16 register from memory.
+     */
+    public static final int LES_R16_M1616 = 397;
+
+    /**
+     * LES_R32_M1632: Load far pointer to the R32 register from memory.
+     */
+    public static final int LES_R32_M1632 = 398;
+
+    /**
+     * LDS_R16_M1616: Load far pointer to the R16 register from memory.
+     */
+    public static final int LDS_R16_M1616 = 399;
+
+    /**
+     * LDS_R32_M1632: Load far pointer to the R32 register from memory.
+     */
+    public static final int LDS_R32_M1632 = 400;
+
+    /**
+     * MOV_RM8_IMM8: Move an 8-bit immediate value into a register/memory operand.
+     */
+    public static final int MOV_RM8_IMM8 = 401;
+
+    /**
+     * XABORT_IMM8: Abort transactional execution with an 8-bit immediate value.
+     */
+    public static final int XABORT_IMM8 = 402;
+
+    /**
+     * MOV_RM16_IMM16: Move a 16-bit immediate value into a register/memory operand.
+     */
+    public static final int MOV_RM16_IMM16 = 403;
+
+    /**
+     * MOV_RM32_IMM32: Move a 32-bit immediate value into a register/memory operand.
+     */
+    public static final int MOV_RM32_IMM32 = 404;
+
+    /**
+     * MOV_RM64_IMM32: Move a 32-bit immediate value into a 64-bit register/memory operand.
+     */
+    public static final int MOV_RM64_IMM32 = 405;
+
+    /**
+     * XBEGIN_REL16: Begin a transaction with a relative 16-bit offset.
+     */
+    public static final int XBEGIN_REL16 = 406;
+
+    /**
+     * XBEGIN_REL32: Begin a transaction with a relative 32-bit offset.
+     */
+    public static final int XBEGIN_REL32 = 407;
+
+    /**
+     * ENTERW_IMM16_IMM8: Set up a stack frame with 16-bit immediate values for the number of words and stack size.
+     */
+    public static final int ENTERW_IMM16_IMM8 = 408;
+
+    /**
+     * ENTERD_IMM16_IMM8: Set up a stack frame with 32-bit immediate values for the number of words and stack size.
+     */
+    public static final int ENTERD_IMM16_IMM8 = 409;
+
+    /**
+     * ENTERQ_IMM16_IMM8: Set up a stack frame with 64-bit immediate values for the number of words and stack size.
+     */
+    public static final int ENTERQ_IMM16_IMM8 = 410;
+
+    /**
+     * LEAVEW: Leave the current stack frame (16-bit operation).
+     */
+    public static final int LEAVEW = 411;
+
+    /**
+     * LEAVED: Leave the current stack frame (32-bit operation).
+     */
+    public static final int LEAVED = 412;
+
+    /**
+     * LEAVEQ: Leave the current stack frame (64-bit operation).
+     */
+    public static final int LEAVEQ = 413;
+
+    /**
+     * RETFW_IMM16: Return from a procedure with a 16-bit immediate return address.
+     */
+    public static final int RETFW_IMM16 = 414;
+
+    /**
+     * RETFD_IMM16: Return from a procedure with a 32-bit immediate return address.
+     */
+    public static final int RETFD_IMM16 = 415;
+
+    /**
+     * RETFQ_IMM16: Return from a procedure with a 64-bit immediate return address.
+     */
+    public static final int RETFQ_IMM16 = 416;
+
+    /**
+     * RETFW: Return from a procedure with a 16-bit return address.
+     */
+    public static final int RETFW = 417;
+
+    /**
+     * RETFD: Return from a procedure with a 32-bit return address.
+     */
+    public static final int RETFD = 418;
+
+    /**
+     * RETFQ: Return from a procedure with a 64-bit return address.
+     */
+    public static final int RETFQ = 419;
+
+    /**
+     * INT3: Trigger a breakpoint interrupt.
+     */
+    public static final int INT3 = 420;
+
+    /**
+     * INT_IMM8: Trigger an interrupt with an 8-bit immediate value.
+     */
+    public static final int INT_IMM8 = 421;
+
+    /**
+     * INTO: Trigger an interrupt on overflow.
+     */
+    public static final int INTO = 422;
+
+    /**
+     * IRETW: Return from an interrupt procedure (16-bit operation).
+     */
+    public static final int IRETW = 423;
+
+    /**
+     * IRETD: Return from an interrupt procedure (32-bit operation).
+     */
+    public static final int IRETD = 424;
+
+    /**
+     * IRETQ: Return from an interrupt procedure (64-bit operation).
+     */
+    public static final int IRETQ = 425;
+
+    /**
+     * ROL_RM8_1: Rotate an 8-bit operand left by 1 bit.
+     */
+    public static final int ROL_RM8_1 = 426;
+
+    /**
+     * ROR_RM8_1: Rotate an 8-bit operand right by 1 bit.
+     */
+    public static final int ROR_RM8_1 = 427;
+
+    /**
+     * RCL_RM8_1: Rotate an 8-bit operand left through the carry flag by 1 bit.
+     */
+    public static final int RCL_RM8_1 = 428;
+
+    /**
+     * RCR_RM8_1: Rotate an 8-bit operand right through the carry flag by 1 bit.
+     */
+    public static final int RCR_RM8_1 = 429;
+
+    /**
+     * SHL_RM8_1: Shift an 8-bit operand left by 1 bit.
+     */
+    public static final int SHL_RM8_1 = 430;
+
+    /**
+     * SHR_RM8_1: Shift an 8-bit operand right by 1 bit.
+     */
+    public static final int SHR_RM8_1 = 431;
+
+    /**
+     * SAL_RM8_1: Shift an 8-bit operand left (same as SHL) by 1 bit.
+     */
+    public static final int SAL_RM8_1 = 432;
+
+    /**
+     * SAR_RM8_1: Shift an 8-bit operand right through the carry flag by 1 bit.
+     */
+    public static final int SAR_RM8_1 = 433;
+
+    /**
+     * ROL_RM16_1: Rotate a 16-bit operand left by 1 bit.
+     */
+    public static final int ROL_RM16_1 = 434;
+
+    /**
+     * ROL_RM32_1: Rotate a 32-bit operand left by 1 bit.
+     */
+    public static final int ROL_RM32_1 = 435;
+
+    /**
+     * ROL_RM64_1: Rotate a 64-bit operand left by 1 bit.
+     */
+    public static final int ROL_RM64_1 = 436;
+
+    /**
+     * ROR_RM16_1: Rotate a 16-bit operand right by 1 bit.
+     */
+    public static final int ROR_RM16_1 = 437;
+
+    /**
+     * ROR_RM32_1: Rotate a 32-bit operand right by 1 bit.
+     */
+    public static final int ROR_RM32_1 = 438;
+
+    /**
+     * ROR_RM64_1: Rotate a 64-bit operand right by 1 bit.
+     */
+    public static final int ROR_RM64_1 = 439;
+
+    /**
+     * RCL_RM16_1: Rotate a 16-bit operand left through the carry flag by 1 bit.
+     */
+    public static final int RCL_RM16_1 = 440;
+
+    /**
+     * RCL_RM32_1: Rotate a 32-bit operand left through the carry flag by 1 bit.
+     */
+    public static final int RCL_RM32_1 = 441;
+
+    /**
+     * RCL_RM64_1: Rotate a 64-bit operand left through the carry flag by 1 bit.
+     */
+    public static final int RCL_RM64_1 = 442;
+
+    /**
+     * RCR_RM16_1: Rotate a 16-bit operand right through the carry flag by 1 bit.
+     */
+    public static final int RCR_RM16_1 = 443;
+
+    /**
+     * RCR_RM32_1: Rotate a 32-bit operand right through the carry flag by 1 bit.
+     */
+    public static final int RCR_RM32_1 = 444;
+
+    /**
+     * RCR_RM64_1: Rotate a 64-bit operand right through the carry flag by 1 bit.
+     */
+    public static final int RCR_RM64_1 = 445;
+
+    /**
+     * SHL_RM16_1: Shift a 16-bit operand left by 1 bit.
+     */
+    public static final int SHL_RM16_1 = 446;
+
+    /**
+     * SHL_RM32_1: Shift a 32-bit operand left by 1 bit.
+     */
+    public static final int SHL_RM32_1 = 447;
+
+    /**
+     * SHL_RM64_1: Shift a 64-bit operand left by 1 bit.
+     */
+    public static final int SHL_RM64_1 = 448;
+
+    /**
+     * SHR_RM16_1: Shift a 16-bit operand right by 1 bit.
+     */
+    public static final int SHR_RM16_1 = 449;
+
+    /**
+     * SHR_RM32_1: Shift a 32-bit operand right by 1 bit.
+     */
+    public static final int SHR_RM32_1 = 450;
+
+    /**
+     * SHR_RM64_1: Perform a logical shift right by 1 on the 64-bit operand.
+     */
+    public static final int SHR_RM64_1 = 451;
+
+    /**
+     * SAL_RM16_1: Perform an arithmetic shift left by 1 on the 16-bit operand.
+     */
+    public static final int SAL_RM16_1 = 452;
+
+    /**
+     * SAL_RM32_1: Perform an arithmetic shift left by 1 on the 32-bit operand.
+     */
+    public static final int SAL_RM32_1 = 453;
+
+    /**
+     * SAL_RM64_1: Perform an arithmetic shift left by 1 on the 64-bit operand.
+     */
+    public static final int SAL_RM64_1 = 454;
+
+    /**
+     * SAR_RM16_1: Perform an arithmetic shift right by 1 on the 16-bit operand.
+     */
+    public static final int SAR_RM16_1 = 455;
+
+    /**
+     * SAR_RM32_1: Perform an arithmetic shift right by 1 on the 32-bit operand.
+     */
+    public static final int SAR_RM32_1 = 456;
+
+    /**
+     * SAR_RM64_1: Perform an arithmetic shift right by 1 on the 64-bit operand.
+     */
+    public static final int SAR_RM64_1 = 457;
+
+    /**
+     * ROL_RM8_CL: Perform a rotate left through carry on the 8-bit operand with CL register as the shift count.
+     */
+    public static final int ROL_RM8_CL = 458;
+
+    /**
+     * ROR_RM8_CL: Perform a rotate right through carry on the 8-bit operand with CL register as the shift count.
+     */
+    public static final int ROR_RM8_CL = 459;
+
+    /**
+     * RCL_RM8_CL: Perform a rotate left through carry on the 8-bit operand with CL register as the shift count.
+     */
+    public static final int RCL_RM8_CL = 460;
+
+    /**
+     * RCR_RM8_CL: Perform a rotate right through carry on the 8-bit operand with CL register as the shift count.
+     */
+    public static final int RCR_RM8_CL = 461;
+
+    /**
+     * SHL_RM8_CL: Perform a logical shift left on the 8-bit operand with CL register as the shift count.
+     */
+    public static final int SHL_RM8_CL = 462;
+
+    /**
+     * SHR_RM8_CL: Perform a logical shift right on the 8-bit operand with CL register as the shift count.
+     */
+    public static final int SHR_RM8_CL = 463;
+
+    /**
+     * SAL_RM8_CL: Perform an arithmetic shift left on the 8-bit operand with CL register as the shift count.
+     */
+    public static final int SAL_RM8_CL = 464;
+
+    /**
+     * SAR_RM8_CL: Perform an arithmetic shift right on the 8-bit operand with CL register as the shift count.
+     */
+    public static final int SAR_RM8_CL = 465;
+
+    /**
+     * ROL_RM16_CL: Perform a rotate left through carry on the 16-bit operand with CL register as the shift count.
+     */
+    public static final int ROL_RM16_CL = 466;
+
+    /**
+     * ROL_RM32_CL: Perform a rotate left through carry on the 32-bit operand with CL register as the shift count.
+     */
+    public static final int ROL_RM32_CL = 467;
+
+    /**
+     * ROL_RM64_CL: Perform a rotate left through carry on the 64-bit operand with CL register as the shift count.
+     */
+    public static final int ROL_RM64_CL = 468;
+
+    /**
+     * ROR_RM16_CL: Perform a rotate right through carry on the 16-bit operand with CL register as the shift count.
+     */
+    public static final int ROR_RM16_CL = 469;
+
+    /**
+     * ROR_RM32_CL: Perform a rotate right through carry on the 32-bit operand with CL register as the shift count.
+     */
+    public static final int ROR_RM32_CL = 470;
+
+    /**
+     * ROR_RM64_CL: Perform a rotate right through carry on the 64-bit operand with CL register as the shift count.
+     */
+    public static final int ROR_RM64_CL = 471;
+
+    /**
+     * RCL_RM16_CL: Perform a rotate left through carry on the 16-bit operand with CL register as the shift count.
+     */
+    public static final int RCL_RM16_CL = 472;
+
+    /**
+     * RCL_RM32_CL: Perform a rotate left through carry on the 32-bit operand with CL register as the shift count.
+     */
+    public static final int RCL_RM32_CL = 473;
+
+    /**
+     * RCL_RM64_CL: Perform a rotate left through carry on the 64-bit operand with CL register as the shift count.
+     */
+    public static final int RCL_RM64_CL = 474;
+
+    /**
+     * RCR_RM16_CL: Perform a rotate right through carry on the 16-bit operand with CL register as the shift count.
+     */
+    public static final int RCR_RM16_CL = 475;
+
+    /**
+     * RCR_RM32_CL: Perform a rotate right through carry on the 32-bit operand with CL register as the shift count.
+     */
+    public static final int RCR_RM32_CL = 476;
+
+    /**
+     * RCR_RM64_CL: Perform a rotate right through carry on the 64-bit operand with CL register as the shift count.
+     */
+    public static final int RCR_RM64_CL = 477;
+
+    /**
+     * SHL_RM16_CL: Perform a logical shift left on the 16-bit operand with CL register as the shift count.
+     */
+    public static final int SHL_RM16_CL = 478;
+
+    /**
+     * SHL_RM32_CL: Perform a logical shift left on the 32-bit operand with CL register as the shift count.
+     */
+    public static final int SHL_RM32_CL = 479;
+
+    /**
+     * SHL_RM64_CL: Perform a logical shift left on the 64-bit operand with CL register as the shift count.
+     */
+    public static final int SHL_RM64_CL = 480;
+
+    /**
+     * SHR_RM16_CL: Perform a logical shift right on the 16-bit operand with CL register as the shift count.
+     */
+    public static final int SHR_RM16_CL = 481;
+
+    /**
+     * SHR_RM32_CL: Perform a logical shift right on the 32-bit operand with CL register as the shift count.
+     */
+    public static final int SHR_RM32_CL = 482;
+
+    /**
+     * SHR_RM64_CL: Perform a logical shift right on the 64-bit operand with CL register as the shift count.
+     */
+    public static final int SHR_RM64_CL = 483;
+
+    /**
+     * SAL_RM16_CL: Perform an arithmetic shift left on the 16-bit operand with CL register as the shift count.
+     */
+    public static final int SAL_RM16_CL = 484;
+
+    /**
+     * SAL_RM32_CL: Perform an arithmetic shift left on the 32-bit operand with CL register as the shift count.
+     */
+    public static final int SAL_RM32_CL = 485;
+
+    /**
+     * SAL_RM64_CL: Perform an arithmetic shift left on the 64-bit operand with CL register as the shift count.
+     */
+    public static final int SAL_RM64_CL = 486;
+
+    /**
+     * SAR_RM16_CL: Perform an arithmetic shift right on the 16-bit operand with CL register as the shift count.
+     */
+    public static final int SAR_RM16_CL = 487;
+
+    /**
+     * SAR_RM32_CL: Perform an arithmetic shift right on the 32-bit operand with CL register as the shift count.
+     */
+    public static final int SAR_RM32_CL = 488;
+
+    /**
+     * SAR_RM64_CL: Perform an arithmetic shift right on the 64-bit operand with CL register as the shift count.
+     */
+    public static final int SAR_RM64_CL = 489;
+
+    /**
+     * AAM_IMM8: ASCII adjust AX after multiply by the immediate 8-bit value.
+     */
+    public static final int AAM_IMM8 = 490;
+
+    /**
+     * AAD_IMM8: ASCII adjust AX before division by the immediate 8-bit value.
+     */
+    public static final int AAD_IMM8 = 491;
+
+    /**
+     * SALC: Set AL based on the carry flag.
+     */
+    public static final int SALC = 492;
+
+    /**
+     * XLAT_M8: Translate a byte from memory based on AL register value.
+     */
+    public static final int XLAT_M8 = 493;
+
+    /**
+     * FADD_M32FP: Add a floating point value from memory to the ST(0) register.
+     */
+    public static final int FADD_M32FP = 494;
+
+    /**
+     * FMUL_M32FP: Multiply a floating point value from memory with the ST(0) register.
+     */
+    public static final int FMUL_M32FP = 495;
+
+    /**
+     * FCOM_M32FP: Compare a floating point value from memory with the ST(0) register.
+     */
+    public static final int FCOM_M32FP = 496;
+
+    /**
+     * FCOMP_M32FP: Compare and pop a floating point value from memory with the ST(0) register.
+     */
+    public static final int FCOMP_M32FP = 497;
+
+    /**
+     * FSUB_M32FP: Subtract a floating point value from memory from the ST(0) register.
+     */
+    public static final int FSUB_M32FP = 498;
+
+    /**
+     * FSUBR_M32FP: Subtract a floating point value from memory from the ST(0) register and reverse the operands.
+     */
+    public static final int FSUBR_M32FP = 499;
+
+    /**
+     * FDIV_M32FP: Divide a floating point value from memory by the ST(0) register.
+     */
+    public static final int FDIV_M32FP = 500;
 }
