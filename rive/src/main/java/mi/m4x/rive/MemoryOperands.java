@@ -4,158 +4,225 @@ import mi.m4x.carbide.interfaces.Beta;
 import mi.m4x.rive.registers.InstructionCreateRegister;
 
 /**
- * Represents the operands for memory addressing in assembly instructions.
- * This class encapsulates the details of how memory is accessed, including
- * the base and index registers, scale factor, displacement, and segment prefix.
- *
- * <p>It is used to create and manipulate memory operands in assembly instructions.</p>
- *
- * <p>Note: This class is not intended to be instantiated directly. Use the provided
- * constructors to create instances with the desired parameters.</p>
+ * Represents a memory operand used in assembly instructions,
+ * such as those involving register-indirect addressing, displacement,
+ * or scaled indexed addressing.
+ * <p>
+ * {@code MemoryOperands} is immutable, thread-safe, and optimized for
+ * fast hashing and equality checks.
+ * </p>
  *
  * @since 1.0.2
  * @author M4ximumpizza
  */
 @Beta
 public final class MemoryOperands {
-    /**
-     * Segment override or {@code NONE} if not provided.
-     */
-    public final InstructionCreateRegister segmentPrefix;
 
     /**
-     * Base register or {@code NONE} if not provided.
+     * Predefined empty operand with no base, no index, and zero displacement.
+     */
+    public static final MemoryOperands EMPTY = new MemoryOperands(
+            InstructionCreateRegister.NONE, InstructionCreateRegister.NONE,
+            1, 0L, 0, false, InstructionCreateRegister.NONE
+    );
+
+    /**
+     * Base register (or {@link InstructionCreateRegister#NONE} if absent).
      */
     public final InstructionCreateRegister base;
 
     /**
-     * Index register or {@code NONE} if not provided.
+     * Index register (or {@link InstructionCreateRegister#NONE} if absent).
      */
     public final InstructionCreateRegister index;
 
     /**
-     * Index register scale (1, 2, 4, or 8).
+     * Scaling factor for the index register (must be 1, 2, 4, or 8).
      */
     public final int scale;
 
     /**
-     * Memory displacement.
+     * Constant displacement offset added to the address.
      */
     public final long displacement;
 
     /**
-     * Displacement size:
-     * <ul>
-     * <li>0: No displacement</li>
-     * <li>1: 16/32/64-bit (use 2/4/8 if not fitting in a byte)</li>
-     * <li>2: 16-bit</li>
-     * <li>4: 32-bit</li>
-     * <li>8: 64-bit</li>
-     * </ul>
+     * Size of the displacement in bytes (0 = none, otherwise 2/4/8).
      */
     public final int displSize;
 
     /**
-     * {@code true} if it’s broadcast memory (EVEX instructions).
+     * Whether this operand uses broadcast semantics (e.g., EVEX instructions).
      */
-    public final boolean isBroadcast;
+    public final boolean broadcast;
 
     /**
-     * Default constructor that initializes fields with provided values or defaults to NONE or zero.
-     *
-     * @param base          Base register or {@code NONE}.
-     * @param index         Index register or {@code NONE}.
-     * @param scale         Index register scale (1, 2, 4, or 8).
-     * @param displacement  Memory displacement.
-     * @param displSize     Displacement size (see above).
-     * @param isBroadcast   {@code true} if it's broadcast memory (EVEX instructions).
-     * @param segmentPrefix Segment override or {@code NONE}.
+     * Optional segment override prefix (or {@link InstructionCreateRegister#NONE}).
      */
-    public MemoryOperands(InstructionCreateRegister base, InstructionCreateRegister index, int scale, long displacement, int displSize, boolean isBroadcast,
-                          InstructionCreateRegister segmentPrefix) {
-        this.base = base == null ? InstructionCreateRegister.NONE : base;
-        this.index = index == null ? InstructionCreateRegister.NONE : index;
+    public final InstructionCreateRegister segmentPrefix;
+
+    /**
+     * Cached hash code for faster lookups and comparisons.
+     */
+    private final int cachedHash;
+
+    /**
+     * Internal constructor.
+     * Use static factories such as {@link #of} instead of direct instantiation.
+     */
+    private MemoryOperands(
+            InstructionCreateRegister base,
+            InstructionCreateRegister index,
+            int scale,
+            long displacement,
+            int displSize,
+            boolean broadcast,
+            InstructionCreateRegister segmentPrefix) {
+        this.base = base;
+        this.index = index;
         this.scale = scale;
         this.displacement = displacement;
         this.displSize = displSize;
-        this.isBroadcast = isBroadcast;
-        this.segmentPrefix = segmentPrefix == null ? InstructionCreateRegister.NONE : segmentPrefix;
+        this.broadcast = broadcast;
+        this.segmentPrefix = segmentPrefix;
+        this.cachedHash = computeHash();
     }
 
     /**
-     * Overloaded constructor for cases where displacement is not provided.
+     * Creates a fully specified {@code MemoryOperands} instance.
      *
-     * @param base          Base register or {@code NONE}.
-     * @param index         Index register or {@code NONE}.
-     * @param scale         Index register scale (1, 2, 4, or 8).
-     * @param isBroadcast   {@code true} if it's broadcast memory (EVEX instructions).
-     * @param segmentPrefix Segment override or {@code NONE}.
+     * @param base           Base register (null treated as {@link InstructionCreateRegister#NONE}).
+     * @param index          Index register (null treated as {@link InstructionCreateRegister#NONE}).
+     * @param scale          Scale factor (must be 1, 2, 4, or 8; invalid values default to 1).
+     * @param displacement   Displacement value.
+     * @param displSize      Size of the displacement field in bytes.
+     * @param broadcast      Whether broadcast mode is enabled.
+     * @param segmentPrefix  Segment override (null treated as {@link InstructionCreateRegister#NONE}).
+     * @return A new {@code MemoryOperands} instance.
      */
-    public MemoryOperands(InstructionCreateRegister base, InstructionCreateRegister index, int scale, boolean isBroadcast, InstructionCreateRegister segmentPrefix) {
-        this(base, index, scale, 0L, 0, isBroadcast, segmentPrefix);
+    public static MemoryOperands of(
+            InstructionCreateRegister base,
+            InstructionCreateRegister index,
+            int scale,
+            long displacement,
+            int displSize,
+            boolean broadcast,
+            InstructionCreateRegister segmentPrefix) {
+        return new MemoryOperands(
+                nonNull(base), nonNull(index), validScale(scale),
+                displacement, displSize, broadcast, nonNull(segmentPrefix)
+        );
     }
 
     /**
-     * Overloaded constructor for simpler cases where no index register is used.
+     * Creates a {@code MemoryOperands} instance using a base register and index register only.
+     * No displacement is applied.
      *
-     * @param base          Base register or {@code NONE}.
-     * @param displacement  Memory displacement.
-     * @param displSize     Displacement size (see above).
-     * @param isBroadcast   {@code true} if it's broadcast memory (EVEX instructions).
-     * @param segmentPrefix Segment override or {@code NONE}.
+     * @param base  Base register.
+     * @param index Index register.
+     * @param scale Scaling factor (defaults to 1 if invalid).
+     * @return A new {@code MemoryOperands} instance.
      */
-    public MemoryOperands(InstructionCreateRegister base, long displacement, int displSize, boolean isBroadcast, InstructionCreateRegister segmentPrefix) {
-        this(base, InstructionCreateRegister.NONE, 1, displacement, displSize, isBroadcast, segmentPrefix);
+    public static MemoryOperands baseIndex(
+            InstructionCreateRegister base, InstructionCreateRegister index, int scale) {
+        return new MemoryOperands(
+                nonNull(base), nonNull(index), validScale(scale),
+                0L, 0, false, InstructionCreateRegister.NONE
+        );
     }
 
     /**
-     * Overloaded constructor for cases with no displacement and no broadcast flag.
+     * Creates a {@code MemoryOperands} instance with only a base register and no index or displacement.
      *
-     * @param base          Base register or {@code NONE}.
-     * @param index         Index register or {@code NONE}.
-     * @param scale         Index register scale (1, 2, 4, or 8).
+     * @param base Base register.
+     * @return A new {@code MemoryOperands} instance.
      */
-    public MemoryOperands(InstructionCreateRegister base, InstructionCreateRegister index, int scale) {
-        this(base, index, scale, 0L, 0, false, InstructionCreateRegister.NONE);
+    public static MemoryOperands baseOnly(InstructionCreateRegister base) {
+        return new MemoryOperands(
+                nonNull(base), InstructionCreateRegister.NONE, 1,
+                0L, 0, false, InstructionCreateRegister.NONE
+        );
     }
 
     /**
-     * Overloaded constructor for cases with only a base register and no displacement.
+     * Creates a {@code MemoryOperands} instance using only a displacement with no base or index registers.
      *
-     * @param base Base register or {@code NONE}.
+     * @param displacement Memory displacement value.
+     * @param displSize    Size of the displacement in bytes.
+     * @return A new {@code MemoryOperands} instance.
      */
-    public MemoryOperands(InstructionCreateRegister base) {
-        this(base, InstructionCreateRegister.NONE, 1, 0L, 0, false, InstructionCreateRegister.NONE);
+    public static MemoryOperands displacementOnly(long displacement, int displSize) {
+        return new MemoryOperands(
+                InstructionCreateRegister.NONE, InstructionCreateRegister.NONE, 1,
+                displacement, displSize, false, InstructionCreateRegister.NONE
+        );
     }
 
     /**
-     * Overloaded constructor for cases with only displacement and no registers.
+     * Ensures that a register is non-null, replacing {@code null} with {@link InstructionCreateRegister#NONE}.
      *
-     * @param displacement Memory displacement.
-     * @param displSize    Displacement size (see above).
+     * @param reg Register to check.
+     * @return Non-null register.
      */
-    public MemoryOperands(long displacement, int displSize) {
-        this(InstructionCreateRegister.NONE, InstructionCreateRegister.NONE, 1, displacement, displSize, false, InstructionCreateRegister.NONE);
+    private static InstructionCreateRegister nonNull(InstructionCreateRegister reg) {
+        return reg != null ? reg : InstructionCreateRegister.NONE;
     }
 
     /**
-     * Hash code implementation based on all fields of the object.
+     * Validates the scale factor for an index register.
+     * Allowed values are 1, 2, 4, or 8. Invalid values are corrected to 1.
+     *
+     * @param scale Input scale.
+     * @return Valid scale factor.
+     */
+    private static int validScale(int scale) {
+        return (scale == 1 || scale == 2 || scale == 4 || scale == 8) ? scale : 1;
+    }
+
+    /**
+     * Computes the hash code based on all fields.
+     * Called once during construction for caching.
+     *
+     * @return Hash code.
+     */
+    private int computeHash() {
+        int result = base.hashCode();
+        result = 31 * result + index.hashCode();
+        result = 31 * result + Integer.hashCode(scale);
+        result = 31 * result + Long.hashCode(displacement);
+        result = 31 * result + Integer.hashCode(displSize);
+        result = 31 * result + Boolean.hashCode(broadcast);
+        result = 31 * result + segmentPrefix.hashCode();
+        return result;
+    }
+
+    /**
+     * Returns the cached hash code of this operand.
+     *
+     * @return Hash code.
      */
     @Override
     public int hashCode() {
-        return 31 * (31 * (31 * (31 * (31 * base.hashCode() + index.hashCode()) + Long.hashCode(displacement)) + Integer.hashCode(displSize)) + Integer.hashCode(scale))
-                + (isBroadcast ? 1231 : 1237) + segmentPrefix.hashCode();
+        return cachedHash;
     }
 
     /**
-     * Equality check based on all fields of the object.
+     * Compares this operand to another for equality.
+     * Two {@code MemoryOperands} instances are equal if all fields match exactly.
+     *
+     * @param obj The object to compare to.
+     * @return {@code true} if equal, {@code false} otherwise.
      */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        MemoryOperands other = (MemoryOperands) obj;
-        return base.equals(other.base) && index.equals(other.index) && displacement == other.displacement && displSize == other.displSize
-                && scale == other.scale && isBroadcast == other.isBroadcast && segmentPrefix.equals(other.segmentPrefix);
+        if (!(obj instanceof MemoryOperands other)) return false;
+        return base == other.base
+                && index == other.index
+                && scale == other.scale
+                && displacement == other.displacement
+                && displSize == other.displSize
+                && broadcast == other.broadcast
+                && segmentPrefix == other.segmentPrefix;
     }
 }

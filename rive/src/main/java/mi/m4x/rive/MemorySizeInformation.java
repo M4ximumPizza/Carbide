@@ -201,7 +201,6 @@ public class MemorySizeInformation {
         // Constants for decoding the memory configuration values.
         final short IS_SIGNED = -32768;  // 0x8000 in signed short format
         final int SIZE_MASK = 31;
-        final int SIZE_SHIFT = 0;
         final int ELEMENT_SIZE_SHIFT = 5;
 
         // Predefined size values for different configurations.
@@ -212,10 +211,17 @@ public class MemorySizeInformation {
 
         // Iterate through the raw data to populate the memory information.
         for (int i = 0, j = 0; i < informations.length; i++, j += 3) {
-            int elementType = data[j];
-            int value = ((data[j + 2] & 0xFF) << 8) | (data[j + 1] & 0xFF);
-            int size = sizes[(value >>> SIZE_SHIFT) & SIZE_MASK];
-            int elementSize = sizes[(value >>> ELEMENT_SIZE_SHIFT) & 31];
+            int elementType = data[j];  // Extract element type.
+            int value = ((data[j + 2] & 0xFF) << 8) | (data[j + 1] & 0xFF);  // Combine high and low bytes into value.
+
+            // Calculate size and element size directly with optimized masking.
+            int sizeIndex = (value & SIZE_MASK);
+            int elementSizeIndex = ((value >>> ELEMENT_SIZE_SHIFT) & SIZE_MASK);
+
+            int size = sizes[sizeIndex];
+            int elementSize = sizes[elementSizeIndex];
+
+            // Check for signed value and broadcast condition.
             boolean isSigned = (value & IS_SIGNED) != 0;
             boolean isBroadcast = i >= Constants.FIRST_BROADCAST_MEMORY_SIZE;
 
