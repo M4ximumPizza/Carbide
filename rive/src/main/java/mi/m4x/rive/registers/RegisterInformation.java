@@ -94,7 +94,10 @@ public class RegisterInformation {
      * with shared properties such as size and full-width association.
      */
     public static final class RegRange {
-        final int start, end, full, size;
+        final int start;
+        final int end;
+        final int full;
+        final int size;
 
         /**
          * Constructs a new {@code RegRange}.
