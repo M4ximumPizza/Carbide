@@ -4032,6 +4032,506 @@ public class Code {
      */
     public static final int VERW_RM16;
 
+    /**
+     * CL1INVMB: Invalidate modified cache line in all caches of a coherence domain.
+     */
+    public static final int CL1INVMB;
+
+    /**
+     * CLAC: Clear the AC flag (alignment check).
+     */
+    public static final int CLAC;
+
+    /**
+     * CLGI: Clear Global Interrupt Flag (for secure virtualization).
+     */
+    public static final int CLGI;
+
+    /**
+     * CLTS: Clear Task Switched flag in CR0.
+     */
+    public static final int CLTS;
+
+    /**
+     * CLZEROD: Zero 32 bytes of memory starting at the destination using DWORD granularity.
+     */
+    public static final int CLZEROD;
+
+    /**
+     * CLZEROQ: Zero 32 bytes of memory starting at the destination using QWORD granularity.
+     */
+    public static final int CLZEROQ;
+
+    /**
+     * CLZEROW: Zero 32 bytes of memory starting at the destination using WORD granularity.
+     */
+    public static final int CLZEROW;
+
+    /**
+     * ENCLS: Execute a secure enclave instruction (leaf-specific).
+     */
+    public static final int ENCLS;
+
+    /**
+     * ENCLU: Execute a user-mode secure enclave instruction (leaf-specific).
+     */
+    public static final int ENCLU;
+
+    /**
+     * ENCLV: Execute a virtualization enclave instruction (leaf-specific).
+     */
+    public static final int ENCLV;
+
+    /**
+     * EVEX_VMOVUPS_XMM_K1Z_XMMM128: Move unaligned packed single-precision values (XMM variant with masking).
+     */
+    public static final int EVEX_VMOVUPS_XMM_K1Z_XMMM128;
+
+    /**
+     * EVEX_VMOVUPS_YMM_K1Z_YMMM256: Move unaligned packed single-precision values (YMM variant with masking).
+     */
+    public static final int EVEX_VMOVUPS_YMM_K1Z_YMMM256;
+
+    /**
+     * EVEX_VMOVUPS_ZMM_K1Z_ZMMM512: Move unaligned packed single-precision values (ZMM variant with masking).
+     */
+    public static final int EVEX_VMOVUPS_ZMM_K1Z_ZMMM512;
+
+    /**
+     * FEMMS: Fast exit from MMX state.
+     */
+    public static final int FEMMS;
+
+    /**
+     * INVD: Invalidate internal caches without writing back.
+     */
+    public static final int INVD;
+
+    /**
+     * INVLPGAD: Invalidate a TLB entry for a specific address (DWORD).
+     */
+    public static final int INVLPGAD;
+
+    /**
+     * INVLPGAQ: Invalidate a TLB entry for a specific address (QWORD).
+     */
+    public static final int INVLPGAQ;
+
+    /**
+     * INVLPGAW: Invalidate a TLB entry for a specific address (WORD).
+     */
+    public static final int INVLPGAW;
+
+    /**
+     * INVLPG_M: Invalidate TLB entry for memory location.
+     */
+    public static final int INVLPG_M;
+
+    /**
+     * LAR_R16_RM16: Load Access Rights byte into 16-bit register from segment selector.
+     */
+    public static final int LAR_R16_RM16;
+
+    /**
+     * LAR_R32_R32M16: Load Access Rights byte into 32-bit register from memory/selector.
+     */
+    public static final int LAR_R32_R32M16;
+
+    /**
+     * LAR_R64_R64M16: Load Access Rights byte into 64-bit register from memory/selector.
+     */
+    public static final int LAR_R64_R64M16;
+
+    /**
+     * LIDT_M1632: Load Interrupt Descriptor Table from 32-bit memory operand.
+     */
+    public static final int LIDT_M1632;
+
+    /**
+     * LIDT_M1632_16: Load Interrupt Descriptor Table from 16-bit memory operand (protected mode).
+     */
+    public static final int LIDT_M1632_16;
+
+    /**
+     * LIDT_M1664: Load Interrupt Descriptor Table from 64-bit memory operand.
+     */
+    public static final int LIDT_M1664;
+
+    /**
+     * LMSW_R32M16: Load Machine Status Word from 32-bit register/memory.
+     */
+    public static final int LMSW_R32M16;
+
+    /**
+     * LMSW_R64M16: Load Machine Status Word from 64-bit register/memory.
+     */
+    public static final int LMSW_R64M16;
+
+    /**
+     * LMSW_RM16: Load Machine Status Word from 16-bit register/memory.
+     */
+    public static final int LMSW_RM16;
+
+    /**
+     * LOADALL286: Load all CPU state (286-specific; undocumented).
+     */
+    public static final int LOADALL286;
+
+    /**
+     * LOADALL386: Load all CPU state (386-specific; undocumented).
+     */
+    public static final int LOADALL386;
+
+    /**
+     * LSL_R16_RM16: Load segment limit into 16-bit register.
+     */
+    public static final int LSL_R16_RM16;
+
+    /**
+     * LSL_R32_R32M16: Load segment limit into 32-bit register.
+     */
+    public static final int LSL_R32_R32M16;
+
+    /**
+     * LSL_R64_R64M16: Load segment limit into 64-bit register.
+     */
+    public static final int LSL_R64_R64M16;
+
+    /**
+     * MCOMMIT: Commit memory contents from temporary buffer to physical storage.
+     */
+    public static final int MCOMMIT;
+
+    /**
+     * MONITORD: Set up monitor for address range (DWORD).
+     */
+    public static final int MONITORD;
+
+    /**
+     * MONITORQ: Set up monitor for address range (QWORD).
+     */
+    public static final int MONITORQ;
+
+    /**
+     * MONITORW: Set up monitor for address range (WORD).
+     */
+    public static final int MONITORW;
+
+    /**
+     * MONITORXD: Set up extended monitor for DWORD.
+     */
+    public static final int MONITORXD;
+
+    /**
+     * MONITORXQ: Set up extended monitor for QWORD.
+     */
+    public static final int MONITORXQ;
+
+    /**
+     * MONITORXW: Set up extended monitor for WORD.
+     */
+    public static final int MONITORXW;
+
+    /**
+     * MOVUPD_XMM_XMMM128: Move unaligned packed double-precision values.
+     */
+    public static final int MOVUPD_XMM_XMMM128;
+
+    /**
+     * MOVUPS_XMM_XMMM128: Move unaligned packed single-precision values.
+     */
+    public static final int MOVUPS_XMM_XMMM128;
+
+    /**
+     * MWAIT: Wait for a memory address write to resume execution.
+     */
+    public static final int MWAIT;
+
+    /**
+     * MWAITX: Wait for memory write with timeout and optional hints.
+     */
+    public static final int MWAITX;
+
+    /**
+     * PCONFIG: Used to configure platform security features (e.g., CET).
+     */
+    public static final int PCONFIG;
+
+    /**
+     * PREFETCHWT1_M8: Prefetch data into cache with write-through intent.
+     */
+    public static final int PREFETCHWT1_M8;
+
+    /**
+     * PREFETCHW_M8: Prefetch data into cache with intent to write.
+     */
+    public static final int PREFETCHW_M8;
+
+    /**
+     * PREFETCH_M8: Prefetch data into cache.
+     */
+    public static final int PREFETCH_M8;
+
+    /**
+     * RDPKRU: Read the PKRU register (protection keys).
+     */
+    public static final int RDPKRU;
+
+    /**
+     * RDPRU: Read privileged resource usage.
+     */
+    public static final int RDPRU;
+
+    /**
+     * RDTSCP: Read time-stamp counter and processor ID.
+     */
+    public static final int RDTSCP;
+
+    /**
+     * RESERVEDNOP_RM16_R16_0F0D: Reserved no-op using ModR/M encoding for 16-bit operands.
+     */
+    public static final int RESERVEDNOP_RM16_R16_0F0D;
+
+    /**
+     * RESERVEDNOP_RM32_R32_0F0D: Reserved no-op using ModR/M encoding for 32-bit operands.
+     */
+    public static final int RESERVEDNOP_RM32_R32_0F0D;
+
+    /**
+     * RESERVEDNOP_RM64_R64_0F0D: Reserved no-op using ModR/M encoding for 64-bit operands.
+     */
+    public static final int RESERVEDNOP_RM64_R64_0F0D;
+
+    /**
+     * RSTORSSP_M64: Restore shadow stack pointer from memory.
+     */
+    public static final int RSTORSSP_M64;
+
+    /**
+     * SAVEPREVSSP: Save the current shadow stack pointer.
+     */
+    public static final int SAVEPREVSSP;
+
+    /**
+     * SETSSBSY: Set supervisor shadow stack busy state.
+     */
+    public static final int SETSSBSY;
+
+    /**
+     * SKINIT: Start secure boot of OS or hypervisor.
+     */
+    public static final int SKINIT;
+
+    /**
+     * SMSW_R32M16: Store Machine Status Word into 32-bit register/memory.
+     */
+    public static final int SMSW_R32M16;
+
+    /**
+     * SMSW_R64M16: Store Machine Status Word into 64-bit register/memory.
+     */
+    public static final int SMSW_R64M16;
+
+    /**
+     * SMSW_RM16: Store Machine Status Word into 16-bit register/memory.
+     */
+    public static final int SMSW_RM16;
+
+    /**
+     * STAC: Set the AC (alignment check) flag.
+     */
+    public static final int STAC;
+
+    /**
+     * STGI: Set Global Interrupt Flag (for secure virtualization).
+     */
+    public static final int STGI;
+
+    /**
+     * STOREALL: Store all CPU state (undocumented; obsolete).
+     */
+    public static final int STOREALL;
+
+    /**
+     * SWAPGS: Swap GS base register with KernelGSBase.
+     */
+    public static final int SWAPGS;
+
+    /**
+     * SYSCALL: Invoke fast system call (entry to kernel).
+     */
+    public static final int SYSCALL;
+
+    /**
+     * SYSRETD: Return from fast system call to 32-bit user space.
+     */
+    public static final int SYSRETD;
+
+    /**
+     * SYSRETQ: Return from fast system call to 64-bit user space.
+     */
+    public static final int SYSRETQ;
+
+    /**
+     * UD2: Generate invalid opcode exception (for undefined instruction).
+     */
+    public static final int UD2;
+
+    /**
+     * UMOV_R16_RM16: Move 16-bit register from memory (undocumented legacy).
+     */
+    public static final int UMOV_R16_RM16;
+
+    /**
+     * UMOV_R32_RM32: Move 32-bit register from memory (undocumented legacy).
+     */
+    public static final int UMOV_R32_RM32;
+
+    /**
+     * UMOV_R8_RM8: Move 8-bit register from memory (undocumented legacy).
+     */
+    public static final int UMOV_R8_RM8;
+
+    /**
+     * UMOV_RM16_R16: Move 16-bit value to memory (undocumented legacy).
+     */
+    public static final int UMOV_RM16_R16;
+
+    /**
+     * UMOV_RM32_R32: Move 32-bit value to memory (undocumented legacy).
+     */
+    public static final int UMOV_RM32_R32;
+
+    /**
+     * UMOV_RM8_R8: Move 8-bit value to memory (undocumented legacy).
+     */
+    public static final int UMOV_RM8_R8;
+
+    /**
+     * VEX_VMOVUPD_XMM_XMMM128: Move unaligned packed double-precision values (VEX prefix).
+     */
+    public static final int VEX_VMOVUPD_XMM_XMMM128;
+
+    /**
+     * VEX_VMOVUPS_XMM_XMMM128: Move unaligned packed single-precision values (VEX prefix).
+     */
+    public static final int VEX_VMOVUPS_XMM_XMMM128;
+
+    /**
+     * VEX_VMOVUPS_YMM_YMMM256: Move unaligned packed single-precision values (YMM, VEX prefix).
+     */
+    public static final int VEX_VMOVUPS_YMM_YMMM256;
+
+    /**
+     * VMCALL: Call VM monitor (hypervisor call).
+     */
+    public static final int VMCALL;
+
+    /**
+     * VMFUNC: Execute a VM function (e.g., EPTP switch).
+     */
+    public static final int VMFUNC;
+
+    /**
+     * VMLAUNCH: Launch virtual machine from VMCS.
+     */
+    public static final int VMLAUNCH;
+
+    /**
+     * VMLOADD: Load virtual machine state (DWORD).
+     */
+    public static final int VMLOADD;
+
+    /**
+     * VMLOADQ: Load virtual machine state (QWORD).
+     */
+    public static final int VMLOADQ;
+
+    /**
+     * VMLOADW: Load virtual machine state (WORD).
+     */
+    public static final int VMLOADW;
+
+    /**
+     * VMMCALL: Hypervisor call (AMD).
+     */
+    public static final int VMMCALL;
+
+    /**
+     * VMRESUME: Resume execution of a virtual machine.
+     */
+    public static final int VMRESUME;
+
+    /**
+     * VMRUND: Run virtual machine (DWORD state).
+     */
+    public static final int VMRUND;
+
+    /**
+     * VMRUNQ: Run virtual machine (QWORD state).
+     */
+    public static final int VMRUNQ;
+
+    /**
+     * VMRUNW: Run virtual machine (WORD state).
+     */
+    public static final int VMRUNW;
+
+    /**
+     * VMSAVED: Save virtual machine state (DWORD).
+     */
+    public static final int VMSAVED;
+
+    /**
+     * VMSAVEQ: Save virtual machine state (QWORD).
+     */
+    public static final int VMSAVEQ;
+
+    /**
+     * VMSAVEW: Save virtual machine state (WORD).
+     */
+    public static final int VMSAVEW;
+
+    /**
+     * VMXOFF: Exit VMX operation.
+     */
+    public static final int VMXOFF;
+
+    /**
+     * WBINVD: Write back and invalidate cache.
+     */
+    public static final int WBINVD;
+
+    /**
+     * WBNOINVD: Write back without invalidating cache.
+     */
+    public static final int WBNOINVD;
+
+    /**
+     * WRPKRU: Write to the PKRU register (protection keys).
+     */
+    public static final int WRPKRU;
+
+    /**
+     * XEND: End transactional execution.
+     */
+    public static final int XEND;
+
+    /**
+     * XGETBV: Get the value of an extended control register (XCR).
+     */
+    public static final int XGETBV;
+
+    /**
+     * XSETBV: Set the value of an extended control register (XCR).
+     */
+    public static final int XSETBV;
+
+    /**
+     * XTEST: Test if in transactional execution.
+     */
+    public static final int XTEST;
+
     //FIXME: THIS NEEDS TO BE REORGANIZED BADLY. In 1.0.3
     static {
         int i = 0;
@@ -4918,5 +5418,121 @@ public class Code {
         PUSH_RM16 = i++;
         PUSH_RM32 = i++;
         PUSH_RM64 = i++;
+
+        // Cache Instructions
+        CL1INVMB = i++;
+        CLZEROD = i++;
+        CLZEROQ = i++;
+        CLZEROW = i++;
+        INVD = i++;
+        INVLPGAD = i++;
+        INVLPGAQ = i++;
+        INVLPGAW = i++;
+        INVLPG_M = i++;
+        LOADALL286 = i++;
+        LOADALL386 = i++;
+        MCOMMIT = i++;
+        PREFETCHWT1_M8 = i++;
+        PREFETCHW_M8 = i++;
+        PREFETCH_M8 = i++;
+        WBINVD = i++;
+        WBNOINVD = i++;
+
+        // CPU and Privileged Instructions
+        CLAC = i++;
+        CLGI = i++;
+        CLTS = i++;
+        ENCLS = i++;
+        ENCLU = i++;
+        ENCLV = i++;
+        FEMMS = i++;
+        LIDT_M1632 = i++;
+        LIDT_M1632_16 = i++;
+        LIDT_M1664 = i++;
+        LMSW_R32M16 = i++;
+        LMSW_R64M16 = i++;
+        LMSW_RM16 = i++;
+        MONITORD = i++;
+        MONITORQ = i++;
+        MONITORW = i++;
+        MONITORXD = i++;
+        MONITORXQ = i++;
+        MONITORXW = i++;
+        MWAIT = i++;
+        MWAITX = i++;
+        PCONFIG = i++;
+        RDTSCP = i++;
+        RSTORSSP_M64 = i++;
+        SAVEPREVSSP = i++;
+        SETSSBSY = i++;
+        SKINIT = i++;
+        STAC = i++;
+        STGI = i++;
+        STOREALL = i++;
+        SWAPGS = i++;
+        SYSCALL = i++;
+        SYSRETD = i++;
+        SYSRETQ = i++;
+        UD2 = i++;
+
+        // External Control and System Table Instructions
+        LAR_R16_RM16 = i++;
+        LAR_R32_R32M16 = i++;
+        LAR_R64_R64M16 = i++;
+        LSL_R16_RM16 = i++;
+        LSL_R32_R32M16 = i++;
+        LSL_R64_R64M16 = i++;
+        SMSW_R32M16 = i++;
+        SMSW_R64M16 = i++;
+        SMSW_RM16 = i++;
+
+        // Virtualization Instructions
+        VMCALL = i++;
+        VMFUNC = i++;
+        VMLAUNCH = i++;
+        VMLOADD = i++;
+        VMLOADQ = i++;
+        VMLOADW = i++;
+        VMMCALL = i++;
+        VMRESUME = i++;
+        VMRUND = i++;
+        VMRUNQ = i++;
+        VMRUNW = i++;
+        VMSAVED = i++;
+        VMSAVEQ = i++;
+        VMSAVEW = i++;
+        VMXOFF = i++;
+
+        // Vector/AVX Instructions
+        EVEX_VMOVUPS_XMM_K1Z_XMMM128 = i++;
+        EVEX_VMOVUPS_YMM_K1Z_YMMM256 = i++;
+        EVEX_VMOVUPS_ZMM_K1Z_ZMMM512 = i++;
+        MOVUPD_XMM_XMMM128 = i++;
+        MOVUPS_XMM_XMMM128 = i++;
+        VEX_VMOVUPD_XMM_XMMM128 = i++;
+        VEX_VMOVUPS_XMM_XMMM128 = i++;
+        VEX_VMOVUPS_YMM_YMMM256 = i++;
+
+        // Unofficial/Reserved Instructions
+        RESERVEDNOP_RM16_R16_0F0D = i++;
+        RESERVEDNOP_RM32_R32_0F0D = i++;
+        RESERVEDNOP_RM64_R64_0F0D = i++;
+
+        //UMOVE (Undocumented Move)
+        UMOV_R16_RM16 = i++;
+        UMOV_R32_RM32 = i++;
+        UMOV_R8_RM8 = i++;
+        UMOV_RM16_R16 = i++;
+        UMOV_RM32_R32 = i++;
+        UMOV_RM8_R8 = i++;
+
+        // Miscellaneous Instructions
+        RDPKRU = i++;
+        RDPRU = i++;
+        WRPKRU = i++;
+        XEND = i++;
+        XGETBV = i++;
+        XSETBV = i++;
+        XTEST = i;
     }
 }
