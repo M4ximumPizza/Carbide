@@ -2532,6 +2532,1507 @@ public class Code {
      */
     public static final int FDIV_M32FP;
 
+    /**
+     * F2XM1: Convert ST(0) to a floating point value and subtract 1.
+     */
+    public static final int F2XM1;
+
+    /**
+     * FABS: Take the absolute value of the floating point value in ST(0).
+     */
+    public static final int FABS;
+
+    /**
+     * FADD_M64FP: Add a 64-bit floating-point value in memory to ST(0).
+     */
+    public static final int FADD_M64FP;
+
+    /**
+     * FADD_ST0_STI: Add ST(i) to ST(0).
+     */
+    public static final int FADD_ST0_STI;
+
+    /**
+     * FADD_STI_ST0: Add ST(0) to ST(i).
+     */
+    public static final int FADD_STI_ST0;
+
+    /**
+     * FCHS: Change the sign of the value in ST(0).
+     */
+    public static final int FCHS;
+
+    /**
+     * FCLEX: Clear floating-point exception flags.
+     */
+    public static final int FCLEX;
+
+    /**
+     * FCMOVBE_ST0_STI: Move if below or equal (CF or ZF set).
+     */
+    public static final int FCMOVBE_ST0_STI;
+
+    /**
+     * FCMOVB_ST0_STI: Move if below (CF set).
+     */
+    public static final int FCMOVB_ST0_STI;
+
+    /**
+     * FCMOVE_ST0_STI: Move if equal (ZF set).
+     */
+    public static final int FCMOVE_ST0_STI;
+
+    /**
+     * FCMOVNBE_ST0_STI: Move if not below or equal (CF and ZF clear).
+     */
+    public static final int FCMOVNBE_ST0_STI;
+
+    /**
+     * FCMOVNB_ST0_STI: Move if not below (CF clear).
+     */
+    public static final int FCMOVNB_ST0_STI;
+
+    /**
+     * FCMOVNE_ST0_STI: Move if not equal (ZF clear).
+     */
+    public static final int FCMOVNE_ST0_STI;
+
+    /**
+     * FCMOVNU_ST0_STI: Move if not unordered (PF clear).
+     */
+    public static final int FCMOVNU_ST0_STI;
+
+    /**
+     * FCMOVU_ST0_STI: Move if unordered (PF set).
+     */
+    public static final int FCMOVU_ST0_STI;
+
+    /**
+     * FCOMI_ST0_STI: Compare ST(0) with ST(i) and set flags.
+     */
+    public static final int FCOMI_ST0_STI;
+
+    /**
+     * FCOMP_M64FP: Compare ST(0) with 64-bit float in memory and pop register stack.
+     */
+    public static final int FCOMP_M64FP;
+
+    /**
+     * FCOMP_ST0_STI: Compare ST(0) with ST(i) and pop register stack.
+     */
+    public static final int FCOMP_ST0_STI;
+
+    /**
+     * FCOMP_ST0_STI_DCD8: Duplicate encoding variant of FCOMP ST(i).
+     */
+    public static final int FCOMP_ST0_STI_DCD8;
+
+    /**
+     * FCOM_M64FP: Compare ST(0) with 64-bit float in memory.
+     */
+    public static final int FCOM_M64FP;
+
+    /**
+     * FCOM_ST0_STI: Compare ST(0) with ST(i).
+     */
+    public static final int FCOM_ST0_STI;
+
+    /**
+     * FCOM_ST0_STI_DCD0: Duplicate encoding variant of FCOM ST(i).
+     */
+    public static final int FCOM_ST0_STI_DCD0;
+
+    /**
+     * FCOS: Compute cosine of ST(0).
+     */
+    public static final int FCOS;
+
+    /**
+     * FDECSTP: Decrement the FPU register stack pointer.
+     */
+    public static final int FDECSTP;
+
+    /**
+     * FDISI: Disable FPU interrupts (obsolete).
+     */
+    public static final int FDISI;
+
+    /**
+     * FDIVR_M32FP: Divide ST(0) by 32-bit float in memory (reverse operands).
+     */
+    public static final int FDIVR_M32FP;
+
+    /**
+     * FDIVR_M64FP: Divide ST(0) by 64-bit float in memory (reverse operands).
+     */
+    public static final int FDIVR_M64FP;
+
+    /**
+     * FDIVR_ST0_STI: Divide ST(i) by ST(0).
+     */
+    public static final int FDIVR_ST0_STI;
+
+    /**
+     * FDIV_M64FP: Divide 64-bit float in memory by ST(0).
+     */
+    public static final int FDIV_M64FP;
+
+    /**
+     * FDIV_ST0_STI: Divide ST(0) by ST(i).
+     */
+    public static final int FDIV_ST0_STI;
+
+    /**
+     * FENI: Enable FPU interrupts (obsolete).
+     */
+    public static final int FENI;
+
+    /**
+     * FIADD_M32INT: Add 32-bit integer in memory to ST(0).
+     */
+    public static final int FIADD_M32INT;
+
+    /**
+     * FICOMP_M32INT: Compare 32-bit integer with ST(0) and pop.
+     */
+    public static final int FICOMP_M32INT;
+
+    /**
+     * FICOM_M32INT: Compare 32-bit integer with ST(0).
+     */
+    public static final int FICOM_M32INT;
+
+    /**
+     * FIDIVR_M32INT: Divide ST(0) by 32-bit integer in memory (reverse operands).
+     */
+    public static final int FIDIVR_M32INT;
+
+    /**
+     * FIDIV_M32INT: Divide 32-bit integer in memory by ST(0).
+     */
+    public static final int FIDIV_M32INT;
+
+    /**
+     * FILD_M32INT: Load 32-bit integer from memory into ST(0).
+     */
+    public static final int FILD_M32INT;
+
+    /**
+     * FIMUL_M32INT: Multiply ST(0) by 32-bit integer in memory.
+     */
+    public static final int FIMUL_M32INT;
+
+    /**
+     * FINCSTP: Increment the FPU register stack pointer.
+     */
+    public static final int FINCSTP;
+
+    /**
+     * FINIT: Initialize the FPU (reset control and status words).
+     */
+    public static final int FINIT;
+
+    /**
+     * FISTP_M32INT: Store ST(0) to 32-bit integer in memory and pop.
+     */
+    public static final int FISTP_M32INT;
+
+    /**
+     * FISTTP_M32INT: Store ST(0) to 32-bit integer in memory with truncation and pop.
+     */
+    public static final int FISTTP_M32INT;
+
+    /**
+     * FIST_M32INT: Store ST(0) to 32-bit integer in memory.
+     */
+    public static final int FIST_M32INT;
+
+    /**
+     * FISUBR_M32INT: Subtract ST(0) from 32-bit integer in memory.
+     */
+    public static final int FISUBR_M32INT;
+
+    /**
+     * FISUB_M32INT: Subtract 32-bit integer in memory from ST(0).
+     */
+    public static final int FISUB_M32INT;
+
+    /**
+     * FLD1: Load constant 1.0 into ST(0).
+     */
+    public static final int FLD1;
+
+    /**
+     * FLDCW_M2BYTE: Load x87 FPU control word from 2-byte memory location.
+     */
+    public static final int FLDCW_M2BYTE;
+
+    /**
+     * FLDENV_M14BYTE: Load x87 FPU environment from 14-byte memory region.
+     */
+    public static final int FLDENV_M14BYTE;
+
+    /**
+     * FLDENV_M28BYTE: Load x87 FPU environment from 28-byte memory region.
+     */
+    public static final int FLDENV_M28BYTE;
+
+    /**
+     * FLDL2E: Load constant log2(e) into ST(0).
+     */
+    public static final int FLDL2E;
+
+    /**
+     * FLDL2T: Load constant log2(10) into ST(0).
+     */
+    public static final int FLDL2T;
+
+    /**
+     * FLDLG2: Load constant log10(2) into ST(0).
+     */
+    public static final int FLDLG2;
+
+    /**
+     * FLDLN2: Load constant ln(2) into ST(0).
+     */
+    public static final int FLDLN2;
+
+    /**
+     * FLDPI: Load constant pi into ST(0).
+     */
+    public static final int FLDPI;
+
+    /**
+     * FLDZ: Load constant 0.0 into ST(0).
+     */
+    public static final int FLDZ;
+
+    /**
+     * FLD_M32FP: Load 32-bit floating-point value from memory into ST(0).
+     */
+    public static final int FLD_M32FP;
+
+    /**
+     * FLD_M80FP: Load 80-bit floating-point value from memory into ST(0).
+     */
+    public static final int FLD_M80FP;
+
+    /**
+     * FLD_STI: Push ST(i) onto the register stack.
+     */
+    public static final int FLD_STI;
+
+    /**
+     * FMUL_M64FP: Multiply ST(0) by 64-bit float in memory.
+     */
+    public static final int FMUL_M64FP;
+
+    /**
+     * FMUL_ST0_STI: Multiply ST(0) by ST(i).
+     */
+    public static final int FMUL_ST0_STI;
+
+    /**
+     * FMUL_STI_ST0: Multiply ST(i) by ST(0).
+     */
+    public static final int FMUL_STI_ST0;
+
+    /**
+     * FNCLEX: Clear exceptions without checking interrupt enable flag.
+     */
+    public static final int FNCLEX;
+
+    /**
+     * FNDISI: Disable interrupts (undocumented).
+     */
+    public static final int FNDISI;
+
+    /**
+     * FNENI: Enable interrupts (undocumented).
+     */
+    public static final int FNENI;
+
+    /**
+     * FNINIT: Initialize FPU without generating exceptions.
+     */
+    public static final int FNINIT;
+
+    /**
+     * FNOP: No operation (FPU).
+     */
+    public static final int FNOP;
+
+    /**
+     * FNSETPM: Set protected mode (undocumented).
+     */
+    public static final int FNSETPM;
+
+    /**
+     * FNSTCW_M2BYTE: Store control word to 2-byte memory.
+     */
+    public static final int FNSTCW_M2BYTE;
+
+    /**
+     * FNSTENV_M14BYTE: Store FPU environment to 14-byte memory.
+     */
+    public static final int FNSTENV_M14BYTE;
+
+    /**
+     * FNSTENV_M28BYTE: Store FPU environment to 28-byte memory.
+     */
+    public static final int FNSTENV_M28BYTE;
+
+    /**
+     * FPATAN: Replace ST(1) with arctangent of ST(1)/ST(0), pop stack.
+     */
+    public static final int FPATAN;
+
+    /**
+     * FPREM: Partial remainder (rounds toward zero).
+     */
+    public static final int FPREM;
+
+    /**
+     * FPREM1: Partial remainder (rounds to nearest).
+     */
+    public static final int FPREM1;
+
+    /**
+     * FPTAN: Replace ST(0) with tangent and push 1.0.
+     */
+    public static final int FPTAN;
+
+    /**
+     * FRNDINT: Round ST(0) to integer.
+     */
+    public static final int FRNDINT;
+
+    /**
+     * FRSTPM: Store x87 FPU state to memory and pop all registers (undocumented).
+     */
+    public static final int FRSTPM;
+
+    /**
+     * FSCALE: Scale ST(0) by ST(1).
+     */
+    public static final int FSCALE;
+
+    /**
+     * FSETPM: Set protected mode (obsolete).
+     */
+    public static final int FSETPM;
+
+    /**
+     * FSIN: Compute sine of ST(0).
+     */
+    public static final int FSIN;
+
+    /**
+     * FSINCOS: Compute sine and cosine of ST(0).
+     */
+    public static final int FSINCOS;
+
+    /**
+     * FSQRT: Compute square root of ST(0).
+     */
+    public static final int FSQRT;
+
+    /**
+     * FSTCW_M2BYTE: Store control word to 2-byte memory.
+     */
+    public static final int FSTCW_M2BYTE;
+
+    /**
+     * FSTENV_M14BYTE: Store FPU environment to 14-byte memory.
+     */
+    public static final int FSTENV_M14BYTE;
+
+    /**
+     * FSTENV_M28BYTE: Store FPU environment to 28-byte memory.
+     */
+    public static final int FSTENV_M28BYTE;
+
+    /**
+     * FSTPNCE_STI: Store ST(i) and pop register stack (noncanonical encoding).
+     */
+    public static final int FSTPNCE_STI;
+
+    /**
+     * FSTP_M32FP: Store ST(0) to 32-bit float in memory and pop.
+     */
+    public static final int FSTP_M32FP;
+
+    /**
+     * FSTP_M80FP: Store ST(0) to 80-bit float in memory and pop.
+     */
+    public static final int FSTP_M80FP;
+
+    /**
+     * FST_M32FP: Store ST(0) to 32-bit float in memory.
+     */
+    public static final int FST_M32FP;
+
+    /**
+     * FSUBR_M64FP: Subtract ST(0) from 64-bit float in memory.
+     */
+    public static final int FSUBR_M64FP;
+
+    /**
+     * FSUBR_ST0_STI: Subtract ST(0) from ST(i).
+     */
+    public static final int FSUBR_ST0_STI;
+
+    /**
+     * FSUB_M64FP: Subtract 64-bit float in memory from ST(0).
+     */
+    public static final int FSUB_M64FP;
+
+    /**
+     * FSUB_ST0_STI: Subtract ST(i) from ST(0).
+     */
+    public static final int FSUB_ST0_STI;
+
+    /**
+     * FTST: Compare ST(0) with 0.0 and set condition flags.
+     */
+    public static final int FTST;
+
+    /**
+     * FUCOMI_ST0_STI: Unordered compare ST(0) with ST(i) and set flags.
+     */
+    public static final int FUCOMI_ST0_STI;
+
+    /**
+     * FUCOMPP: Unordered compare ST(0) with ST(1) and pop twice.
+     */
+    public static final int FUCOMPP;
+
+    /**
+     * FXAM: Examine ST(0) and set condition flags.
+     */
+    public static final int FXAM;
+
+    /**
+     * FXCH_ST0_STI: Exchange ST(0) with ST(i).
+     */
+    public static final int FXCH_ST0_STI;
+
+    /**
+     * FXTRACT: Extract exponent and significand from ST(0).
+     */
+    public static final int FXTRACT;
+
+    /**
+     * FYL2X: Compute y * log2(x) with ST(1) = y and ST(0) = x.
+     */
+    public static final int FYL2X;
+
+    /**
+     * FYL2XP1: Compute y * log2(x + 1) with ST(1) = y and ST(0) = x.
+     */
+    public static final int FYL2XP1;
+
+    /**
+     * CALL_REL16: Call near, relative, displacement relative to the next instruction (16-bit).
+     */
+    public static final int CALL_REL16;
+
+    /**
+     * CALL_REL32_32: Call near, relative, displacement relative to the next instruction (32-bit in 32-bit mode).
+     */
+    public static final int CALL_REL32_32;
+
+    /**
+     * CALL_REL32_64: Call near, relative, displacement relative to the next instruction (32-bit in 64-bit mode).
+     */
+    public static final int CALL_REL32_64;
+
+    /**
+     * FADDP_STI_ST0: Add ST(0) to ST(i) and pop the FPU stack.
+     */
+    public static final int FADDP_STI_ST0;
+
+    /**
+     * FBLD_M80BCD: Load BCD value from memory into ST(0).
+     */
+    public static final int FBLD_M80BCD;
+
+    /**
+     * FBSTP_M80BCD: Store ST(0) into memory as BCD and pop the FPU stack.
+     */
+    public static final int FBSTP_M80BCD;
+
+    /**
+     * FCOMIP_ST0_STI: Compare ST(0) with ST(i) and set flags; then pop ST(0).
+     */
+    public static final int FCOMIP_ST0_STI;
+
+    /**
+     * FCOMPP: Compare ST(0) with ST(1), pop twice from the FPU stack.
+     */
+    public static final int FCOMPP;
+
+    /**
+     * FCOMP_ST0_STI_DED0: Compare ST(0) with ST(i) and pop ST(0).
+     */
+    public static final int FCOMP_ST0_STI_DED0;
+
+    /**
+     * FDIVP_STI_ST0: Divide ST(i) by ST(0), store result in ST(i), and pop ST(0).
+     */
+    public static final int FDIVP_STI_ST0;
+
+    /**
+     * FDIVRP_STI_ST0: Reverse divide ST(0) by ST(i), store in ST(i), and pop ST(0).
+     */
+    public static final int FDIVRP_STI_ST0;
+
+    /**
+     * FDIVR_STI_ST0: Reverse divide ST(0) by ST(i), store result in ST(0).
+     */
+    public static final int FDIVR_STI_ST0;
+
+    /**
+     * FDIV_STI_ST0: Divide ST(i) by ST(0), store result in ST(0).
+     */
+    public static final int FDIV_STI_ST0;
+
+    /**
+     * FFREEP_STI: Free ST(i) and mark it as empty, then pop the FPU stack.
+     */
+    public static final int FFREEP_STI;
+
+    /**
+     * FFREE_STI: Free ST(i) and mark it as empty.
+     */
+    public static final int FFREE_STI;
+
+    /**
+     * FIADD_M16INT: Add 16-bit integer in memory to ST(0).
+     */
+    public static final int FIADD_M16INT;
+
+    /**
+     * FICOMP_M16INT: Compare 16-bit integer in memory with ST(0), then pop ST(0).
+     */
+    public static final int FICOMP_M16INT;
+
+    /**
+     * FICOM_M16INT: Compare 16-bit integer in memory with ST(0).
+     */
+    public static final int FICOM_M16INT;
+
+    /**
+     * FIDIVR_M16INT: Reverse divide ST(0) by 16-bit integer in memory.
+     */
+    public static final int FIDIVR_M16INT;
+
+    /**
+     * FIDIV_M16INT: Divide ST(0) by 16-bit integer in memory.
+     */
+    public static final int FIDIV_M16INT;
+
+    /**
+     * FILD_M16INT: Load 16-bit integer from memory into ST(0).
+     */
+    public static final int FILD_M16INT;
+
+    /**
+     * FILD_M64INT: Load 64-bit integer from memory into ST(0).
+     */
+    public static final int FILD_M64INT;
+
+    /**
+     * FIMUL_M16INT: Multiply ST(0) by 16-bit integer from memory.
+     */
+    public static final int FIMUL_M16INT;
+
+    /**
+     * FISTP_M16INT: Store ST(0) into memory as 16-bit integer and pop ST(0).
+     */
+    public static final int FISTP_M16INT;
+
+    /**
+     * FISTP_M64INT: Store ST(0) into memory as 64-bit integer and pop ST(0).
+     */
+    public static final int FISTP_M64INT;
+
+    /**
+     * FISTTP_M16INT: Truncate and store ST(0) as 16-bit integer and pop ST(0).
+     */
+    public static final int FISTTP_M16INT;
+
+    /**
+     * FISTTP_M64INT: Truncate and store ST(0) as 64-bit integer and pop ST(0).
+     */
+    public static final int FISTTP_M64INT;
+
+    /**
+     * FIST_M16INT: Store ST(0) into memory as 16-bit integer.
+     */
+    public static final int FIST_M16INT;
+
+    /**
+     * FISUBR_M16INT: Reverse subtract 16-bit integer in memory from ST(0).
+     */
+    public static final int FISUBR_M16INT;
+
+    /**
+     * FISUB_M16INT: Subtract 16-bit integer in memory from ST(0).
+     */
+    public static final int FISUB_M16INT;
+
+    /**
+     * FLD_M64FP: Load 64-bit floating-point value from memory into ST(0).
+     */
+    public static final int FLD_M64FP;
+
+    /**
+     * FMULP_STI_ST0: Multiply ST(i) by ST(0), store result in ST(i), and pop ST(0).
+     */
+    public static final int FMULP_STI_ST0;
+
+    /**
+     * FNSAVE_M108BYTE: Save the FPU state into 108-byte memory location.
+     */
+    public static final int FNSAVE_M108BYTE;
+
+    /**
+     * FNSAVE_M94BYTE: Save the FPU state into 94-byte memory location.
+     */
+    public static final int FNSAVE_M94BYTE;
+
+    /**
+     * FNSTSW_AX: Store the FPU status word into the AX register.
+     */
+    public static final int FNSTSW_AX;
+
+    /**
+     * FNSTSW_M2BYTE: Store the FPU status word into a 2-byte memory location.
+     */
+    public static final int FNSTSW_M2BYTE;
+
+    /**
+     * FRSTOR_M108BYTE: Restore the FPU state from a 108-byte memory location.
+     */
+    public static final int FRSTOR_M108BYTE;
+
+    /**
+     * FRSTOR_M94BYTE: Restore the FPU state from a 94-byte memory location.
+     */
+    public static final int FRSTOR_M94BYTE;
+
+    /**
+     * FSAVE_M108BYTE: Save the FPU state into a 108-byte memory location and suspend FPU operation.
+     */
+    public static final int FSAVE_M108BYTE;
+
+    /**
+     * FSAVE_M94BYTE: Save the FPU state into a 94-byte memory location and suspend FPU operation.
+     */
+    public static final int FSAVE_M94BYTE;
+
+    /**
+     * FSTDW_AX: Store ST(0) as a double word into the AX register.
+     */
+    public static final int FSTDW_AX;
+
+    /**
+     * FSTP_M64FP: Store ST(0) as 64-bit floating-point value into memory and pop the FPU stack.
+     */
+    public static final int FSTP_M64FP;
+
+    /**
+     * FSTP_STI: Store ST(0) into ST(i) and pop ST(0).
+     */
+    public static final int FSTP_STI;
+
+    /**
+     * FSTP_STI_DFD0: Store ST(0) into ST(i) with a specific precision and pop ST(0).
+     */
+    public static final int FSTP_STI_DFD0;
+
+    /**
+     * FSTP_STI_DFD8: Store ST(0) into ST(i) with another specific precision and pop ST(0).
+     */
+    public static final int FSTP_STI_DFD8;
+
+    /**
+     * FSTSG_AX: Store the FPU status group from AX register.
+     */
+    public static final int FSTSG_AX;
+
+    /**
+     * FSTSW_AX: Store the FPU status word into AX register.
+     */
+    public static final int FSTSW_AX;
+
+    /**
+     * FSTSW_M2BYTE: Store the FPU status word into a 2-byte memory location.
+     */
+    public static final int FSTSW_M2BYTE;
+
+    /**
+     * FST_M64FP: Store ST(0) as a 64-bit floating-point value into memory.
+     */
+    public static final int FST_M64FP;
+
+    /**
+     * FST_STI: Store ST(0) into ST(i) without popping ST(0).
+     */
+    public static final int FST_STI;
+
+    /**
+     * FSUBP_STI_ST0: Subtract ST(0) from ST(i), store result in ST(i), and pop ST(0).
+     */
+    public static final int FSUBP_STI_ST0;
+
+    /**
+     * FSUBRP_STI_ST0: Reverse subtract ST(i) from ST(0), store result in ST(i), and pop ST(0).
+     */
+    public static final int FSUBRP_STI_ST0;
+
+    /**
+     * FSUBR_STI_ST0: Reverse subtract ST(i) from ST(0), store result in ST(0).
+     */
+    public static final int FSUBR_STI_ST0;
+
+    /**
+     * FSUB_STI_ST0: Subtract ST(i) from ST(0), store result in ST(0).
+     */
+    public static final int FSUB_STI_ST0;
+
+    /**
+     * FUCOMIP_ST0_STI: Compare ST(0) with ST(i) and set flags, then pop ST(0) (non-exceptional).
+     */
+    public static final int FUCOMIP_ST0_STI;
+
+    /**
+     * FUCOMP_ST0_STI: Compare ST(0) with ST(i) and set flags, then pop ST(0) (exceptional).
+     */
+    public static final int FUCOMP_ST0_STI;
+
+    /**
+     * FUCOM_ST0_STI: Compare ST(0) with ST(i) and set flags.
+     */
+    public static final int FUCOM_ST0_STI;
+
+    /**
+     * FXCH_ST0_STI_DDC8: Exchange ST(0) with ST(i) (using specific precision format).
+     */
+    public static final int FXCH_ST0_STI_DDC8;
+
+    /**
+     * FXCH_ST0_STI_DFC8: Exchange ST(0) with ST(i) (using different precision format).
+     */
+    public static final int FXCH_ST0_STI_DFC8;
+
+    /**
+     * IN_AL_IMM8: Input 8-bit data from the port specified by IMM8 into the AL register.
+     */
+    public static final int IN_AL_IMM8;
+
+    /**
+     * IN_AX_IMM8: Input 8-bit data from the port specified by IMM8 into the AX register.
+     */
+    public static final int IN_AX_IMM8;
+
+    /**
+     * IN_EAX_IMM8: Input 8-bit data from the port specified by IMM8 into the EAX register.
+     */
+    public static final int IN_EAX_IMM8;
+
+    /**
+     * JCXZ_REL8_16: Jump to the address specified by REL8 if CX register is zero (16-bit).
+     */
+    public static final int JCXZ_REL8_16;
+
+    /**
+     * JCXZ_REL8_32: Jump to the address specified by REL8 if CX register is zero (32-bit).
+     */
+    public static final int JCXZ_REL8_32;
+
+    /**
+     * JECXZ_REL8_16: Jump to the address specified by REL8 if ECX register is zero (16-bit).
+     */
+    public static final int JECXZ_REL8_16;
+
+    /**
+     * JECXZ_REL8_32: Jump to the address specified by REL8 if ECX register is zero (32-bit).
+     */
+    public static final int JECXZ_REL8_32;
+
+    /**
+     * JECXZ_REL8_64: Jump to the address specified by REL8 if ECX register is zero (64-bit).
+     */
+    public static final int JECXZ_REL8_64;
+
+    /**
+     * JMP_PTR1616: Jump to the address specified by a 16-bit pointer (16-bit mode).
+     */
+    public static final int JMP_PTR1616;
+
+    /**
+     * JMP_PTR1632: Jump to the address specified by a 16-bit pointer (32-bit mode).
+     */
+    public static final int JMP_PTR1632;
+
+    /**
+     * JMP_REL16: Jump to the address specified by the 16-bit relative offset.
+     */
+    public static final int JMP_REL16;
+
+    /**
+     * JMP_REL32_32: Jump to the address specified by the 32-bit relative offset (32-bit mode).
+     */
+    public static final int JMP_REL32_32;
+
+    /**
+     * JMP_REL32_64: Jump to the address specified by the 32-bit relative offset (64-bit mode).
+     */
+    public static final int JMP_REL32_64;
+
+    /**
+     * JMP_REL8_16: Jump to the address specified by the 8-bit relative offset (16-bit mode).
+     */
+    public static final int JMP_REL8_16;
+
+    /**
+     * JMP_REL8_32: Jump to the address specified by the 8-bit relative offset (32-bit mode).
+     */
+    public static final int JMP_REL8_32;
+
+    /**
+     * JRCXZ_REL8_16: Jump to the address specified by REL8 if RCX register is zero (16-bit mode).
+     */
+    public static final int JRCXZ_REL8_16;
+
+    /**
+     * JRCXZ_REL8_64: Jump to the address specified by REL8 if RCX register is zero (64-bit mode).
+     */
+    public static final int JRCXZ_REL8_64;
+
+    /**
+     * LOOPE_REL8_16_CX: Loop while the CX register is not zero, executing the jump specified by REL8 (16-bit mode).
+     */
+    public static final int LOOPE_REL8_16_CX;
+
+    /**
+     * LOOPE_REL8_16_ECX: Loop while the ECX register is not zero, executing the jump specified by REL8 (16-bit mode).
+     */
+    public static final int LOOPE_REL8_16_ECX;
+
+    /**
+     * LOOPE_REL8_16_RCX: Loop while the RCX register is not zero, executing the jump specified by REL8 (16-bit mode).
+     */
+    public static final int LOOPE_REL8_16_RCX;
+
+    /**
+     * LOOPE_REL8_32_CX: Loop while the CX register is not zero, executing the jump specified by REL8 (32-bit mode).
+     */
+    public static final int LOOPE_REL8_32_CX;
+
+    /**
+     * LOOPE_REL8_32_ECX: Loop while the ECX register is not zero, executing the jump specified by REL8 (32-bit mode).
+     */
+    public static final int LOOPE_REL8_32_ECX;
+
+    /**
+     * LOOPE_REL8_64_ECX: Loop while the ECX register is not zero, executing the jump specified by REL8 (64-bit mode).
+     */
+    public static final int LOOPE_REL8_64_ECX;
+
+    /**
+     * LOOPE_REL8_64_RCX: Loop while the RCX register is not zero, executing the jump specified by REL8 (64-bit mode).
+     */
+    public static final int LOOPE_REL8_64_RCX;
+
+    /**
+     * LOOPNE_REL8_16_CX: Loop while the CX register is not zero and ZF is clear, executing the jump specified by REL8 (16-bit mode).
+     */
+    public static final int LOOPNE_REL8_16_CX;
+
+    /**
+     * LOOPNE_REL8_16_ECX: Loop while the ECX register is not zero and ZF is clear, executing the jump specified by REL8 (16-bit mode).
+     */
+    public static final int LOOPNE_REL8_16_ECX;
+
+    /**
+     * LOOPNE_REL8_16_RCX: Loop while the RCX register is not zero and ZF is clear, executing the jump specified by REL8 (16-bit mode).
+     */
+    public static final int LOOPNE_REL8_16_RCX;
+
+    /**
+     * LOOPNE_REL8_32_CX: Loop while the CX register is not zero and ZF is clear, executing the jump specified by REL8 (32-bit mode).
+     */
+    public static final int LOOPNE_REL8_32_CX;
+
+    /**
+     * LOOPNE_REL8_32_ECX: Loop while the ECX register is not zero and ZF is clear, executing the jump specified by REL8 (32-bit mode).
+     */
+    public static final int LOOPNE_REL8_32_ECX;
+
+    /**
+     * LOOPNE_REL8_64_ECX: Loop while the ECX register is not zero and ZF is clear, executing the jump specified by REL8 (64-bit mode).
+     */
+    public static final int LOOPNE_REL8_64_ECX;
+
+    /**
+     * LOOPNE_REL8_64_RCX: Loop while the RCX register is not zero and ZF is clear, executing the jump specified by REL8 (64-bit mode).
+     */
+    public static final int LOOPNE_REL8_64_RCX;
+
+    /**
+     * LOOP_REL8_16_CX: Loop while the CX register is not zero, executing the jump specified by REL8 (16-bit mode).
+     */
+    public static final int LOOP_REL8_16_CX;
+
+    /**
+     * LOOP_REL8_16_ECX: Loop while the ECX register is not zero, executing the jump specified by REL8 (16-bit mode).
+     */
+    public static final int LOOP_REL8_16_ECX;
+
+    /**
+     * LOOP_REL8_16_RCX: Loop while the RCX register is not zero, executing the jump specified by REL8 (16-bit mode).
+     */
+    public static final int LOOP_REL8_16_RCX;
+
+    /**
+     * LOOP_REL8_32_CX: Loop while the CX register is not zero, executing the jump specified by REL8 (32-bit mode).
+     */
+    public static final int LOOP_REL8_32_CX;
+
+    /**
+     * LOOP_REL8_32_ECX: Loop while the ECX register is not zero, executing the jump specified by REL8 (32-bit mode).
+     */
+    public static final int LOOP_REL8_32_ECX;
+
+    /**
+     * LOOP_REL8_64_ECX: Loop while the ECX register is not zero, executing the jump specified by REL8 (64-bit mode).
+     */
+    public static final int LOOP_REL8_64_ECX;
+
+    /**
+     * LOOP_REL8_64_RCX: Loop while the RCX register is not zero, executing the jump specified by REL8 (64-bit mode).
+     */
+    public static final int LOOP_REL8_64_RCX;
+
+    /**
+     * OUT_IMM8_AL: Output the byte from the AL register to the I/O port specified by IMM8.
+     */
+    public static final int OUT_IMM8_AL;
+
+    /**
+     * OUT_IMM8_AX: Output the word from the AX register to the I/O port specified by IMM8.
+     */
+    public static final int OUT_IMM8_AX;
+
+    /**
+     * OUT_IMM8_EAX: Output the double word from the EAX register to the I/O port specified by IMM8.
+     */
+    public static final int OUT_IMM8_EAX;
+
+    /**
+     * CALL_M1616: Call a procedure specified by the 16-bit memory address.
+     */
+    public static final int CALL_M1616;
+
+    /**
+     * CALL_M1632: Call a procedure specified by the 32-bit memory address.
+     */
+    public static final int CALL_M1632;
+
+    /**
+     * CALL_M1664: Call a procedure specified by the 64-bit memory address.
+     */
+    public static final int CALL_M1664;
+
+    /**
+     * CALL_RM16: Call a procedure specified by the 16-bit register/memory address.
+     */
+    public static final int CALL_RM16;
+
+    /**
+     * CALL_RM32: Call a procedure specified by the 32-bit register/memory address.
+     */
+    public static final int CALL_RM32;
+
+    /**
+     * CALL_RM64: Call a procedure specified by the 64-bit register/memory address.
+     */
+    public static final int CALL_RM64;
+
+    /**
+     * CLC: Clear the carry flag.
+     */
+    public static final int CLC;
+
+    /**
+     * CLD: Clear the direction flag.
+     */
+    public static final int CLD;
+
+    /**
+     * CLI: Clear the interrupt flag.
+     */
+    public static final int CLI;
+
+    /**
+     * CMC: Complement the carry flag (invert its value).
+     */
+    public static final int CMC;
+
+    /**
+     * DEC_RM16: Decrement the value at the specified 16-bit memory/register address.
+     */
+    public static final int DEC_RM16;
+
+    /**
+     * DEC_RM32: Decrement the value at the specified 32-bit memory/register address.
+     */
+    public static final int DEC_RM32;
+
+    /**
+     * DEC_RM64: Decrement the value at the specified 64-bit memory/register address.
+     */
+    public static final int DEC_RM64;
+
+    /**
+     * DEC_RM8: Decrement the value at the specified 8-bit memory/register address.
+     */
+    public static final int DEC_RM8;
+
+    /**
+     * DIV_RM16: Divide the 16-bit accumulator by the specified 16-bit value.
+     */
+    public static final int DIV_RM16;
+
+    /**
+     * DIV_RM32: Divide the 32-bit accumulator by the specified 32-bit value.
+     */
+    public static final int DIV_RM32;
+
+    /**
+     * DIV_RM64: Divide the 64-bit accumulator by the specified 64-bit value.
+     */
+    public static final int DIV_RM64;
+
+    /**
+     * DIV_RM8: Divide the 8-bit accumulator by the specified 8-bit value.
+     */
+    public static final int DIV_RM8;
+
+    /**
+     * HLT: Halt the processor (used to stop execution).
+     */
+    public static final int HLT;
+
+    /**
+     * IDIV_RM16: Signed divide the 16-bit accumulator by the specified 16-bit value.
+     */
+    public static final int IDIV_RM16;
+
+    /**
+     * IDIV_RM32: Signed divide the 32-bit accumulator by the specified 32-bit value.
+     */
+    public static final int IDIV_RM32;
+
+    /**
+     * IDIV_RM64: Signed divide the 64-bit accumulator by the specified 64-bit value.
+     */
+    public static final int IDIV_RM64;
+
+    /**
+     * IDIV_RM8: Signed divide the 8-bit accumulator by the specified 8-bit value.
+     */
+    public static final int IDIV_RM8;
+
+    /**
+     * IMUL_RM16: Multiply the 16-bit accumulator by the specified 16-bit value.
+     */
+    public static final int IMUL_RM16;
+
+    /**
+     * IMUL_RM32: Multiply the 32-bit accumulator by the specified 32-bit value.
+     */
+    public static final int IMUL_RM32;
+
+    /**
+     * IMUL_RM64: Multiply the 64-bit accumulator by the specified 64-bit value.
+     */
+    public static final int IMUL_RM64;
+
+    /**
+     * IMUL_RM8: Multiply the 8-bit accumulator by the specified 8-bit value.
+     */
+    public static final int IMUL_RM8;
+
+    /**
+     * INC_RM16: Increment the value at the specified 16-bit memory/register address.
+     */
+    public static final int INC_RM16;
+
+    /**
+     * INC_RM32: Increment the value at the specified 32-bit memory/register address.
+     */
+    public static final int INC_RM32;
+
+    /**
+     * INC_RM64: Increment the value at the specified 64-bit memory/register address.
+     */
+    public static final int INC_RM64;
+
+    /**
+     * INC_RM8: Increment the value at the specified 8-bit memory/register address.
+     */
+    public static final int INC_RM8;
+
+    /**
+     * INT1: Generate a software interrupt 1 (often used for debugging).
+     */
+    public static final int INT1;
+
+    /**
+     * IN_AL_DX: Input a byte from the I/O port specified by DX into the AL register.
+     */
+    public static final int IN_AL_DX;
+
+    /**
+     * IN_AX_DX: Input a word from the I/O port specified by DX into the AX register.
+     */
+    public static final int IN_AX_DX;
+
+    /**
+     * IN_EAX_DX: Input a double word from the I/O port specified by DX into the EAX register.
+     */
+    public static final int IN_EAX_DX;
+
+    /**
+     * JMPE_RM16: Jump to the address specified by the 16-bit register/memory address, and set the code segment.
+     */
+    public static final int JMPE_RM16;
+
+    /**
+     * JMPE_RM32: Jump to the address specified by the 32-bit register/memory address, and set the code segment.
+     */
+    public static final int JMPE_RM32;
+
+    /**
+     * JMP_M1616: Jump to the address specified by the 16-bit memory address.
+     */
+    public static final int JMP_M1616;
+
+    /**
+     * JMP_M1632: Jump to the address specified by the 32-bit memory address.
+     */
+    public static final int JMP_M1632;
+
+    /**
+     * JMP_M1664: Jump to the address specified by the 64-bit memory address.
+     */
+    public static final int JMP_M1664;
+
+    /**
+     * JMP_REL8_64: Jump to the address specified by the 8-bit relative offset (64-bit mode).
+     */
+    public static final int JMP_REL8_64;
+
+    /**
+     * JMP_RM16: Jump to the address specified by the 16-bit register/memory address.
+     */
+    public static final int JMP_RM16;
+
+    /**
+     * JMP_RM32: Jump to the address specified by the 32-bit register/memory address.
+     */
+    public static final int JMP_RM32;
+
+    /**
+     * JMP_RM64: Jump to the address specified by the 64-bit register/memory address.
+     */
+    public static final int JMP_RM64;
+
+    /**
+     * LGDT_M1632: Load the Global Descriptor Table from the specified 32-bit memory address.
+     */
+    public static final int LGDT_M1632;
+
+    /**
+     * LGDT_M1632_16: Load the Global Descriptor Table from the specified 16-bit memory address.
+     */
+    public static final int LGDT_M1632_16;
+
+    /**
+     * LGDT_M1664: Load the Global Descriptor Table from the specified 64-bit memory address.
+     */
+    public static final int LGDT_M1664;
+
+    /**
+     * LLDT_R32M16: Load the Local Descriptor Table from the 32-bit register and 16-bit memory address.
+     */
+    public static final int LLDT_R32M16;
+
+    /**
+     * LLDT_R64M16: Load the Local Descriptor Table from the 64-bit register and 16-bit memory address.
+     */
+    public static final int LLDT_R64M16;
+
+    /**
+     * LLDT_RM16: Load the Local Descriptor Table from the specified 16-bit register/memory address.
+     */
+    public static final int LLDT_RM16;
+
+    /**
+     * LTR_R32M16: Load the Task Register from the 32-bit register and 16-bit memory address.
+     */
+    public static final int LTR_R32M16;
+
+    /**
+     * LTR_R64M16: Load the Task Register from the 64-bit register and 16-bit memory address.
+     */
+    public static final int LTR_R64M16;
+
+    /**
+     * LTR_RM16: Load the Task Register from the specified 16-bit register/memory address.
+     */
+    public static final int LTR_RM16;
+
+    /**
+     * MUL_RM16: Multiply the 16-bit accumulator by the specified 16-bit value.
+     */
+    public static final int MUL_RM16;
+
+    /**
+     * MUL_RM32: Multiply the 32-bit accumulator by the specified 32-bit value.
+     */
+    public static final int MUL_RM32;
+
+    /**
+     * MUL_RM64: Multiply the 64-bit accumulator by the specified 64-bit value.
+     */
+    public static final int MUL_RM64;
+
+    /**
+     * MUL_RM8: Multiply the 8-bit accumulator by the specified 8-bit value.
+     */
+    public static final int MUL_RM8;
+
+    /**
+     * NEG_RM16: Negate the value at the specified 16-bit memory/register address.
+     */
+    public static final int NEG_RM16;
+
+    /**
+     * NEG_RM32: Negate the value at the specified 32-bit memory/register address.
+     */
+    public static final int NEG_RM32;
+
+    /**
+     * NEG_RM64: Negate the value at the specified 64-bit memory/register address.
+     */
+    public static final int NEG_RM64;
+
+    /**
+     * NEG_RM8: Negate the value at the specified 8-bit memory/register address.
+     */
+    public static final int NEG_RM8;
+
+    /**
+     * NOT_RM16: Perform a bitwise NOT operation on the value at the specified 16-bit memory/register address.
+     */
+    public static final int NOT_RM16;
+
+    /**
+     * NOT_RM32: Perform a bitwise NOT operation on the value at the specified 32-bit memory/register address.
+     */
+    public static final int NOT_RM32;
+
+    /**
+     * NOT_RM64: Perform a bitwise NOT operation on the value at the specified 64-bit memory/register address.
+     */
+    public static final int NOT_RM64;
+
+    /**
+     * NOT_RM8: Perform a bitwise NOT operation on the value at the specified 8-bit memory/register address.
+     */
+    public static final int NOT_RM8;
+
+    /**
+     * OUT_DX_AL: Output the byte in the AL register to the I/O port specified by DX.
+     */
+    public static final int OUT_DX_AL;
+
+    /**
+     * OUT_DX_AX: Output the word in the AX register to the I/O port specified by DX.
+     */
+    public static final int OUT_DX_AX;
+
+    /**
+     * OUT_DX_EAX: Output the double word in the EAX register to the I/O port specified by DX.
+     */
+    public static final int OUT_DX_EAX;
+
+    /**
+     * PUSH_RM16: Push the value at the specified 16-bit memory/register address onto the stack.
+     */
+    public static final int PUSH_RM16;
+
+    /**
+     * PUSH_RM32: Push the value at the specified 32-bit memory/register address onto the stack.
+     */
+    public static final int PUSH_RM32;
+
+    /**
+     * PUSH_RM64: Push the value at the specified 64-bit memory/register address onto the stack.
+     */
+    public static final int PUSH_RM64;
+
+    /**
+     * SGDT_M1632: Store the Global Descriptor Table to the specified 32-bit memory address.
+     */
+    public static final int SGDT_M1632;
+
+    /**
+     * SGDT_M1632_16: Store the Global Descriptor Table to the specified 16-bit memory address.
+     */
+    public static final int SGDT_M1632_16;
+
+    /**
+     * SGDT_M1664: Store the Global Descriptor Table to the specified 64-bit memory address.
+     */
+    public static final int SGDT_M1664;
+
+    /**
+     * SIDT_M1632: Store the Interrupt Descriptor Table to the specified 32-bit memory address.
+     */
+    public static final int SIDT_M1632;
+
+    /**
+     * SIDT_M1632_16: Store the Interrupt Descriptor Table to the specified 16-bit memory address.
+     */
+    public static final int SIDT_M1632_16;
+
+    /**
+     * SIDT_M1664: Store the Interrupt Descriptor Table to the specified 64-bit memory address.
+     */
+    public static final int SIDT_M1664;
+
+    /**
+     * SLDT_R32M16: Store the Local Descriptor Table from the 32-bit register and 16-bit memory address.
+     */
+    public static final int SLDT_R32M16;
+
+    /**
+     * SLDT_R64M16: Store the Local Descriptor Table from the 64-bit register and 16-bit memory address.
+     */
+    public static final int SLDT_R64M16;
+
+    /**
+     * SLDT_RM16: Store the Local Descriptor Table from the specified 16-bit register/memory address.
+     */
+    public static final int SLDT_RM16;
+
+    /**
+     * STC: Set the carry flag.
+     */
+    public static final int STC;
+
+    /**
+     * STD: Set the direction flag.
+     */
+    public static final int STD;
+
+    /**
+     * STI: Set the interrupt flag.
+     */
+    public static final int STI;
+
+    /**
+     * STR_R32M16: Store the Task Register from the 32-bit register and 16-bit memory address.
+     */
+    public static final int STR_R32M16;
+
+    /**
+     * STR_R64M16: Store the Task Register from the 64-bit register and 16-bit memory address.
+     */
+    public static final int STR_R64M16;
+
+    /**
+     * STR_RM16: Store the Task Register from the specified 16-bit register/memory address.
+     */
+    public static final int STR_RM16;
+
+    /**
+     * TEST_RM16_IMM16: Test the 16-bit value at the specified memory/register address with the given immediate 16-bit value.
+     */
+    public static final int TEST_RM16_IMM16;
+
+    /**
+     * TEST_RM16_IMM16_F7R1: Test the 16-bit value at the specified memory/register address with the given immediate 16-bit value, special case for F7R1.
+     */
+    public static final int TEST_RM16_IMM16_F7R1;
+
+    /**
+     * TEST_RM32_IMM32: Test the 32-bit value at the specified memory/register address with the given immediate 32-bit value.
+     */
+    public static final int TEST_RM32_IMM32;
+
+    /**
+     * TEST_RM32_IMM32_F7R1: Test the 32-bit value at the specified memory/register address with the given immediate 32-bit value, special case for F7R1.
+     */
+    public static final int TEST_RM32_IMM32_F7R1;
+
+    /**
+     * TEST_RM64_IMM32: Test the 64-bit value at the specified memory/register address with the given immediate 32-bit value.
+     */
+    public static final int TEST_RM64_IMM32;
+
+    /**
+     * TEST_RM64_IMM32_F7R1: Test the 64-bit value at the specified memory/register address with the given immediate 32-bit value, special case for F7R1.
+     */
+    public static final int TEST_RM64_IMM32_F7R1;
+
+    /**
+     * TEST_RM8_IMM8: Test the 8-bit value at the specified memory/register address with the given immediate 8-bit value.
+     */
+    public static final int TEST_RM8_IMM8;
+
+    /**
+     * TEST_RM8_IMM8_F6R1: Test the 8-bit value at the specified memory/register address with the given immediate 8-bit value, special case for F6R1.
+     */
+    public static final int TEST_RM8_IMM8_F6R1;
+
+    /**
+     * VERR_R32M16: Verify the validity of the 32-bit value at the specified 16-bit register/memory address.
+     */
+    public static final int VERR_R32M16;
+
+    /**
+     * VERR_R64M16: Verify the validity of the 64-bit value at the specified 16-bit register/memory address.
+     */
+    public static final int VERR_R64M16;
+
+    /**
+     * VERR_RM16: Verify the validity of the value at the specified 16-bit register/memory address.
+     */
+    public static final int VERR_RM16;
+
+    /**
+     * VERW_R32M16: Verify the write validity of the 32-bit value at the specified 16-bit register/memory address.
+     */
+    public static final int VERW_R32M16;
+
+    /**
+     * VERW_R64M16: Verify the write validity of the 64-bit value at the specified 16-bit register/memory address.
+     */
+    public static final int VERW_R64M16;
+
+    /**
+     * VERW_RM16: Verify the write validity of the value at the specified 16-bit register/memory address.
+     */
+    public static final int VERW_RM16;
+
+    //FIXME: THIS NEEDS TO BE REORGANIZED BADLY. In 1.0.3
     static {
         int i = 0;
 
@@ -3036,6 +4537,15 @@ public class Code {
         JG_REL8_16 = i++;
         JG_REL8_32 = i++;
         JG_REL8_64 = i++;
+        JMPE_RM16  = i++;
+        JMPE_RM32 =  i++;
+        JMP_M1616 = i++;
+        JMP_M1632 = i++;
+        JMP_M1664 = i++;
+        JMP_REL8_64 = i++;
+        JMP_RM16 = i++;
+        JMP_RM32 = i++;
+        JMP_RM64 = i++;
 
         // NOP / XBEGIN
         NOPW = i++;
@@ -3097,5 +4607,328 @@ public class Code {
         FSUB_M32FP = i++;
         FSUBR_M32FP = i++;
         FDIV_M32FP = i++;
+        F2XM1 = i++;
+        FABS = i++;
+        FADD_M64FP = i++;
+        FADD_ST0_STI = i++;
+        FADD_STI_ST0 = i++;
+        FCHS = i++;
+        FCLEX = i++;
+        FCMOVBE_ST0_STI = i++;
+        FCMOVB_ST0_STI = i++;
+        FCMOVE_ST0_STI = i++;
+        FCMOVNBE_ST0_STI = i++;
+        FCMOVNB_ST0_STI = i++;
+        FCMOVNE_ST0_STI = i++;
+        FCMOVNU_ST0_STI = i++;
+        FCMOVU_ST0_STI = i++;
+        FCOMI_ST0_STI = i++;
+        FCOMP_M64FP = i++;
+        FCOMP_ST0_STI = i++;
+        FCOMP_ST0_STI_DCD8 = i++;
+        FCOM_M64FP = i++;
+        FCOM_ST0_STI = i++;
+        FCOM_ST0_STI_DCD0 = i++;
+        FCOS = i++;
+        FDECSTP = i++;
+        FDISI = i++;
+        FDIVR_M32FP = i++;
+        FDIVR_M64FP = i++;
+        FDIVR_ST0_STI = i++;
+        FDIV_M64FP = i++;
+        FDIV_ST0_STI = i++;
+        FENI = i++;
+        FIADD_M32INT = i++;
+        FICOMP_M32INT = i++;
+        FICOM_M32INT = i++;
+        FIDIVR_M32INT = i++;
+        FIDIV_M32INT = i++;
+        FILD_M32INT = i++;
+        FIMUL_M32INT = i++;
+        FINCSTP = i++;
+        FINIT = i++;
+        FISTP_M32INT = i++;
+        FISTTP_M32INT = i++;
+        FIST_M32INT = i++;
+        FISUBR_M32INT = i++;
+        FISUB_M32INT = i++;
+        FLD1 = i++;
+        FLDCW_M2BYTE = i++;
+        FLDENV_M14BYTE = i++;
+        FLDENV_M28BYTE = i++;
+        FLDL2E = i++;
+        FLDL2T = i++;
+        FLDLG2 = i++;
+        FLDLN2 = i++;
+        FLDPI = i++;
+        FLDZ = i++;
+        FLD_M32FP = i++;
+        FLD_M80FP = i++;
+        FLD_STI = i++;
+        FMUL_M64FP = i++;
+        FMUL_ST0_STI = i++;
+        FMUL_STI_ST0 = i++;
+        FNCLEX = i++;
+        FNDISI = i++;
+        FNENI = i++;
+        FNINIT = i++;
+        FNOP = i++;
+        FNSETPM = i++;
+        FNSTCW_M2BYTE = i++;
+        FNSTENV_M14BYTE = i++;
+        FNSTENV_M28BYTE = i++;
+        FPATAN = i++;
+        FPREM = i++;
+        FPREM1 = i++;
+        FPTAN = i++;
+        FRNDINT = i++;
+        FRSTPM = i++;
+        FSCALE = i++;
+        FSETPM = i++;
+        FSIN = i++;
+        FSINCOS = i++;
+        FSQRT = i++;
+        FSTCW_M2BYTE = i++;
+        FSTENV_M14BYTE = i++;
+        FSTENV_M28BYTE = i++;
+        FSTPNCE_STI = i++;
+        FSTP_M32FP = i++;
+        FSTP_M80FP = i++;
+        FST_M32FP = i++;
+        FSUBR_M64FP = i++;
+        FSUBR_ST0_STI = i++;
+        FSUB_M64FP = i++;
+        FSUB_ST0_STI = i++;
+        FTST = i++;
+        FUCOMI_ST0_STI = i++;
+        FUCOMPP = i++;
+        FXAM = i++;
+        FXCH_ST0_STI = i++;
+        FXTRACT = i++;
+        FYL2X = i++;
+        FYL2XP1 = i++;
+
+        // CALL instructions
+        CALL_REL16 = i++;
+        CALL_REL32_32 = i++;
+        CALL_REL32_64 = i++;
+
+        // Floating-point (x87) continued
+        FADDP_STI_ST0 = i++;
+        FBLD_M80BCD = i++;
+        FBSTP_M80BCD = i++;
+        FCOMIP_ST0_STI = i++;
+        FCOMPP = i++;
+        FCOMP_ST0_STI_DED0 = i++;
+        FDIVP_STI_ST0 = i++;
+        FDIVRP_STI_ST0 = i++;
+        FDIVR_STI_ST0 = i++;
+        FDIV_STI_ST0 = i++;
+        FFREEP_STI = i++;
+        FFREE_STI = i++;
+        FIADD_M16INT = i++;
+        FICOMP_M16INT = i++;
+        FICOM_M16INT = i++;
+        FIDIVR_M16INT = i++;
+        FIDIV_M16INT = i++;
+        FILD_M16INT = i++;
+        FILD_M64INT = i++;
+        FIMUL_M16INT = i++;
+        FISTP_M16INT = i++;
+        FISTP_M64INT = i++;
+        FISTTP_M16INT = i++;
+        FISTTP_M64INT = i++;
+        FIST_M16INT = i++;
+        FISUBR_M16INT = i++;
+        FISUB_M16INT = i++;
+        FLD_M64FP = i++;
+        FMULP_STI_ST0 = i++;
+         FNSAVE_M108BYTE = i++;
+        FNSAVE_M94BYTE = i++;
+        FNSTSW_AX = i++;
+        FNSTSW_M2BYTE = i++;
+        FRSTOR_M108BYTE = i++;
+        FRSTOR_M94BYTE = i++;
+        FSAVE_M108BYTE = i++;
+        FSAVE_M94BYTE = i++;
+        FSTDW_AX = i++;
+        FSTP_M64FP = i++;
+        FSTP_STI = i++;
+        FSTP_STI_DFD0 = i++;
+        FSTP_STI_DFD8 = i++;
+        FSTSG_AX = i++;
+        FSTSW_AX = i++;
+        FSTSW_M2BYTE = i++;
+        FST_M64FP = i++;
+        FST_STI = i++;
+        FSUBP_STI_ST0 = i++;
+        FSUBRP_STI_ST0 = i++;
+        FSUBR_STI_ST0 = i++;
+        FSUB_STI_ST0 = i++;
+        FUCOMIP_ST0_STI = i++;
+        FUCOMP_ST0_STI = i++;
+        FUCOM_ST0_STI = i++;
+        FXCH_ST0_STI_DDC8 = i++;
+        FXCH_ST0_STI_DFC8 = i++;
+
+        // I/O operations continued
+        IN_AL_IMM8 = i++;
+        IN_AX_IMM8 = i++;
+        IN_EAX_IMM8 = i++;
+        OUT_IMM8_AL = i++;
+        OUT_IMM8_AX = i++;
+        OUT_IMM8_EAX = i++;
+
+        // Jump instructions
+        JCXZ_REL8_16 = i++;
+        JCXZ_REL8_32 = i++;
+        JECXZ_REL8_16 = i++;
+        JECXZ_REL8_32 = i++;
+        JECXZ_REL8_64 = i++;
+        JMP_PTR1616 = i++;
+        JMP_PTR1632 = i++;
+        JMP_REL16 = i++;
+        JMP_REL32_32 = i++;
+        JMP_REL32_64 = i++;
+        JMP_REL8_16 = i++;
+        JMP_REL8_32 = i++;
+        JRCXZ_REL8_16 = i++;
+        JRCXZ_REL8_64 = i++;
+        LOOPE_REL8_16_CX = i++;
+        LOOPE_REL8_16_ECX = i++;
+        LOOPE_REL8_16_RCX = i++;
+        LOOPE_REL8_32_CX = i++;
+        LOOPE_REL8_32_ECX = i++;
+        LOOPE_REL8_64_ECX = i++;
+        LOOPE_REL8_64_RCX = i++;
+        LOOPNE_REL8_16_CX = i++;
+        LOOPNE_REL8_16_ECX = i++;
+        LOOPNE_REL8_16_RCX = i++;
+        LOOPNE_REL8_32_CX = i++;
+        LOOPNE_REL8_32_ECX = i++;
+        LOOPNE_REL8_64_ECX = i++;
+        LOOPNE_REL8_64_RCX = i++;
+        LOOP_REL8_16_CX = i++;
+        LOOP_REL8_16_ECX = i++;
+        LOOP_REL8_16_RCX = i++;
+        LOOP_REL8_32_CX = i++;
+        LOOP_REL8_32_ECX = i++;
+        LOOP_REL8_64_ECX = i++;
+        LOOP_REL8_64_RCX = i++;
+
+        // Call and Control Operations
+        CALL_M1616 = i++;
+        CALL_M1632 = i++;
+        CALL_M1664 = i++;
+        CALL_RM16 = i++;
+        CALL_RM32 = i++;
+        CALL_RM64 = i++;
+        CLC = i++;
+        CLD = i++;
+        CLI = i++;
+        CMC = i++;
+
+        // Arithmetic Operations
+        DEC_RM16 = i++;
+        DEC_RM32 = i++;
+        DEC_RM64 = i++;
+        DEC_RM8 = i++;
+        DIV_RM16 = i++;
+        DIV_RM32 = i++;
+        DIV_RM64 = i++;
+        DIV_RM8 = i++;
+
+        // Halt
+        HLT = i++;
+
+// === Arithmetic Operations ===
+        IDIV_RM16 = i++;
+        IDIV_RM32 = i++;
+        IDIV_RM64 = i++;
+        IDIV_RM8  = i++;
+        IMUL_RM16 = i++;
+        IMUL_RM32 = i++;
+        IMUL_RM64 = i++;
+        IMUL_RM8  = i++;
+        INC_RM16  = i++;
+        INC_RM32  = i++;
+        INC_RM64  = i++;
+        INC_RM8   = i++;
+        MUL_RM16  = i++;
+        MUL_RM32  = i++;
+        MUL_RM64  = i++;
+        MUL_RM8   = i++;
+        NEG_RM16  = i++;
+        NEG_RM32  = i++;
+        NEG_RM64  = i++;
+        NEG_RM8   = i++;
+        NOT_RM16  = i++;
+        NOT_RM32  = i++;
+        NOT_RM64  = i++;
+        NOT_RM8   = i++;
+
+// === I/O Operations ===
+        IN_AL_DX   = i++;
+        IN_AX_DX   = i++;
+        IN_EAX_DX  = i++;
+        OUT_DX_AL  = i++;
+        OUT_DX_AX  = i++;
+        OUT_DX_EAX = i++;
+
+        // === Jump Operations ===
+
+        // === Segment Descriptor Table Operations ===
+        LGDT_M1632     = i++;
+        LGDT_M1632_16  = i++;
+        LGDT_M1664     = i++;
+        SGDT_M1632     = i++;
+        SGDT_M1632_16  = i++;
+        SGDT_M1664     = i++;
+        SIDT_M1632     = i++;
+        SIDT_M1632_16  = i++;
+        SIDT_M1664     = i++;
+
+        // === Segment Register Load/Store Operations ===
+        LLDT_R32M16 = i++;
+        LLDT_R64M16 = i++;
+        LLDT_RM16   = i++;
+        LTR_R32M16  = i++;
+        LTR_R64M16  = i++;
+        LTR_RM16    = i++;
+        SLDT_R32M16 = i++;
+        SLDT_R64M16 = i++;
+        SLDT_RM16   = i++;
+        STR_R32M16  = i++;
+        STR_R64M16  = i++;
+        STR_RM16    = i++;
+
+        // === Control Instructions ===
+        INT1 = i++;
+        STC  = i++;
+        STD  = i++;
+        STI  = i++;
+
+        // === TEST Instructions ===
+        TEST_RM16_IMM16         = i++;
+        TEST_RM16_IMM16_F7R1    = i++;
+        TEST_RM32_IMM32         = i++;
+        TEST_RM32_IMM32_F7R1    = i++;
+        TEST_RM64_IMM32         = i++;
+        TEST_RM64_IMM32_F7R1    = i++;
+        TEST_RM8_IMM8           = i++;
+        TEST_RM8_IMM8_F6R1      = i++;
+
+        // === Verification Instructions ===
+        VERR_R32M16 = i++;
+        VERR_R64M16 = i++;
+        VERR_RM16   = i++;
+        VERW_R32M16 = i++;
+        VERW_R64M16 = i++;
+        VERW_RM16   = i++;
+
+        // Stack operations
+        PUSH_RM16 = i++;
+        PUSH_RM32 = i++;
+        PUSH_RM64 = i++;
     }
 }
