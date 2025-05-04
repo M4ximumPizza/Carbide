@@ -1,14 +1,14 @@
 package x86;
 
-import mi.m4x.rive.MemorySize;
+import mi.m4x.rive.registers.Register;
 
 import java.lang.reflect.Field;
 
-public class MemoryTest {
+public class RegisterTest {
     public static void main(String[] args) {
         try {
-            // Get all declared fields in the MemorySize class
-            Field[] fields = MemorySize.class.getDeclaredFields();
+            // Get all declared fields in the Register class
+            Field[] fields = Register.class.getDeclaredFields();
 
             for (Field field : fields) {
                 // Check if the field is of type int
