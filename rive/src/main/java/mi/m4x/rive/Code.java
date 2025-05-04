@@ -4480,14 +4480,6 @@ public class Code {
         IMUL_R32_RM32_IMM8 = i++;
         IMUL_R64_RM64_IMM8 = i++;
 
-        // I/O operations
-        INSB_M8_DX = i++;
-        INSW_M16_DX = i++;
-        INSD_M32_DX = i++;
-        OUTSB_DX_M8 = i++;
-        OUTSW_DX_M16 = i++;
-        OUTSD_DX_M32 = i++;
-
         // Conditional short jumps (8-bit offset)
         JO_REL8_16 = i++;
         JO_REL8_32 = i++;
@@ -4707,13 +4699,6 @@ public class Code {
         FXTRACT = i++;
         FYL2X = i++;
         FYL2XP1 = i++;
-
-        // CALL instructions
-        CALL_REL16 = i++;
-        CALL_REL32_32 = i++;
-        CALL_REL32_64 = i++;
-
-        // Floating-point (x87) continued
         FADDP_STI_ST0 = i++;
         FBLD_M80BCD = i++;
         FBSTP_M80BCD = i++;
@@ -4743,7 +4728,7 @@ public class Code {
         FISUB_M16INT = i++;
         FLD_M64FP = i++;
         FMULP_STI_ST0 = i++;
-         FNSAVE_M108BYTE = i++;
+        FNSAVE_M108BYTE = i++;
         FNSAVE_M94BYTE = i++;
         FNSTSW_AX = i++;
         FNSTSW_M2BYTE = i++;
@@ -4771,13 +4756,44 @@ public class Code {
         FXCH_ST0_STI_DDC8 = i++;
         FXCH_ST0_STI_DFC8 = i++;
 
+        // CALL and control instructions
+        CALL_REL16 = i++;
+        CALL_REL32_32 = i++;
+        CALL_REL32_64 = i++;
+        CALL_M1616 = i++;
+        CALL_M1632 = i++;
+        CALL_M1664 = i++;
+        CALL_RM16 = i++;
+        CALL_RM32 = i++;
+        CALL_RM64 = i++;
+        CLC = i++;
+        CLD = i++;
+        CLI = i++;
+        CMC = i++;
+        INT1 = i++;
+        STC  = i++;
+        STD  = i++;
+        STI  = i++;
+
         // I/O operations continued
         IN_AL_IMM8 = i++;
         IN_AX_IMM8 = i++;
         IN_EAX_IMM8 = i++;
+        IN_AL_DX   = i++;
+        IN_AX_DX   = i++;
+        IN_EAX_DX  = i++;
+        INSB_M8_DX = i++;
+        INSW_M16_DX = i++;
+        INSD_M32_DX = i++;
         OUT_IMM8_AL = i++;
         OUT_IMM8_AX = i++;
         OUT_IMM8_EAX = i++;
+        OUT_DX_AL  = i++;
+        OUT_DX_AX  = i++;
+        OUT_DX_EAX = i++;
+        OUTSB_DX_M8 = i++;
+        OUTSW_DX_M16 = i++;
+        OUTSD_DX_M32 = i++;
 
         // Jump instructions
         JCXZ_REL8_16 = i++;
@@ -4817,16 +4833,6 @@ public class Code {
         LOOP_REL8_64_RCX = i++;
 
         // Call and Control Operations
-        CALL_M1616 = i++;
-        CALL_M1632 = i++;
-        CALL_M1664 = i++;
-        CALL_RM16 = i++;
-        CALL_RM32 = i++;
-        CALL_RM64 = i++;
-        CLC = i++;
-        CLD = i++;
-        CLI = i++;
-        CMC = i++;
 
         // Arithmetic Operations
         DEC_RM16 = i++;
@@ -4837,11 +4843,6 @@ public class Code {
         DIV_RM32 = i++;
         DIV_RM64 = i++;
         DIV_RM8 = i++;
-
-        // Halt
-        HLT = i++;
-
-// === Arithmetic Operations ===
         IDIV_RM16 = i++;
         IDIV_RM32 = i++;
         IDIV_RM64 = i++;
@@ -4867,15 +4868,8 @@ public class Code {
         NOT_RM64  = i++;
         NOT_RM8   = i++;
 
-// === I/O Operations ===
-        IN_AL_DX   = i++;
-        IN_AX_DX   = i++;
-        IN_EAX_DX  = i++;
-        OUT_DX_AL  = i++;
-        OUT_DX_AX  = i++;
-        OUT_DX_EAX = i++;
-
-        // === Jump Operations ===
+        // Halt
+        HLT = i++;
 
         // === Segment Descriptor Table Operations ===
         LGDT_M1632     = i++;
@@ -4901,12 +4895,6 @@ public class Code {
         STR_R32M16  = i++;
         STR_R64M16  = i++;
         STR_RM16    = i++;
-
-        // === Control Instructions ===
-        INT1 = i++;
-        STC  = i++;
-        STD  = i++;
-        STI  = i++;
 
         // === TEST Instructions ===
         TEST_RM16_IMM16         = i++;
