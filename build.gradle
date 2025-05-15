@@ -35,7 +35,7 @@ tasks.named('sourcesJar') {
 
 tasks.named('javadocJar') {
     duplicatesStrategy DuplicatesStrategy.INCLUDE
-    from tasks.javadoc.get().destinationDir
+    from tasks.javadoc.destinationDir
 }
 
 publishing {
