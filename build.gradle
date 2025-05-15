@@ -10,6 +10,8 @@ version = '1.0.2-SNAPSHOT'
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'it.unimi.dsi:fastutil:8.5.12'
+    implementation 'org.slf4j:slf4j-api:2.0.9'
 }
 
 test {
