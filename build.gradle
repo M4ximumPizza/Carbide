@@ -8,12 +8,6 @@ group = 'mi.m4x.carbide'
 version = '1.0.2-SNAPSHOT'
 
 dependencies {
-    implementation 'com.google.guava:guava:32.1.2-jre'
-    implementation 'io.netty:netty-handler:4.1.100.Final'
-    implementation 'org.checkerframework:checker-qual:3.42.0'
-    implementation 'it.unimi.dsi:fastutil:8.5.12'
-    implementation 'io.reactivex.rxjava3:rxjava:3.1.8'
-    implementation 'org.slf4j:slf4j-api:2.0.9'
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
@@ -30,29 +24,23 @@ java {
 tasks.named('jar') {
     duplicatesStrategy DuplicatesStrategy.INCLUDE
     from sourceSets.main.output
-    from project(':rive').sourceSets.main.output
 }
 
 tasks.named('sourcesJar') {
     duplicatesStrategy DuplicatesStrategy.INCLUDE
     from sourceSets.main.allSource
-    // Include source files from the 'rive' subproject
-    from project(':rive').sourceSets.main.allSource
 }
 
 tasks.named('javadocJar') {
     duplicatesStrategy DuplicatesStrategy.INCLUDE
-    // Include javadoc from the 'rive' subproject
-    from project(':rive').tasks.named('javadoc').get().destinationDir
+    from tasks.javadoc.get().destinationDir
 }
 
 publishing {
     publications {
         mavenJava(MavenPublication) {
             from components.java
-            artifact(tasks.named('jar')) {
-                // No classifier needed for the main artifact
-            }
+            artifact(tasks.named('jar')) // main artifact
             artifact(tasks.named('sourcesJar')) {
                 classifier = 'sources'
             }
