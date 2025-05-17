@@ -1,5 +1,6 @@
 package mi.m4x.carbide.scheduler.structures;
 
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicIntegerArray;
@@ -21,29 +22,30 @@ import java.util.concurrent.atomic.AtomicIntegerArray;
  * - Thread-safe for concurrent enqueues and dequeues, but not for simultaneous
  *   `changePriority()` calls on the same element.
  *
- * @author M4ximumpizza
+ * @param <E> the type of elements held in this queue
  * @since 1.0.0
+ * @author M4ximumpizza
  */
 public final class DynamicPriorityQueue<E> {
 
-    // Tracks count of tasks in each priority queue (faster than scanning queues)
     private final AtomicIntegerArray taskCount;
-
-    // Lock-free FIFO queues for each priority level
     private final ConcurrentLinkedQueue<E>[] queues;
-
-    // Tracks which queue an element belongs to (constant-time lookup/removal)
-    private final ConcurrentHashMap<E, Integer> elementPriorityMap = new ConcurrentHashMap<>();
+    private final ConcurrentHashMap<E, Integer> elementPriorityMap;
 
     /**
      * Initializes the dynamic priority queue with the specified number of levels.
      *
      * @param levels Number of priority levels (0 = highest)
+     * @throws IllegalArgumentException if levels &lt;= 0
      */
     @SuppressWarnings("unchecked")
     public DynamicPriorityQueue(int levels) {
+        if (levels <= 0) throw new IllegalArgumentException("Priority levels must be positive");
+
         this.taskCount = new AtomicIntegerArray(levels);
         this.queues = new ConcurrentLinkedQueue[levels];
+        this.elementPriorityMap = new ConcurrentHashMap<>();
+
         for (int i = 0; i < levels; i++) {
             queues[i] = new ConcurrentLinkedQueue<>();
         }
@@ -57,37 +59,37 @@ public final class DynamicPriorityQueue<E> {
      * @throws IllegalArgumentException if priority is invalid or element already exists
      */
     public void enqueue(E element, int priority) {
+        Objects.requireNonNull(element, "Element cannot be null");
         validatePriority(priority);
+
         if (elementPriorityMap.putIfAbsent(element, priority) != null) {
-            throw new IllegalArgumentException("Element already in queue");
+            throw new IllegalArgumentException("Element already exists in the queue");
         }
+
         queues[priority].add(element);
         taskCount.incrementAndGet(priority);
     }
 
     /**
-     * Atomically changes the priority of an element already in the queue.
-     * Not thread-safe for the same element across threads.
+     * Atomically changes the priority of an existing element.
+     * Not thread-safe for the same element being modified concurrently.
      *
-     * @param element the element whose priority should change
+     * @param element     the element to reprioritize
      * @param newPriority the new priority level
      * @return true if the priority was changed successfully, false otherwise
      */
     public boolean changePriority(E element, int newPriority) {
+        Objects.requireNonNull(element, "Element cannot be null");
         validatePriority(newPriority);
 
-        int oldPriority = elementPriorityMap.getOrDefault(element, -1);
-        if (oldPriority == -1 || oldPriority == newPriority) return false;
+        Integer currentPriority = elementPriorityMap.get(element);
+        if (currentPriority == null || currentPriority == newPriority) return false;
 
-        // Best-effort removal from old queue
-        boolean removed = queues[oldPriority].remove(element);
-        if (!removed) return false; // Possibly dequeued by another thread
+        boolean removed = queues[currentPriority].remove(element);
+        if (!removed) return false;
 
-        taskCount.decrementAndGet(oldPriority);
-
-        // Update map after successful removal
-        Integer prev = elementPriorityMap.put(element, newPriority);
-        if (prev == null || prev != oldPriority) return false;
+        taskCount.decrementAndGet(currentPriority);
+        elementPriorityMap.put(element, newPriority);
 
         queues[newPriority].add(element);
         taskCount.incrementAndGet(newPriority);
@@ -97,7 +99,7 @@ public final class DynamicPriorityQueue<E> {
     /**
      * Dequeues the highest-priority available element.
      *
-     * @return the dequeued element or null if all queues are empty
+     * @return the dequeued element, or null if all queues are empty
      */
     public E dequeue() {
         for (int i = 0; i < queues.length; i++) {
@@ -117,36 +119,39 @@ public final class DynamicPriorityQueue<E> {
      * Checks if the queue contains the specified element.
      *
      * @param element the element to check
-     * @return true if the element exists in any queue
+     * @return true if present, false otherwise
      */
     public boolean contains(E element) {
         return elementPriorityMap.containsKey(element);
     }
 
     /**
-     * Removes an element from the queue, if it exists.
-     * Safe to call concurrently, but may race with other removals.
+     * Removes an element from the queue.
      *
      * @param element the element to remove
      */
     public void remove(E element) {
         Integer priority = elementPriorityMap.remove(element);
-        if (priority != null) {
-            boolean removed = queues[priority].remove(element);
-            if (removed) taskCount.decrementAndGet(priority);
+        if (priority != null && queues[priority].remove(element)) {
+            taskCount.decrementAndGet(priority);
         }
     }
 
     /**
      * Returns the total number of elements in the queue.
      *
-     * @return total size
+     * @return the total size
      */
     public int size() {
         return elementPriorityMap.size();
     }
 
-    // Validates priority level bounds
+    /**
+     * Validates that a priority is within bounds.
+     *
+     * @param priority the priority to check
+     * @throws IllegalArgumentException if priority is out of bounds
+     */
     private void validatePriority(int priority) {
         if (priority < 0 || priority >= queues.length) {
             throw new IllegalArgumentException("Priority out of range: " + priority);
