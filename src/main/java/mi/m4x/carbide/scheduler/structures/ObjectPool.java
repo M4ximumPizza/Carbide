@@ -7,83 +7,67 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 
 /**
- * A high-performance, non-blocking object pool that recycles preallocated instances
- * to reduce GC pressure and allocation latency in performance-critical applications.
+ * A high-performance, fixed-size object pool that recycles instances to minimize GC overhead.
+ * Supports overflow instantiation beyond capacity, optional initialization and cleanup hooks,
+ * and is safe for multi-threaded use.
  *
- * - Fixed-size pool with thread-safe access.
- * - Optional post-release hook and custom initialization logic.
- * - Supports object overflow by allocating outside the pool when capacity is exceeded.
- * - No dependency on reflection or unsafe operations.
- *
- * Designed for hot code paths like networking, game engines, or real-time simulations
- * where allocation overhead is non-trivial.
- *
- * @author M4ximumpizza
+ * @param <T> the type of object managed by this pool
  * @since 1.0.0
+ * @author M4ximumpizza
  */
 public final class ObjectPool<T> {
 
-    // Factory method to construct new instances for the pool
     private final Function<ObjectPool<T>, T> constructor;
-
-    // Hook for resetting/initializing objects before reuse
     private final Consumer<T> initializer;
-
-    // Hook for cleanup before object is returned to the pool
     private final Consumer<T> postRelease;
-
-    // Maximum number of pooled objects
     private final int capacity;
-
-    // Internal object buffer (statically sized, no resizing)
     private final Object[] buffer;
 
-    // Tracks how many objects have been checked out from the pool
-    private int count = 0;
+    // The number of objects currently checked out (also serves as index for the next free slot)
+    private int count;
 
     /**
-     * Creates a new ObjectPool.
+     * Constructs a new ObjectPool.
      *
-     * @param constructor function to create new pooled objects
-     * @param initializer function to prepare objects on allocation
-     * @param postRelease function to clean up objects on release
-     * @param capacity maximum number of objects to pool
-     * @throws IllegalArgumentException if capacity less than or equal 0
-     * @throws NullPointerException if any function is null
+     * @param constructor function to create new objects
+     * @param initializer function to initialize objects before use
+     * @param postRelease function to clean up objects before reuse
+     * @param capacity maximum number of pooled objects
      */
     public ObjectPool(Function<ObjectPool<T>, T> constructor,
                       Consumer<T> initializer,
                       Consumer<T> postRelease,
                       int capacity) {
+
         Assertions.assertTrue(capacity > 0, "ObjectPool capacity must be positive");
-        this.constructor = Objects.requireNonNull(constructor);
-        this.initializer = Objects.requireNonNull(initializer);
-        this.postRelease = Objects.requireNonNull(postRelease);
+        this.constructor = Objects.requireNonNull(constructor, "Constructor must not be null");
+        this.initializer = Objects.requireNonNull(initializer, "Initializer must not be null");
+        this.postRelease = Objects.requireNonNull(postRelease, "PostRelease must not be null");
         this.capacity = capacity;
         this.buffer = new Object[capacity];
 
-        // Eagerly allocate all pooled objects to avoid lazy init race
+        // Pre-fill the pool to avoid on-demand creation
         for (int i = 0; i < capacity; i++) {
             buffer[i] = constructor.apply(this);
         }
+
+        this.count = capacity;
     }
 
     /**
-     * Acquires an object from the pool. If the pool is exhausted,
-     * a new object will be allocated via the constructor.
+     * Allocates an object from the pool, or creates a new one if exhausted.
      *
-     * @return an initialized object (never null)
+     * @return an initialized object, never null
      */
     public T alloc() {
         final T obj;
+
         synchronized (this) {
-            if (count < capacity) {
-                obj = (T) buffer[count];
-                buffer[count++] = null;
+            if (count > 0) {
+                obj = getFromPool();
             } else {
-                // Allocate a fresh instance outside the pool (overflow)
+                // Overflow: create a new instance on demand
                 obj = constructor.apply(this);
-                // Avoid initializing here to skip double init on overflow
                 initializer.accept(obj);
                 return obj;
             }
@@ -94,10 +78,9 @@ public final class ObjectPool<T> {
     }
 
     /**
-     * Returns an object to the pool. If the pool is full,
-     * the object is discarded and may be GC'd.
+     * Releases an object back into the pool. If full, the object is discarded.
      *
-     * @param obj the object to return
+     * @param obj the object to release
      */
     public void release(T obj) {
         if (obj == null) return;
@@ -105,11 +88,20 @@ public final class ObjectPool<T> {
         postRelease.accept(obj);
 
         synchronized (this) {
-            if (count > 0) {
-                buffer[--count] = obj;
+            if (count < capacity) {
+                buffer[count++] = obj;
             }
-            // If count == 0, pool is already full — silently drop
+            // Else: silently drop the object
         }
     }
-}
 
+    /**
+     * Internal helper for retrieving an object from the pool.
+     *
+     * @since 1.0.3
+     */
+    @SuppressWarnings("unchecked")
+    private T getFromPool() {
+        return (T) buffer[--count];
+    }
+}
