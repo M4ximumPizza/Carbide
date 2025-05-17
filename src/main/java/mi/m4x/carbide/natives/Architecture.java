@@ -1,69 +1,74 @@
 package mi.m4x.carbide.natives;
 
 /**
- * Enum representing the system architecture.
+ * Represents the system CPU architecture.
+ * <p>
+ * Detects the current runtime architecture using {@code System.getProperty("os.arch")},
+ * normalizes it, and maps it to supported values.
+ * </p>
  *
- * Currently, supports detection of 64-bit x86 architecture (X86_64) and
- * defaults to UNSUPPORTED for any unrecognized values.
+ * <p>Supported architectures:</p>
+ * <ul>
+ *   <li>{@link #X86_64} — 64-bit x86 (e.g., AMD64, x86_64)</li>
+ *   <li>{@link #ARM} — ARM 32/64-bit (e.g., arm, arm64, aarch64)</li>
+ *   <li>{@link #RISC_V} — RISC-V (e.g., riscv, riscv64)</li>
+ *   <li>{@link #UNSUPPORTED} — Any unrecognized or unsupported architecture</li>
+ * </ul>
  *
  * @since 1.0.0
  * @author M4ximumpizza
  */
 public enum Architecture {
-    /**
-     * Represents 64-bit x86 architectures, commonly known as AMD64 or x86_64.
-     */
+    /** Represents 64-bit x86 architectures such as AMD64 and x86_64. */
     X86_64,
 
-    /**
-     * Represents any architecture not recognized or explicitly unsupported.
-     */
+    /** Represents ARM and ARM64 architectures. */
+    ARM,
+
+    /** Represents RISC-V architectures. */
+    RISC_V,
+
+    /** Represents an unsupported or unrecognized architecture. */
     UNSUPPORTED;
 
     /**
-     * Detects and returns the current system architecture.
+     * Detects the architecture of the running system.
+     * <p>
+     * Normalizes the {@code os.arch} system property to remove formatting variations,
+     * then maps the result to a supported enum value.
+     * </p>
      *
-     * This method reads the system property "os.arch", normalizes it,
-     * and matches it against known architecture identifiers.
-     *
-     * @since 1.0.0
-     * @author M4ximumpizza
-     * @return the detected Architecture, or UNSUPPORTED if unrecognized
+     * @return the detected {@link Architecture}, or {@link #UNSUPPORTED} if unknown
      */
-    public static Architecture get() {
+    public static Architecture detect() {
         String arch = System.getProperty("os.arch");
-        if (arch == null) return UNSUPPORTED;
+        if (arch == null || arch.isEmpty()) return UNSUPPORTED;
 
-        String norm = normalizeArch(arch);
+        String normalized = normalize(arch);
 
-        // Match normalized architecture strings to known identifiers
-        return switch (norm) {
+        return switch (normalized) {
             case "x8664", "amd64", "ia32e", "em64t", "x64" -> X86_64;
+            case "arm", "armv7", "armv8", "arm64", "aarch64" -> ARM;
+            case "riscv", "riscv64", "rv64" -> RISC_V;
             default -> UNSUPPORTED;
         };
     }
 
     /**
-     * Normalizes the architecture string by:
-     * - Converting all characters to lowercase
-     * - Removing all non-alphanumeric characters
+     * Normalizes an architecture string by converting it to lowercase and
+     * removing all non-alphanumeric characters.
      *
-     * This ensures consistent matching across various platform quirks
-     * (e.g., "x86_64", "AMD64", or "x64" all normalize correctly).
-     *
-     * @since 1.0.0
-     * @author M4ximumpizza
-     * @param arch the original architecture string from system property
-     * @return a lowercase, alphanumeric-only version of the architecture string
+     * @param arch the raw {@code os.arch} string
+     * @return a normalized, lowercase, alphanumeric-only architecture identifier
      */
-    private static String normalizeArch(String arch) {
-        StringBuilder sb = new StringBuilder(arch.length());
+    private static String normalize(String arch) {
+        StringBuilder result = new StringBuilder(arch.length());
         for (int i = 0; i < arch.length(); i++) {
             char c = Character.toLowerCase(arch.charAt(i));
-            if ((c >= 'a' && c <= 'z') || (c >= '0' && c <= '9')) {
-                sb.append(c);
+            if (Character.isLetterOrDigit(c)) {
+                result.append(c);
             }
         }
-        return sb.toString();
+        return result.toString();
     }
 }
