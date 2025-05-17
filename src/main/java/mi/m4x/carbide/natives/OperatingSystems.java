@@ -1,48 +1,49 @@
 package mi.m4x.carbide.natives;
 
 /**
- * Enum representing a simplified set of operating systems.
+ * Represents a simplified categorization of the host operating system.
+ * <p>
+ * This enum provides a platform-agnostic mechanism to detect the OS using
+ * {@code System.getProperty("os.name")}, normalizing and parsing common
+ * variants into generalized types.
+ * </p>
  *
- * This enum provides a utility method to detect and categorize the host
- * operating system using the standard {@code os.name} system property.
- *
- * Supported OS categories:
- * - {@link #LINUX}
- * - {@link #OSX} (MacOS)
- * - {@link #WINDOWS}
- * - {@link #UNSUPPORTED} (fallback for unknown systems)
- *
- * Detection is normalized and tolerant of common system naming variations
- * such as "Darwin" for Mac or different flavors of Linux.
+ * <p>Supported operating systems:</p>
+ * <ul>
+ *   <li>{@link #LINUX}</li>
+ *   <li>{@link #OSX} (macOS / Darwin)</li>
+ *   <li>{@link #WINDOWS}</li>
+ *   <li>{@link #UNSUPPORTED} (fallback category)</li>
+ * </ul>
  *
  * @author M4ximumpizza
  * @since 1.0.0
  */
 public enum OperatingSystems {
-    /** Represents any Linux-based OS. */
+    /** Any Linux-based OS (Ubuntu, Arch, etc.) */
     LINUX,
-    /** Represents macOS (also includes Darwin-based systems). */
+
+    /** macOS and Darwin-based systems */
     OSX,
-    /** Represents Microsoft Windows operating systems. */
+
+    /** Microsoft Windows OS family */
     WINDOWS,
-    /** Represents an unrecognized or unsupported operating system. */
+
+    /** Unrecognized or unsupported operating system */
     UNSUPPORTED;
 
     /**
-     * Detects the host operating system and returns the corresponding enum constant.
+     * Detects and returns the host operating system as an {@link OperatingSystems} enum constant.
+     * The detection is case- and formatting-insensitive and supports common variants.
      *
-     * Uses {@code System.getProperty("os.name")} to determine the platform.
-     * The value is normalized to lowercase alphanumeric characters before matching.
-     *
-     * @return the detected {@code OperatingSystems} value, or {@code UNSUPPORTED} if unknown.
+     * @return the detected {@code OperatingSystems} value; defaults to {@code UNSUPPORTED} if unrecognized.
      */
-    public static OperatingSystems get() {
-        String os = System.getProperty("os.name");
-        if (os == null) return UNSUPPORTED;
+    public static OperatingSystems detect() {
+        String osName = System.getProperty("os.name");
+        if (osName == null || osName.isEmpty()) return UNSUPPORTED;
 
-        String normalized = normalizeOs(os);
+        String normalized = normalize(osName);
 
-        // Match against known OS name prefixes
         if (startsWith(normalized, "linux")) return LINUX;
         if (startsWith(normalized, "macosx") || startsWith(normalized, "osx") || startsWith(normalized, "darwin")) return OSX;
         if (startsWith(normalized, "windows")) return WINDOWS;
@@ -51,40 +52,35 @@ public enum OperatingSystems {
     }
 
     /**
-     * Normalizes an OS name string by converting it to lowercase and removing all
-     * non-alphanumeric characters.
+     * Normalizes an OS name by converting it to lowercase and removing all non-alphanumeric characters.
+     * This ensures consistent comparison across OS name variants.
      *
-     * This ensures consistent and predictable comparisons across platforms and vendors.
-     *
-     * @param os the original {@code os.name} string
-     * @return a normalized, lowercase alphanumeric version of the input
+     * @param name the original OS name
+     * @return a normalized version suitable for comparison
      */
-    private static String normalizeOs(String os) {
-        StringBuilder sb = new StringBuilder(os.length());
-        for (int i = 0; i < os.length(); i++) {
-            char c = Character.toLowerCase(os.charAt(i));
-            if ((c >= 'a' && c <= 'z') || (c >= '0' && c <= '9')) {
-                sb.append(c);
+    private static String normalize(String name) {
+        StringBuilder result = new StringBuilder(name.length());
+        for (int i = 0; i < name.length(); i++) {
+            char c = Character.toLowerCase(name.charAt(i));
+            if (Character.isLetterOrDigit(c)) {
+                result.append(c);
             }
         }
-        return sb.toString();
+        return result.toString();
     }
 
     /**
-     * Checks whether a string starts with a given prefix.
+     * Checks whether the given string starts with the specified prefix.
+     * Avoids using {@code String.startsWith()} to reduce allocations in restricted environments.
      *
-     * Equivalent to {@code String.startsWith()} but implemented manually
-     * to avoid allocation and improve portability across restricted environments.
-     *
-     * @param s the full string
-     * @param prefix the prefix to check
-     * @return true if {@code s} starts with {@code prefix}, false otherwise
+     * @param text the string to test
+     * @param prefix the expected prefix
+     * @return {@code true} if {@code text} starts with {@code prefix}, {@code false} otherwise
      */
-    private static boolean startsWith(String s, String prefix) {
-        int len = prefix.length();
-        if (s.length() < len) return false;
-        for (int i = 0; i < len; i++) {
-            if (s.charAt(i) != prefix.charAt(i)) return false;
+    private static boolean startsWith(String text, String prefix) {
+        if (text.length() < prefix.length()) return false;
+        for (int i = 0; i < prefix.length(); i++) {
+            if (text.charAt(i) != prefix.charAt(i)) return false;
         }
         return true;
     }
