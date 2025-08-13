@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'mi.m4x.carbide'
-version = '1.0.4'
+version = '1.0.5-SNAPSHOT'
 
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
