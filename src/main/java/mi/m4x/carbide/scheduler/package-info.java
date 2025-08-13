@@ -24,11 +24,15 @@
  *       <li><code>WorkerThread</code>: Polls and executes tasks, handling lock acquisition and release.</li>
  *       <li><code>Task</code>: Represents a unit of work with execution and lock management logic.</li>
  *       <li><code>SimpleTask</code>: Basic implementation of <code>Task</code> without lock dependencies.</li>
+ *       <li><code>BusyReferenceCounter</code>: Tracks active usage of resources for concurrency control.</li>
+ *       <li><code>ObjectFactory</code>: Factory for creating reusable objects, often used in pooling scenarios.</li>
  *     </ul>
  *   </li>
  *   <li><strong>Priority Management</strong>
  *     <ul>
  *       <li><code>DynamicPriorityQueue</code>: A lock-free, multi-level priority queue with dynamic re-prioritization.</li>
+ *       <li><code>FairScheduler</code>: Distributes resources fairly among tasks.</li>
+ *       <li><code>WeightedTask</code>: Task representation with associated weights for weighted scheduling.</li>
  *     </ul>
  *   </li>
  *   <li><strong>Lock Coordination</strong>
@@ -40,12 +44,20 @@
  *   <li><strong>Cancellation and Completion</strong>
  *     <ul>
  *       <li><code>CancellationSignaller</code>: Propagates cancellation and completion signals to listeners.</li>
- *       <li><code>Cancellable</code>: Lightweight token for cooperative cancellation.</li>
+ *       <li><code>Cancellable</code>: Interface for cooperative cancellation.</li>
+ *       <li><code>Late</code>: Utility for marking or handling late tasks.</li>
  *     </ul>
  *   </li>
  *   <li><strong>Resource Optimization</strong>
  *     <ul>
  *       <li><code>ObjectPool</code>: High-performance, thread-safe object pooling for reduced GC pressure.</li>
+ *       <li><code>SingleAssignmentMap</code>: Map structure allowing single assignment per key.</li>
+ *     </ul>
+ *   </li>
+ *   <li><strong>Scheduling Algorithms</strong>
+ *     <ul>
+ *       <li><code>EDFScheduler</code>: Implements Earliest Deadline First scheduling.</li>
+ *       <li><code>EDFTask</code>: Task representation for EDF scheduling.</li>
  *     </ul>
  *   </li>
  *   <li><strong>Assertions</strong>
@@ -61,7 +73,7 @@
  *   <li>Worker threads poll tasks, acquire required locks, and execute them.</li>
  *   <li>Locks are acquired and released around execution, coordinating dependent tasks.</li>
  *   <li>Cancellation and completion signals trigger listeners and cleanup logic.</li>
- *   <li>Object pooling is used to optimize memory and performance.</li>
+ *   <li>Object pooling and resource management optimize memory and performance.</li>
  * </ol>
  *
  * <h2>Use Cases</h2>
@@ -69,6 +81,7 @@
  *   <li><strong>Concurrent Task Scheduling</strong>: Useful in job schedulers, game engines, or real-time systems.</li>
  *   <li><strong>Dependency Management</strong>: Suitable for tasks requiring strict ordering via lock dependencies.</li>
  *   <li><strong>High-Performance Applications</strong>: Tuned for low-latency, high-throughput execution with minimal contention.</li>
+ *   <li><strong>Fair and Deadline-Based Scheduling</strong>: Supports fairness and deadline-driven task execution.</li>
  * </ul>
  *
  * @since 1.0.0
